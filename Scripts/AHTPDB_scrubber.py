@@ -9,5 +9,9 @@ for line in source:
 
 	#Sequence:		tokens[1]
 	#Source:		tokens[5]
-	#Properties:	NA
+	#Properties:	NA?
 	#Source Data: http://crdd.osdd.net/raghava/ahtpdb/downloads/pepic50.txt
+
+	for each in tokens:
+		destination.write(each + ',')
+	destination.write('\n')
