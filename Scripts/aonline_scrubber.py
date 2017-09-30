@@ -27,9 +27,12 @@ for line in source:
 	line = line.strip()
 	tokens = line.split(',')
 
+	#Place in file
 	for each in tokens:
 		destination.write(each.strip("\"") + ',')
 	destination.write('\n')
+	#
+	#
 	#Sequence:		tokens[8]
 	#Source:		NA?
 	#Properties:	Toxic: + tokens[3]

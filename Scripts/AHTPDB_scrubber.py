@@ -7,11 +7,13 @@ for line in source:
 	line = line.rstrip()
 	tokens = line.split('	')
 
+	#Place in file
+	for each in tokens:
+		destination.write(each + ',')
+		destination.write('\n')
+	#
+	#
 	#Sequence:		tokens[1]
 	#Source:		tokens[5]
 	#Properties:	NA?
 	#Source Data: http://crdd.osdd.net/raghava/ahtpdb/downloads/pepic50.txt
-
-	for each in tokens:
-		destination.write(each + ',')
-	destination.write('\n')
