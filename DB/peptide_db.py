@@ -15,30 +15,33 @@ class PeptideDB:
         # Create attributes for collections
         self.peptides = self.db[peptide_coll_name]
         self.sources = self.db[source_coll_name]
+        # Create dictionary of fields for each collection
+        self.peptide_fields = {
+            "sequence": "string",
+            "name": "string",
+            "hydrophobicity": "double",
+            "toxin": "bool",
+            "allergen": "bool",
+            "antiviral": "bool",
+            "antimicrobial": "bool",
+            "antibacterial": "bool",
+            "antihyptertensive": "bool",
+            "anticancer": "bool",
+            "antiparasitic": "bool"
+        }
+        self.source_fields = {
+            "url": "string",
+            "institution": "string",
+            "authors": "string"
+        }
 
     def create_collections(self, source_coll_name="source", peptide_coll_name="peptide"):
-        self.db.create_collection(peptide_coll_name, validator={
-        "$and":
-            [
-                { "sequence": { "$type": "string" } },
-                { "url": { "$type": "string" } }
-            ],
-        "$or":
-            [
-                { "anticancer": { "$type": "bool" } },
-                { "antifungal": { "$type": "bool" } }
-            ]
-        })
-        self.db.create_collection(source_coll_name, validator={ "$and":
-            [
-                { "url": { "$type": "string" } },
-                { "institution": { "$type": "string" } },
-                { "authors": { "$type": "string" } }
-            ]
-        })
+        self.db.create_collection(peptide_coll_name)
+        self.db.create_collection(source_coll_name)
         self.db[peptide_coll_name].create_index("sequence", unique=True)
+        self.db[source_coll_name].create_index("url", unique=True)
 
-    def import_csv(self, filepath, db_name):
+    def import_csv(self, filepath, db_name="peptide"):
         # Read csv
         with open(filepath, 'r') as f:
             reader = csv.reader(f)
@@ -58,10 +61,14 @@ class PeptideDB:
 
         # Insert source data
         result = {}
-        result["source_insert"] = self.sources.insert_one(document_data)
+        try:
+            result["source_insert"] = self.sources.insert_one(document_data)
+        except pymongo.errors.DuplicateKeyError:
+            print("Updating database...")
+
 
         # Convert 2D array to array of dictionaries, starting from second row
-        # Second row of 2D array is names of columns, rest are peptide data
+        # Second row of 2D array is names of fields, rest are peptide data
         # URL of source is also added to each field as a reference to the source
         collection_data = []
         for row in csv_list[2:]:
@@ -71,8 +78,19 @@ class PeptideDB:
             document_data["url"] = source_url
             collection_data.append(document_data)
 
-        # insert into database
-        result["peptide_insert"] = self.peptides.insert_many(collection_data)
+        # Insert into database
+        # If there's a DuplicateKeyError (1100), update field instead
+        try:
+            result["peptide_insert"] = self.peptides.insert_many(collection_data, ordered=False)
+        except pymongo.errors.BulkWriteError as e:
+            for count, write_error in enumerate(e.details['writeErrors']):
+                if write_error["code"] == 11000:
+                    fields = write_error["op"]
+                    fields.pop("_id")
+                    self.peptides.update({"sequence": write_error["op"]["sequence"]}, fields)
+                    print("Updated peptide", write_error["op"]["sequence"])
+                else:
+                    print("something went wrong")
 
         return result
 
