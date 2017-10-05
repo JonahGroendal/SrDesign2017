@@ -16,23 +16,24 @@ class PeptideDB:
         self.peptides = self.db[peptide_coll_name]
         self.sources = self.db[source_coll_name]
         # Create dictionary of fields for each collection
-        self.peptide_fields = {
-            "sequence": "string",
-            "name": "string",
-            "hydrophobicity": "double",
-            "toxin": "bool",
-            "allergen": "bool",
-            "antiviral": "bool",
-            "antimicrobial": "bool",
-            "antibacterial": "bool",
-            "antihyptertensive": "bool",
-            "anticancer": "bool",
-            "antiparasitic": "bool"
+        self.collection_fields = {}
+        self.collection_fields["peptide"] = {
+            "sequence": {"type": str, "max": 50},
+            "name": {"type": str},
+            "hydrophobicity": {"type": int, "min": 0, "max": 100},
+            "toxin": {"type": bool},
+            "allergen": {"type": bool},
+            "antiviral": {"type": bool},
+            "antimicrobial": {"type": bool},
+            "antibacterial": {"type": bool},
+            "antihyptertensive": {"type": bool},
+            "anticancer": {"type": bool},
+            "antiparasitic": {"type": bool}
         }
-        self.source_fields = {
-            "url": "string",
-            "institution": "string",
-            "authors": "string"
+        self.collection_fields["source"] = {
+            "url": {"type": str},
+            "institution": {"type": str},
+            "authors": {"type": str}
         }
 
     def create_collections(self, source_coll_name="source", peptide_coll_name="peptide"):
@@ -60,12 +61,14 @@ class PeptideDB:
         source_url = document_data["url"]
 
         # Insert source data
-        result = {}
         try:
-            result["source_insert"] = self.sources.insert_one(document_data)
+            print(document_data)
+            self.sources.insert_one(document_data)
         except pymongo.errors.DuplicateKeyError:
-            print("Updating database...")
-
+            print("Source already exists. Updating...")
+            # Remove _id field that was automatically added by insert_one()
+            document_data.pop("_id")
+            self.sources.update({"url": document_data["url"]}, document_data)
 
         # Convert 2D array to array of dictionaries, starting from second row
         # Second row of 2D array is names of fields, rest are peptide data
@@ -74,14 +77,16 @@ class PeptideDB:
         for row in csv_list[2:]:
             document_data = {}
             for count, value in enumerate(row):
-                document_data[csv_list[1][count]] = self.convert_data_type(value)
+                if csv_list[1][count] in self.collection_fields["peptide"]:
+                    print(type(self.convert_data_type("peptide", csv_list[1][count], value)))
+                    document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
             document_data["url"] = source_url
             collection_data.append(document_data)
 
         # Insert into database
-        # If there's a DuplicateKeyError (1100), update field instead
+        # If there's a DuplicateKeyError (1100), update document instead
         try:
-            result["peptide_insert"] = self.peptides.insert_many(collection_data, ordered=False)
+            self.peptides.insert_many(collection_data, ordered=False)
         except pymongo.errors.BulkWriteError as e:
             for count, write_error in enumerate(e.details['writeErrors']):
                 if write_error["code"] == 11000:
@@ -92,11 +97,18 @@ class PeptideDB:
                 else:
                     print("something went wrong")
 
-        return result
+    def validate_document(self, doc, source_or_peptide):
+        pass
 
-    def convert_data_type(self, data):
-        if data == "True":
-            return True
-        elif data == "False":
-            return False
-        return data
+    def convert_data_type(self, coll_name, field_name, data):
+        # If this field's data type is bool, convert by hand
+        if self.collection_fields[coll_name][field_name]["type"] is bool:
+            if data == "1" or data == "True" or data == "true":
+                return True
+            elif data == "0" or data == "False" or data == "false":
+                return False
+            else:
+                return bool(data)
+        # Otherwise use this data type's function for conversion
+        else:
+            return self.collection_fields[coll_name][field_name]["type"](data)
