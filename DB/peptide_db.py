@@ -20,6 +20,7 @@ class PeptideDB:
         self.collection_fields["peptide"] = {
             "sequence": {"type": str, "max": 50},
             "name": {"type": str},
+            "source": {"type": str},
             "hydrophobicity": {"type": int, "min": 0, "max": 100},
             "toxin": {"type": bool},
             "allergen": {"type": bool},
@@ -42,10 +43,10 @@ class PeptideDB:
         self.db[peptide_coll_name].create_index("sequence", unique=True)
         self.db[source_coll_name].create_index("url", unique=True)
 
-    def import_csv(self, filepath, db_name="peptide"):
+    def import_csv(self, filepath, db_name="peptide", delimiter="|"):
         # Read csv
         with open(filepath, 'r') as f:
-            reader = csv.reader(f)
+            reader = csv.reader(f, delimiter=delimiter)
             csv_list = list(reader)
 
         # Get source data from first row of 2D array
@@ -77,9 +78,7 @@ class PeptideDB:
         for row in csv_list[2:]:
             document_data = {}
             for count, value in enumerate(row):
-                if csv_list[1][count] in self.collection_fields["peptide"]:
-                    print(type(self.convert_data_type("peptide", csv_list[1][count], value)))
-                    document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
+                document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
             document_data["url"] = source_url
             collection_data.append(document_data)
 
