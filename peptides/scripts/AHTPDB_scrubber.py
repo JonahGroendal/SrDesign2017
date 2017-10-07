@@ -1,6 +1,6 @@
-source_path = "../PeptidePulls/downloads/AHTPDB.txt"
+source_path = "../downloads/AHTPDB.txt"
 source = open(source_path, "r")
-destination_path = "./scrubbed/AHTPDB_scrubbed.csv"
+destination_path = "../clean/AHTPDB_scrubbed.csv"
 destination = open(destination_path, "w")
 
 for line in source:

@@ -10,6 +10,6 @@ myRequests = requests.session()
 
 waltData = myRequests.get("http://waltzdb.switchlab.org/sequences/csv?field_hydrophobicity_value[min]=0&amp;field_hydrophobicity_value[max]=100")
 
-with open('waltzdb.csv', 'wb') as csvfile:
+with open('../downloads/waltzdb.csv', 'wb') as csvfile:
 	csvfile.write(waltData.content)
 	csvfile.close()

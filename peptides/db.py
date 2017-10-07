@@ -1,6 +1,7 @@
 import pymongo
 from pymongo import MongoClient
 import csv
+import definitions  # for field names
 
 class PeptideDB:
     def __init__(self, db_name="peptide", source_coll_name="source", peptide_coll_name="peptide"):
@@ -17,25 +18,8 @@ class PeptideDB:
         self.sources = self.db[source_coll_name]
         # Create dictionary of fields for each collection
         self.collection_fields = {}
-        self.collection_fields["peptide"] = {
-            "sequence": {"type": str, "max": 50},
-            "name": {"type": str},
-            "source": {"type": str},
-            "hydrophobicity": {"type": int, "min": 0, "max": 100},
-            "toxin": {"type": bool},
-            "allergen": {"type": bool},
-            "antiviral": {"type": bool},
-            "antimicrobial": {"type": bool},
-            "antibacterial": {"type": bool},
-            "antihyptertensive": {"type": bool},
-            "anticancer": {"type": bool},
-            "antiparasitic": {"type": bool}
-        }
-        self.collection_fields["source"] = {
-            "url": {"type": str},
-            "institution": {"type": str},
-            "authors": {"type": str}
-        }
+        self.collection_fields["peptide"] = definitions.peptide
+        self.collection_fields["source"] = definitions.source
 
     def create_collections(self, source_coll_name="source", peptide_coll_name="peptide"):
         self.db.create_collection(peptide_coll_name)
@@ -74,11 +58,13 @@ class PeptideDB:
         # Convert 2D array to array of dictionaries, starting from second row
         # Second row of 2D array is names of fields, rest are peptide data
         # URL of source is also added to each field as a reference to the source
+        # Only fields in collection_data["peptide"] will be added, others will be skipped
         collection_data = []
         for row in csv_list[2:]:
             document_data = {}
             for count, value in enumerate(row):
-                document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
+                if csv_list[1][count] in collection_fields["peptide"]:
+                    document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
             document_data["url"] = source_url
             collection_data.append(document_data)
 

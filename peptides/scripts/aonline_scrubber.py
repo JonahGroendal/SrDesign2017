@@ -1,8 +1,8 @@
 import re
 
-source_path = "../PeptidePulls/downloads/aonline.csv"
+source_path = "../downloads/aonline.csv"
 source = open(source_path, "r")
-destination_path = "./scrubbed/aonline_scrubbed.csv"
+destination_path = "../clean/aonline_scrubbed.csv"
 destination = open(destination_path, "w")
 
 for line in source:

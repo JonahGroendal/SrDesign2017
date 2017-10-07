@@ -14,7 +14,7 @@ import os
 
 client = MongoClient()
 db = client.test
-f = open(os.path.dirname(os.path.realpath(__file__)) + '/downloads/AHTPDB.txt')
+f = open(os.path.dirname(os.path.realpath(__file__)) + '../downloads/AHTPDB.txt')
 
 #f = open("aonline.csv",encoding='utf8')
 i = 0

@@ -1,0 +1,1016 @@
+http://www.allergenonline.org/celiacbrowse.shtml|University of Nebraska-Lincoln|Richard Goodman|John Wise|Sreedevi Lalithambika
+id|type|description|toxicity|form|hladq|refs|seqlen|sequence
+1|alpha-gliadin|alpha-gliadin CT-1 (p1-p22 of B 3142)|Toxic|Native|Unknown|41|22|VPVPQLQPQNPSQQQPQEQVPL
+2|alpha-gliadin|alpha-gliadin peptide CT-2 (p23-p53 of B 3142)|Toxic|Native|Unknown|41|31|VQQQQFPGQQQPFPPQQPYPQPQPFPSQQPY
+3|alpha-gliadin|alpha-gliadin p14 (p1-p19)|Immunogenic|Native|DQ2|34|19|VRVPVPQLQPQNPSQQQPQ
+4|alpha-gliadin|alpha-gliadin p15 (p11-p28)|Immunogenic|Native|DQ2|34|18|QNPSQQQPQEQVPLVQQQ
+5|alpha-gliadin|alpha-gliadin p209|Immunogenic|Native|DQ2|34|39|20|FPGQQQPFPPQQPYPQPQPF
+7|alpha-gliadin|alpha-gliadin (p44-p55)|Immunogenic| Toxic|Native|HLA-DR|10|12|PQPQPFPSQQPY
+8|alpha-gliadin|Epitope DQ2-alpha-I/II/III|Immunogenic|Native|DQ2|62|20|YLQLQPFPQPQLPYPQPQLP
+9|alpha-gliadin|alpha2-gliadin 1420 (p56-p70)|Immunogenic|Native|DQ2| DQ8|17|15|YLQLQPFPQPQLPYP
+10|alpha-gliadin|alpha2-gliadin 33-mer (p57-p89)|Immunogenic|Native|DQ2| DQ8 (DQ2/8)|2|25|33|LQLQPFPQPQLPYPQPQLPYPQPQLPYPQPQPF
+11|alpha-gliadin|Deamidated alpha2-gliadin 33-mer (p57-p89)|Immunogenic|Deamidated|DQ2.5|61|33|LQLQPFPQPELPYPQPELPYPQPELPYPQPQPF
+12|alpha-gliadin|alpha-2 gliadin G8 (p56–p75)|Toxic| Immunogenic|Native|DQ2|51|63|20|LQLQPFPQPQLPYPQPQLPY
+13|alpha-gliadin|alpha-2 gliadin G9 (p56–p75; E65)|Immunogenic|Deamidated|DQ2|51|20|LQLQPFPQPELPYPQPQLPY
+14|alpha-gliadin|alpha-9 gliadin G5 (p56–p68)|Immunogenic|Native|DQ2|51|13|LQLQPFPQPQLPY
+15|alpha-gliadin|alpha-9 gliadin G5 (p56–p68; E65)|Immunogenic|Deamidated|DQ2|51|13|LQLQPFPQPELPY
+16|alpha-gliadin|Wheat peptide W02|Immunogenic|Native|DQ2|62|86|16|QLQPFPQPQLPYPQPQ
+17|alpha-gliadin|Glia-alpha9 (p57-p71)|Immunogenic|Native|DQ2|9|15|QLQPFPQPQLPYPQP
+18|alpha-gliadin|Glia-alpha9 (p57-p71; T69 and H70)|Immunogenic|Native|DQ2|9|15|QLQPFPQPQLPYTHP
+19|alpha-gliadin|Glia-alpha9 (p57-p71; R59)|Immunogenic|Native|DQ2|9|15|QLRPFPQPQLPYPQP
+20|alpha-gliadin|Glia-alpha9 (p57-p71; H63 and H70)|Immunogenic|Native|DQ2|9|15|QLQPFPHPQLPYPHP
+21|alpha-gliadin|Glia-alpha9 (p57-p71; A63)|Immunogenic|Native|DQ2|9|15|QLQPFPQAQLPYPQP
+22|alpha-gliadin|Glia-alpha9 (p57-p70)|Immunogenic|Native|DQ2|8|14|QLQPFPQPQLPYPQ
+23|alpha-gliadin|Glia-alpha9 (p57-p70; E65)|Immunogenic|Deamidated|DQ2|8|14|QLQPFPQPELPYPQ
+24|alpha-gliadin|alpha-9 gliadin (p57-p68); alpha2/alpha9 gliadin|Immunogenic|Native|DQ2|23|2|84|14|12|QLQPFPQPQLPY
+25|alpha-gliadin|alpha-9 gliadin (p57-p68; E65); alpha-I|Immunogenic|Deamidated|DQ2|8|84|43|14|12|QLQPFPQPELPY
+26|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; E63 (considered native form of synthetic))|Immunogenic|Native|DQ2|8|12|QLQPFPEPQLPY
+27|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; E63 and E65 (tTG-treated form))|Immunogenic|Deamidated|DQ2|8|12|QLQPFPEPELPY
+28|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; Q64 (considered native form of synthetic))|Immunogenic|Native|DQ2|8|12|QLQPFPQQQLPY
+29|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; Q64 and E63 (tTG-treated form))|Immunogenic|Deamidated|DQ2|8|12|QLQPFPEQQLPY
+30|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; Q64 and E65 (tTG-treated form))|Immunogenic|Deamidated|DQ2|8|12|QLQPFPQQELPY
+31|alpha-gliadin|alpha-9 gliadin epitope homolog (p57-p68; Q64| E63 and E65 (tTG-treated form))|Immunogenic|Deamidated|DQ2|8|12|QLQPFPEQELPY
+32|alpha-gliadin|DQ2-Glia-alpha1 epitope (p58–p72)|Immunogenic|Native|DQ2|59|15|LQPFPQPQLPYPQPQ
+33|alpha-gliadin|DQ2-Glia-alpha1 epitope (p58–p72; E65)|Immunogenic|Deamidated|DQ2|59|15|LQPFPQPELPYPQPQ
+34|alpha-gliadin|DQ2-Glia-alpha1 epitope  (p58–p72; S64)|Immunogenic|Native|DQ2|59|15|LQPFPQSQLPYPQPQ
+35|alpha-gliadin|DQ2-Glia-alpha1 epitope (p58–p72; S64 and E65)|Immunogenic|Deamidated|DQ2|59|15|LQPFPQSELPYPQPQ
+36|alpha-gliadin|DQ2-alpha-I epitope (p58-p68)|Immunogenic|Native|DQ2|47|11|LQPFPQPQLPY
+37|alpha-gliadin|DQ2-alpha-I epitope (p58-p68; E65 considered Deamidated form)|Immunogenic|Deamidated|DQ2|47|11|LQPFPQPELPY
+38|alpha-gliadin|Glia-alpha2 (p60-p76)|Immunogenic|Native|DQ2|8|17|QPFPQPQLPYPQPQLPY
+39|alpha-gliadin|Glia-alpha2 (p60-p76; E66)|Immunogenic|Deamidated|DQ2|8|17|QPFPQPELPYPQPQLPY
+40|alpha-gliadin|Glia-alpha2 (p60-p76; E73)|Immunogenic|Deamidated|DQ2|8|17|QPFPQPQLPYPQPELPY
+41|alpha-gliadin|Glia-alpha2 (p60-p76; E66 and E73)|Immunogenic|Deamidated|DQ2|8|17|QPFPQPELPYPQPELPY
+42|alpha-gliadin|Glia-alpha2 (p60-p69)|Immunogenic|Native|DQ2|45|10|QPFPQPQLPY
+43|alpha-gliadin|Glia-alpha2 (p60-p69; E66)|Immunogenic|Deamidated|DQ2|45|10|QPFPQPELPY
+44|alpha-gliadin|alpha2-gliadin 1421 (p61-p75)|Immunogenic|Native|DQ2| DQ8|17|15|PFPQPQLPYPQPQLP
+45|alpha-gliadin|Glia-alpha2 (p61-p71)|Immunogenic|Native|DQ2|59|11|PFPQPQLPYPQ
+46|alpha-gliadin|Glia-alpha2 (p61-p71; E66)|Immunogenic|Deamidated|DQ2|59|11|PFPQPELPYPQ
+47|alpha-gliadin|Glia-alpha2 (p61-p71; T70 and H71)|Immunogenic|Native|DQ2|59|11|PFPQPQLPYTH
+48|alpha-gliadin|Glia-alpha2 (p61-p71; T70| H71 and E66)|Immunogenic|Deamidated|DQ2|59|11|PFPQPELPYTH
+49|alpha-gliadin|Glia-alpha2 (p61-p71; H64)|Immunogenic|Native|DQ2|59|11|PFPHPQLPYPQ
+50|alpha-gliadin|Glia-alpha2 (p61-p71; H64 and E66)|Immunogenic|Deamidated|DQ2|59|11|PFPHPELPYPQ
+53|alpha-9 gliadin|DQ2.5_glia_alpha-la|Immunogenic|Native|DQ2.5|90|17|23|14|9|PFPQPQLPY
+54|alpha-9 gliadin|DQ2.5_glia_alpha-1a|Immunogenic|Deamidated|DQ2.5|90|17|23|14|9|PFPQPELPY
+55|alpha-gliadin|alpha-2 gliadin 1206 (p62-p75)|Immunogenic|Native|DQ2|1|2|14|14|PQPQLPYPQPQLPY
+56|alpha-gliadin|alpha-II/alpha-III epitope (p62-p75; E72)|Immunogenic|Deamidated|DQ2|14|14|PQPQLPYPQPELPY
+57|alpha-gliadin|alpha-2 gliadin (p62-p75; E65)|Immunogenic|Deamidated|DQ2|14|25|14|PQPELPYPQPQLPY
+58|alpha-gliadin|alpha-2 gliadin (p62-p75; E65 and E72)|Immunogenic|Deamidated|DQ2|14|14|PQPELPYPQPELPY
+59|alpha-gliadin|G4-9A gliadin (p62-p75; E65 and A70)|Immunogenic|Deamidated|DQ2|51|14|PQPELPYPAPQLPY
+60|alpha-gliadin|G4-11A gliadin (p62-p75; E65 and A72)|Immunogenic|Deamidated|DQ2|51|14|PQPELPYPQPALPY
+61|alpha-gliadin|G4-12A gliadin (p62-p75; E65 and A73)|Immunogenic|Deamidated|DQ2|51|14|PQPELPYPQPQAPY
+62|alpha-gliadin|G4-13A gliadin (p62-p75; E65 and A74)|Immunogenic|Deamidated|DQ2|51|14|PQPELPYPQPQLAY
+63|alpha-gliadin|G4-14A gliadin (p62-p75; E65 and A70)|Immunogenic|Deamidated|DQ2|51|14|PQPELPYPQPQLPA
+64|alpha-gliadin|alpha-2 gliadin (p62-p73)|Immunogenic|Native|DQ2|47|25|12|PQPQLPYPQPQL
+65|alpha-gliadin|alpha-2 gliadin (p62-p73; E65)|Immunogenic|Deamidated|DQ2|47|25|12|PQPELPYPQPQL
+66|alpha-gliadin|alpha-II (p62-p72)|Immunogenic|Native|DQ2|43|11|PQPQLPYPQPQ
+67|alpha-gliadin|alpha-II (p62-p72; E65 and E72)|Immunogenic|Deamidated|DQ2|43|11|PQPELPYPQPE
+68|alpha-2 gliadin|CAUTION 100% match to one fungal protein and many wheat proteins with multiple epitopes DQ2.5_glia_alpha2|Immunogenic|Native|DQ2.5|14|17|23|9|PQPQLPYPQ
+69|alpha-2 gliadin|DQ2.5_glia alpha2|Immunogenic|Deamidated|DQ2.5|14|17|23|9|PQPELPYPQ
+70|alpha-gliadin|alpha2-gliadin 1423 (p71-p85)|Immunogenic|Native|DQ2| DQ8|17|15|QPQLPYPQPQLPYPQ
+71|alpha-gliadin|a-gliadin (p62-p84)|Immunogenic|Native|DQ2|62|20|PQLPYPQPQLPYPQPQLPYP
+72|alpha-gliadin|alpha-III-gliadin (p62-p79)|Immunogenic|Native|DQ2|25|12|PQLPYPQPQLPY
+73|alpha-gliadin|alpha-III-gliadin (p62-p79; E76)|Immunogenic|Deamidated|DQ2|25|12|PQLPYPQPELPY
+74|alpha-gliadin|alpha-I epitope|Immunogenic|Native|DQ2|25|12|LQLPFPQPQLPY
+75|alpha-gliadin|alpha-I epitope Deamidated form|Immunogenic|Deamidated|DQ2|25|12|LQLPFPQPELPY
+76|alpha-gliadin|Glia-alpha2 25-mer (p64–p89)|Immunogenic|Native|DQ2|57|25|PQLPQFLQPQPYPQPQLPYPQPQPF
+77|alpha-gliadin|Glia-alpha2 25-mer (p64–p89; E65)|Immunogenic|Deamidated|DQ2|57|25|PELPQFLQPQPYPQPQLPYPQPQPF
+78|alpha-gliadin|Glia-alpha2 25-mer (p64–p89; E79)|Immunogenic|Deamidated|DQ2|57|25|PQLPQFLQPQPYPQPELPYPQPQPF
+79|alpha-gliadin|Glia-alpha2 25-mer (p64–p89; E65 and E79)|Immunogenic|Deamidated|DQ2|57|25|PELPQFLQPQPYPQPELPYPQPQPF
+80|alpha-gliadin|alpha2-gliadin 1422 (p66-p80)|Immunogenic|Native|DQ2|17|15|QLPYPQPQLPYPQPQ
+81|alpha-gliadin|alpha-III epitope (p66-p78)|Immunogenic|Native|DQ2|47|13|QLPYPQPQLPYPQ
+82|alpha-gliadin|alpha-III epitope (p66-p78; E72)|Immunogenic|Deamidated|DQ2|47|13|QLPYPQPELPYPQ
+83|alpha-gliadin|Wheat peptide W01|Immunogenic|Native|DQ2|62|12|LPYPQPQLPYPQ
+84|alpha-3 gliadin|DQ2.5_glia_alpha 1b|Immunogenic|Native|DQ2.5|23|9|PYPQPQLPY
+85|alpha-3 gliadin|DQ2.5_glia_alpha 1b|Immunogenic|Deamidated|DQ2.5|23|9|PYPQPELPY
+86|alpha-gliadin|Glia-alpha2 18-mer (p71– p89)|Immunogenic|Native|DQ2|82|18|QPQPYPQPQLPYPQPQPF
+87|alpha-gliadin|Glia-alpha2 18-mer (p71– p89; E79)|Immunogenic|Deamidated|DQ2|82|57|18|QPQPYPQPELPYPQPQPF
+88|alpha-gliadin|Wheat peptide W18|Immunogenic|Native|DQ2|62|82|20|PQLPYPQPQLPYPQPQPFRP
+89|alpha-gliadin|Wheat peptide W18|Immunogenic|Deamidated|DQ2|62|20|PQLPYPQPELPYPQPQPFRP
+90|alpha-gliadin|Wheat peptide W18|Immunogenic|Native|DQ2|62|16|YPQPQLPYPQPQPFRP
+91|alpha-gliadin|Wheat peptide W18|Immunogenic|Deamidated|DQ2|62|16|YPQPELPYPQPQPFRP
+92|alpha-gliadin|alpha2-gliadin 1424 (p76-p90)|Immunogenic|Native|DQ2|17|15|YPQPQLPYPQPQPFR
+93|alpha-20 gliadin|DQ2.5_glia_alpha 3|Immunogenic|Native|DQ2.5|90|8|9|FRPQQPYPQ
+94|alpha-20 gliadin|DQ2.5_glia_alpha 3|Immunogenic|Deamidated|DQ2.5|90|8|9|FRPEQPYPQ
+95|alpha-gliadin|Gliadin (p198-p222)|Immunogenic|Native|DQ8 (DQ2/8| DQ1/8)|3|25|QQPQQQYPSGQGSFQPSQQNPQAQG
+96|alpha-gliadin|alpha-2 gliadin (p219-p242) AJ133612|Immunogenic|Native|DQ8|6|24|QQPQQQYPSGQGSFQPSQQNPQAQ
+97|alpha-gliadin|alpha-2 gliadin (p219-p242; E229 and E237) AJ133612|Immunogenic|Deamidated|DQ8|6|24|QQPQQQYPSGEGSFQPSQENPQAQ
+98|alpha-gliadin|alpha-2 gliadin (p219-p242; E229) AJ133612|Immunogenic|Deamidated|DQ8|6|24|QQPQQQYPSGEGSFQPSQQNPQAQ
+99|alpha-gliadin|alpha-2 gliadin (p219-p242; E237) AJ133612|Immunogenic|Deamidated|DQ8|6|24|QQPQQQYPSGQGSFQPSQENPQAQ
+100|alpha-gliadin|alpha-gliadin (p220-p239) P18573|Immunogenic|Native|DQ8|54|20|QPQQQYPSGQGSFQPSQQNP
+101|alpha-gliadin|Gda09 (p202–p219) P18573|Immunogenic|Native|DQ8 (DQ2/8| DQ1/8)|3|4|18|QQYPSGQGSFQPSQQNPQ
+102|alpha-gliadin|Gda09 (p203–p220) P18573 (alpha-gliadin (alpha-I))|Immunogenic|Native|DQ8|5|18|QYPSGQGSFQPSQQNPQA
+103|alpha-gliadin|Gda09 (p203–p220; E216) P18573 (alpha-gliadin (alpha-I)|Immunogenic|Deamidated|DQ8|5|18|QYPSGEGSFQPSQENPQA
+104|alpha-gliadin|alpha2-gliadin 1447 (p226-p240)|Immunogenic|Native|DQ8|17|15|YPSGQGSFQPSQQNP
+105|alpha-gliadin|Gliadin (p205-p222)|Immunogenic|Native|DQ8 (DQ2/8)|3|18|PSGQGSFQPSQQNPQAQG
+106|alpha-gliadin|Gliadin (p205-p216) ; alpha2-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|46|3|12|PSGQGSFQPSQQ
+107|alpha-gliadin|Gliadin (p205-p215) ; alpha2-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|46|3|11|PSGQGSFQPSQ
+108|alpha-gliadin|Gda09 (p206–p217) P18573|Immunogenic|Native|DQ8 (DQ2/8)|46|4|12|SGQGSFQPSQQN
+109|alpha-gliadin|Gda09 (p206–p217; E215) P18573|Immunogenic|Deamidated|DQ8 (DQ2/8)|46|12|SGQGSFQPSEQN
+110|alpha-gliadin|Gda09 (p206-p217; E208) P18573|Immunogenic|Deamidated|DQ8 (DQ2/8)|46|83|4|12|SGEGSFQPSQQN
+111|alpha-gliadin|Gda09 (p206–p217; E216) P18573|Immunogenic|Deamidated|DQ8 (DQ2/8)|46|4|12|SGQGSFQPSQEN
+112|alpha-gliadin|Gda09 (p206–p217; E208 and E216) P18573|Immunogenic|Deamidated|DQ8 (DQ2/8)|3|4|12|SGEGSFQPSQEN
+113|alpha-gliadin|alpha2-gliadin (p228-p236)|Immunogenic|Native|DQ8 (DQ2/8)|6|9|GQGSFQPSQ
+115|alpha-2 gliadin|CAUTION 100% identity match to Dicot plant protein and many wheat family DQ8_glia_alpha 1 DQ8.5_glia_alpha 1|Immunogenic|Native|DQ8 (DQ2/8)|90|3|6|9|QGSFQPSQQ
+116|alpha-2 gliadin|DQ8_glia_alpha 1 DQ8.5_glia_alpha 1|Immunogenic|Deamidated|DQ8 (DQ2/8)|90|17|83|9|EGSFQPSQQ
+117|alpha-2 gliadin|DQ8_glia_alpha 1 DQ8.5_glia_alpha 1|Immunogenic|Deamidated|DQ8 (DQ2/8)|90|17|9|QGSFQPSQE
+118|alpha-2 gliadin|DQ8_glia_alpha 1 DQ8.5_glia_alpha 1|Immunogenic|Deamidated|DQ8 (DQ2/8)|90|17|9|EGSFQPSQE
+119|alpha-gliadin|alpha2-gliadin 1448 (p231-p245)|Immunogenic|Native|DQ8|17|15|GSFQPSQQNPQAQGS
+120|alpha-gliadin|alpha2-gliadin 1450 (p241-p255)|Immunogenic|Native|DQ8 and weak DQ2|17|15|QAQGSVQPQQLPQFE
+121|alpha-gliadin|Wheat peptide W02|Immunogenic|Native|DQ2|62|20|MQLQPFPQPQLPYPQPQLPY
+122|alpha-gliadin|Wheat peptide W02|Immunogenic|Deamidated|DQ2|62|20|MQLQPFPQPELPYPQPQLPY
+123|alpha-gliadin|Wheat peptide W02|Immunogenic|Deamidated|DQ2|62|16|QLQPFPQPELPYPQPQ
+124|alpha-gliadin|Wheat peptide W02|Immunogenic|Deamidated|DQ2|62|16|ELQPFPQPELPYPQPQ
+125|alpha-gliadin|Wheat peptide W02|Immunogenic|Native|DQ2|62|12|QPFPQPQLPYPQ
+126|alpha-gliadin|Wheat peptide W02|Immunogenic|Deamidated|DQ2|62|12|QPFPQPELPYPQ
+127|gamma-gliadin|Wheat peptide W01|Immunogenic|Native|DQ2|62|20|PQPFPPQLPYPQPQLPYPQP
+128|gamma-gliadin|Wheat peptide W01|Immunogenic|Deamidated|DQ2|62|20|PQPFPPQLPYPQPELPYPQP
+129|gamma-gliadin|Wheat peptide W01|Immunogenic|Deamidated|DQ2|62|12|LPYPQPELPYPQ
+130|alpha-gliadin|Wheat peptide W34|Immunogenic|Native|DQ2|62|20|VAHAIIMHQQQQQQQEQKQQ
+131|alpha-gliadin|Wheat peptide W34|Immunogenic|Native|DQ2|62|16|VAHAIIMHQQQQQQQE
+132|alpha-gliadin|Analog of alpha-gliadin (p31-p49; A31)|Toxic|Native|DQ2|50|19|AGQQQPFPPQQPYPQPQPF
+133|alpha-gliadin|Analog of alpha-gliadin (p31-p49; A36)|Toxic|Native|DQ2|50|19|LGQQQAFPPQQPYPQPQPF
+134|alpha-gliadin|alpha20-gliadin (p91–p106)|Immunogenic|Native|DQ2|8|16|PQPFRPQQPYPQPQPQ
+135|alpha-gliadin|alpha20-gliadin (p93–106; E97)|Immunogenic|Deamidated|DQ2|8|16|PQPFRPEQPYPQPQPQ
+136|alpha-gliadin|Glia-alpha20-gliadin (p93–p106)|Immunogenic|Native|DQ2|19|14|PFRPQQPYPQPQPQ
+137|alpha-gliadin|Glia-alpha20-gliadin (p93–p106; E97)|Immunogenic|Deamidated|DQ2|19|14|PFRPEQPYPQPQPQ
+138|alpha-gliadin|Glia-alpha20-gliadin (p96–106) minimal epitope|Immunogenic|Native|DQ2|19|11|PQQPYPQPQPQ
+139|alpha-gliadin|Glia-alpha20-gliadin (p96–106; E97) minimal epitope| synthetic|Immunogenic|Deamidated|DQ2|19|11|PEQPYPQPQPQ
+140|alpha-gliadin|alpha-gliadin(p123-p132)|Immunogenic|Native|DQ8|64|30|10|QLIPCMDVVL
+141|alpha-gliadin|alpha-gliadin (p206-p217)|Toxic|Native|DQ2 (A1 B8 DR3 DQ2 and A 24 B8 DR3 13 DQ2)|35|12|LGQGSFRPSQQN
+142|alpha-gliadin|Peptide XT (1-55)|Toxic|Native|Unknown|29|55|VRVPVPQLQPQNPSQQQPQEQVPLVQQQQFLGQQQPFPPQQPYPQPQPFPSQQPY
+143|alpha-gliadin|Peptide XT (p1-p30)|Toxic|Native|Unknown|29|30|VRVPVPQLQPQNPSQQQPQEQVPLVQQQQF
+144|alpha-gliadin|alpha-gliadin B 3142 (p3-p55)|Immunogenic| Toxic|Native|Unknown|40|53|VPVPQLQPQNPSQQQPQEQVPLVQQQQFGGQQQPFPPQQPYPQPQPFPSQQPY
+146|alpha-gliadin|alpha-gliadin p19 (p21-p40)|Immunogenic|Native|DQ2|34|20|QVPLVQQQQFLGQQQPFPPQ
+147|alpha-gliadin|alpha-gliadin p134|Immunogenic|Native|DQ2  (alpha1*0501| ß1*0201)|39|19|QFLGQQQPFPPQQPYPQPQ
+148|alpha-gliadin|alpha-gliadin p135|Immunogenic|Native|DQ2 (alpha1*0501| ß1*0201)|39|18|FLGQQQPFPPQQPYPQPQ
+149|alpha-gliadin|Peptide XT (p31-p55)|Immunogenic| Toxic|Native|Unknown|29|10|25|LGQQQPFPPQQPYPQPQPFPSQQPY
+150|alpha-gliadin|alpha-gliadin (p31-p49)|Immunogenic| Toxic|Native|DQ2 (alpha1*0501| ß1*0201)|49|34|39|11|19|LGQQQPFPPQQPYPQPQPF
+151|alpha-gliadin|alpha-gliadin p126|Immunogenic|Native|DQ2 (alpha1*0501| ß1*0201)|15|66|79|10|39|13|17|LGQQQPFPPQQPYPQPQ
+152|alpha-gliadin|alpha-gliadin (p31-p43)|Immunogenic| Toxic|Native|HLA-DR|15|72|79|10|13|13|LGQQQPFPPQQPY
+153|alpha-gliadin|alpha-gliadin CAB76960 (p253-p272)|Immunogenic|Native|DQ8|54|20|AMCNVYIPPYCAMAPFGIFG
+154|alpha-gliadin|alpha-gliadin (proline-rich domain)|Immunogenic|Native|Unknown|42|16|CPQPFPSQQPYLQLQG
+155|alpha-gliadin|alpha-gliadin (p5-p22) (proline-rich domain)|Immunogenic|Native|Unknown|42|18|CPQLQPQNPSQQQPQEQG
+156|alpha-gliadin|alpha-gliadin (p51-p70)|Toxic|Native|DQ2|37|20|SQQPYLQLQPFPQPQLPYSQ
+157|alpha-gliadin|Wheat peptide W08|Immunogenic|Native|DQ2|62|20|LQLQPFPQPQLPYSQPQPFR
+158|alpha-gliadin|Wheat peptide W08|Immunogenic|Deamidated|DQ2|62|20|LQLQPFPQPELPYSQPQPFR
+159|alpha-gliadin|Glia-alpha9 (p57-p71; S69)|Immunogenic|Native|DQ2|9|15|QLQPFPQPQLPYSQP
+160|alpha-gliadin|DQ2-Glia-alpha1 epitope  (p58–p72; S69)|Immunogenic|Native|DQ2|59|15|LQPFPQPQLPYSQPQ
+161|alpha-gliadin|DQ2-Glia-alpha1 epitope (p58–p72; S69 and E65)|Immunogenic|Deamidated|DQ2|59|15|LQPFPQPELPYSQPQ
+162|alpha-gliadin|DQ2-Glia-alpha1 epitope  (p58–p72; S64 and S69)|Immunogenic|Native|DQ2|59|15|LQPFPQSQLPYSQPQ
+163|alpha-gliadin|DQ2-Glia-alpha1 epitope  (p58–p72; S64| S69 and E65)|Immunogenic|Deamidated|DQ2|59|15|LQPFPQSELPYSQPQ
+164|alpha-gliadin|Wheat peptide W08|Immunogenic|Native|DQ2|62|12|QPFPQPQLPYSQ
+165|alpha-gliadin|Wheat peptide W08|Immunogenic|Deamidated|DQ2|62|12|QPFPQPELPYSQ
+166|alpha-gliadin|Glia-alpha|Immunogenic|Native|DQ2|59|11|PFPQPQLPYSQ
+167|alpha-gliadin|Glia-alpha in Deamidated form|Immunogenic|Deamidated|DQ2|59|11|PFPQPELPYSQ
+168|alpha-gliadin|alpha-gliadin (p202-p220)|Toxic|Native|DQ2|11|19|QQYPLGQGSFRPSQQNPQA
+169|alpha-gliadin|alpha-gliadin CAB76961 (p251-p270)|Immunogenic|Native|DQ8|54|20|VYIPPYCTIAPFGIFGTNYR
+170|alpha-gliadin|Wheat peptide W13|Immunogenic|Native|DQ2|62|20|LQLQPFPQPQLPYLQPQPFR
+171|alpha-gliadin|Wheat peptide W13|Immunogenic|Deamidated|DQ2|62|20|LQLQPFPQPELPYLQPQPFR
+172|alpha-gliadin|Glia-alpha9 (p57-p71; L69)|Immunogenic|Native|DQ2|9|15|QLQPFPQPQLPYLQP
+173|alpha-gliadin|Wheat peptide W13|Immunogenic|Native|DQ2|62|12|QPFPQPQLPYLQ
+174|alpha-gliadin|Wheat peptide W13|Immunogenic|Deamidated|DQ2|62|12|QPFPQPELPYLQ
+175|alpha-gliadin|alpha-gliadin 4037|Immunogenic|Native|Unknown|60|17|PPYCTIVPFGIFGTNYR
+176|alpha-gliadin|alpha-gliadin|Immunogenic|Native|DQ2|62|20|LQLQPFPQPQLPYPQPQPFR
+177|alpha-gliadin|alpha-Glia (p57–p73)|Immunogenic|Native|DQ2|57|17|QLQPFPQPQLPYPQPQP
+178|alpha-gliadin|alpha-Glia (p57–p73; E65)|Immunogenic|Deamidated|DQ2|57|17|QLQPFPQPELPYPQPQP
+179|alpha-gliadin|alpha-Glia (p57–p73; T65 and S73)|Immunogenic|Native|DQ2|57|17|QLQPFPQPTLPYPQPQS
+180|alpha-gliadin|alpha-gliadin (p57-p73; S73)|Immunogenic|Native|DQ2|28|17|QLQPFPQPQLPYPQPQS
+181|alpha-gliadin|alpha-gliadin (p57-p73; S73 and E65)|Immunogenic|Deamidated|DQ2|28|17|QLQPFPQPELPYPQPQS
+182|alpha-gliadin|Wheat peptide W09|Immunogenic|Native|DQ2|62|20|LQPFPQPQPFLPQLPYPQPQ
+183|alpha-gliadin|alpha-Glia AG11 (p78 –p95)|Immunogenic|Native|DQ2|57|17|PQPQPFLPQLPYPQPQS
+184|alpha-gliadin|alpha-Glia AG11 (p78 –p95; E86)|Immunogenic|Deamidated|DQ2|57|17|PQPQPFLPELPYPQPQS
+185|alpha-gliadin|Wheat peptide W09|Immunogenic|Native|DQ2|62|14|QPQPFLPQLPYPQP
+186|alpha-gliadin|Wheat peptide W09|Immunogenic|Deamidated|DQ2|62|14|EPQPFLPELPYPQP
+187|alpha-gliadin|Wheat peptide W09|Immunogenic|Native|DQ2|62|12|PQPFLPQLPYPQ
+188|alpha-gliadin|alpha-gliadin p211|Immunogenic|Native|DQ2|34|20|FPGQQQQFPPQQPYPQPQPF
+189|alpha-gliadin|alpha-Glia AG12 (p82–p98)|Immunogenic|Native|DQ2|57|17|PQPQPFPPQLPYPQPQS
+190|alpha-gliadin|alpha-Glia AG12 (p82–p98; E90)|Immunogenic|Deamidated|DQ2|57|17|PQPQPFPPELPYPQPQS
+191|omega-gliadin|Gliadin AAG17702 (p80-p99)|Immunogenic|Native|DQ8|54|20|PFTQPQQPTPIQPQQPFPQQ
+192|omega-gliadin|Wheat peptide W27|Immunogenic|Native|DQ2|62|11|PFTQPQQPTPI
+193|omega-gliadin|Gliadin AAG17702 (p88-p107)|Immunogenic|Native|DQ8|54|20|TPIQPQQPFPQQPQQPQQPF
+194|omega-gliadin|Wheat peptide W25|Immunogenic|Native|DQ2|62|11|TPIQPQQPFPQ
+195|omega-gliadin|Wheat peptide W30; Rye peptide R28|Immunogenic|Native|DQ2|62|12|PQQPFPQQPQQP
+197|omega-gliadin|omega-gliadin|Immunogenic|Native|DQ2|62|20|PQQPQQPQQPFPQPQQPFPW
+198|omega-gliadin|Epitope DQ2-omega-I/II|Immunogenic|Native|DQ2|62|20|PQQPQQPFPQPQQPFPWQPQ
+199|omega-gliadin|p4-p18 omega-gliadin of AAG17702 (p81-p102)|Immunogenic|Native|DQ2|62|15|PQQPQQPFPQPQQPF
+200|omega-gliadin|p5-p19 omega-gliadin of AAG17702 (p81-p102)|Immunogenic|Native|DQ2|62|15|QQPQQPFPQPQQPFP
+201|omega-gliadin|DQ2-omega-1 omega-Glia (p102–p118)|Immunogenic|Native|DQ2|57|17|QPQQPFPQPQQPFPWQP
+202|omega-gliadin|DQ2-omega-1 omega-Glia (p102–p118; E104)|Immunogenic|Deamidated|DQ2|57|17|QPEQPFPQPQQPFPWQP
+203|omega-gliadin|Wheat peptide W03| W19| B01|Immunogenic|Deamidated|DQ2|62|86|17|QPEQPFPQPEQPFPWQP
+204|omega-gliadin|omega-Glia 17mer|Immunogenic|Deamidated|DQ2.5|61|17|QPQQPFPQPEQPFPWQP
+205|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K89)|Immunogenic|Native|DQ2|62|14|KPFPQPEQPFPWQP
+206|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K90)|Immunogenic|Native|DQ2|62|14|QKFPQPEQPFPWQP
+207|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K91)|Immunogenic|Native|DQ2|62|14|QPKPQPEQPFPWQP
+208|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K99)|Immunogenic|Native|DQ2|62|14|QPFPQPEQPFKWQP
+209|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K100)|Immunogenic|Native|DQ2|62|14|QPFPQPEQPFPKQP
+210|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K101)|Immunogenic|Native|DQ2|62|14|QPFPQPEQPFPWKP
+211|omega-gliadin|omega-gliadin AAG17702 substituted by Lysine (p89-p102; E95 K102)|Immunogenic|Native|DQ2|62|14|QPFPQPEQPFPWQK
+212|omega-gliadin|p6-p20 omega-gliadin of AAG17702 (p81-p102)|Immunogenic|Native|DQ2|62|15|QPQQPFPQPQQPFPW
+213|omega-gliadin|p7-p21 omega-gliadin of AAG17702 (p81-p102)|Immunogenic|Native|DQ2|62|15|PQQPFPQPQQPFPWQ
+214|omega-gliadin|p8-p22 omega-gliadin of AAG17702 (p81-p102)| Wheat peptide W3|Immunogenic|Native|DQ2|62|15|QQPFPQPQQPFPWQP
+215|omega-gliadin|Wheat peptide W03|Immunogenic|Deamidated|DQ2|62|15|EQPFPQPEQPFPWQP
+216|omega-gliadin|Wheat peptide W03| W19| Barley peptide B01|Immunogenic|Native|DQ2|62|20|QPFPQPQQPFPWQPQQPFPQ
+217|omega-gliadin|Wheat peptide W03| W19| Barley peptide B01|Immunogenic|Deamidated|DQ2|62|20|QPFPQPEQPFPWQPQQPFPQ
+218|omega-gliadin|Wheat peptide W03| Barley peptide B01|Immunogenic|Native|DQ2|62|12|QPFPQPQQPFPW
+219|omega-gliadin|Wheat peptide W03| Barley peptide B01|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFPW
+220|omega-II gliadin|DQ2.5_glia_omega 2|Immunogenic|Deamidated|DQ2.5|90|62|88|9|PQPEQPFPW
+221|omega-II gliadin|DQ2.5_glia_omega 2|Immunogenic|Native|DQ2|90|62|88|9|PQPQQPFPW
+222|omega-gliadin|Wheat peptide W19| Barley peptide B19|Immunogenic|Native|DQ2|62|12|PFPWQPQQPFPQ
+223|omega-gliadin|Wheat peptide W19|Immunogenic|Deamidated|DQ2|62|12|PFPWQPEQPFPQ
+224|omega-gliadin|Wheat peptide W30|Immunogenic|Native|DQ2|62|20|PLQPQQPFPQQPQQPFPQPQ
+225|omega-gliadin|omega-gliadin|Immunogenic|Native|DQ2|62|20|FPQQPQQPFPQPQLPFPQQS
+226|omega-gliadin|Wheat peptide W06|Immunogenic|Native|DQ2|62|20|QQPQQPFPQPQLPFPQQSEQ
+227|omega-gliadin|Wheat peptide W06|Immunogenic|Native|DQ2|62|12|QPFPQPQLPFPQ
+228|omega-gliadin|Gliadin AAG17702 p173-p192|Immunogenic|Native|DQ8|54|20|QQPFPQQPQQPFPQPQQPIP
+229|omega-gliadin|Wheat peptide W32| Barley peptide B25| Rye peptide R26|Immunogenic|Native|DQ2|62|12|PFPQQPQQPFPQ
+230|omega-gliadin|Wheat peptide W04|Immunogenic|Native|DQ2|62|20|PQQPQQPFPQPQQPIPVQPQ
+231|omega-gliadin|Wheat peptide W04|Immunogenic|Native|DQ2|62|11|PFPQPQQPIPV
+232|omega-gliadin|Gliadin AAG17702 p186-p205|Immunogenic|Native|DQ8|54|20|QPQQPIPVQPQQSFPQQSQQ
+233|omega-gliadin|Wheat peptide W20|Immunogenic|Native|DQ2|62|20|FPELQQPIPQQPQQPFPLQP
+234|omega-gliadin|Wheat peptide W20|Immunogenic|Native|DQ2|62|12|PIPQQPQQPFPL
+235|omega-gliadin|Gliadin AAG17702 p225-p244|Immunogenic|Native|DQ8|54|20|PQQPQQPFPLQPQQPFPQQP
+236|omega-gliadin|Wheat peptide W26| Barley peptide B20|Immunogenic|Native|DQ2|62|12|PFPLQPQQPFPQ
+237|omega-gliadin|Gliadin AAG17702 p239-p258|Immunogenic|Native|DQ8|54|20|PFPQQPQQPFPQQPQQSFPQ
+246|omega5-gliadin/LMW glutenin|Glu-5 peptide epitope in native form|Immunogenic|Native|DQ2|21|12|QQQQIPQQPQQF
+247|omega5-gliadin/LMW glutenin|Glu-5 peptide epitope in native form|Immunogenic|Native|DQ2|21|12|QQQQLPQQPQQF
+248|omega5-gliadin/LMW glutenin|Glu-5 peptide epitope in Deamidated form|Immunogenic|Deamidated|DQ2|21|12|QEQQIPEQPQQF
+249|omega5-gliadin/LMW glutenin|Glu-5 peptide epitope in Deamidated form|Immunogenic|Deamidated|DQ2|21|12|QEQQLPEQPQQF
+252|omega5-gliadin/LMW glutenin|CAUTION 100% matches with 4 fungal proteins but multiple epitopes on Triticum Glu-5 minimal epitope in native form|Immunogenic|Native|DQ2|19|9|QIPQQPQQF
+253|omega5-gliadin/LMW glutenin|Glu-5 minimal epitope in Deamidated form|Immunogenic|Deamidated|DQ2|19|9|QIPEQPQQF
+254|omega5-gliadin/LMW glutenin|CAUTION 100% match with fungal and parasite proteins| less with Glu-5 minimal epitope in native form|Immunogenic|Native|DQ2|19|9|QLPQQPQQF
+255|omega5-gliadin/LMW glutenin|Glu-5 minimal epitope in Deamidated form|Immunogenic|Deamidated|DQ2|19|9|QLPEQPQQF
+256|omega5-gliadin/LMW glutenin|Glu-5 minimal epitope in Deamidated form|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|44|9|EIPEQPQQF
+257|omega5-gliadin/LMW glutenin|Glu-5 minimal epitope in Deamidated form|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|44|9|ELPEQPQQF
+258|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQISQPQIPQQQQIPQQPQQF
+259|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQQQQIPQQPQQF
+260|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQQQQIPQQPQQF
+261|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQEQQIPQQPQQF
+262|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQQQEIPQQPQQF
+263|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQQQQIPQQPQQF
+264|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQEQQIPQQPQQF
+265|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQQQEIPQQPQQF
+266|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQEQQIPQQPQQF
+267|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQQQEIPQQPQQF
+268|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQEQEIPQQPQQF
+269|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQEQQIPQQPQQF
+270|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQQQEIPQQPQQF
+271|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQEQEIPQQPQQF
+272|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQEQEIPQQPQQF
+273|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQEQEIPQQPQQF
+274|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQISQPQLPQQQQIPQQPQQF
+275|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQQQQIPQQPQQF
+276|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQQQQIPQQPQQF
+277|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQEQQIPQQPQQF
+278|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQQQEIPQQPQQF
+279|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQQQQIPQQPQQF
+280|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQEQQIPQQPQQF
+281|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQQQEIPQQPQQF
+282|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQEQQIPQQPQQF
+283|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQQQEIPQQPQQF
+284|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQEQEIPQQPQQF
+285|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQEQQIPQQPQQF
+286|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQQQEIPQQPQQF
+287|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQEQEIPQQPQQF
+288|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQEQEIPQQPQQF
+289|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQEQEIPQQPQQF
+290|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQISQPQIPQQQQLPQQPQQF
+291|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQQQQLPQQPQQF
+292|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQQQQLPQQPQQF
+293|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQEQQLPQQPQQF
+294|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQQQELPQQPQQF
+295|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQQQQLPQQPQQF
+296|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQEQQLPQQPQQF
+297|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQQQELPQQPQQF
+298|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQEQQLPQQPQQF
+299|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQQQELPQQPQQF
+300|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQIPQEQELPQQPQQF
+301|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQEQQLPQQPQQF
+302|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQQQELPQQPQQF
+303|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQIPQEQELPQQPQQF
+304|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPEIPQEQELPQQPQQF
+305|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPEIPQEQELPQQPQQF
+306|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQLSQPQIPQQQQIPQQPQQF
+307|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQQQQIPQQPQQF
+308|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQQQQIPQQPQQF
+309|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQEQQIPQQPQQF
+310|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQQQEIPQQPQQF
+311|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQQQQIPQQPQQF
+312|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQEQQIPQQPQQF
+313|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQQQEIPQQPQQF
+314|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQEQQIPQQPQQF
+315|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQQQEIPQQPQQF
+316|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQEQEIPQQPQQF
+317|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQEQQIPQQPQQF
+318|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQQQEIPQQPQQF
+319|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQEQEIPQQPQQF
+320|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQEQEIPQQPQQF
+321|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQEQEIPQQPQQF
+322|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQLSQPQLPQQQQIPQQPQQF
+323|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQQQQIPQQPQQF
+324|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQQQQIPQQPQQF
+325|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQEQQIPQQPQQF
+326|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQQQEIPQQPQQF
+327|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQQQQIPQQPQQF
+328|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQEQQIPQQPQQF
+329|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQQQEIPQQPQQF
+330|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQEQQIPQQPQQF
+331|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQQQEIPQQPQQF
+332|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQEQEIPQQPQQF
+333|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQEQQIPQQPQQF
+334|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQQQEIPQQPQQF
+335|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQEQEIPQQPQQF
+336|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQEQEIPQQPQQF
+337|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQEQEIPQQPQQF
+338|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQLSQPQIPQQQQLPQQPQQF
+339|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQQQQLPQQPQQF
+340|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQQQQLPQQPQQF
+341|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQEQQLPQQPQQF
+342|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQQQELPQQPQQF
+343|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQQQQLPQQPQQF
+344|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQEQQLPQQPQQF
+345|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQQQELPQQPQQF
+346|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQEQQLPQQPQQF
+347|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQQQELPQQPQQF
+348|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQIPQEQELPQQPQQF
+349|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQEQQLPQQPQQF
+350|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQQQELPQQPQQF
+351|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQIPQEQELPQQPQQF
+352|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPEIPQEQELPQQPQQF
+353|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPEIPQEQELPQQPQQF
+354|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQISQPQLPQQQQLPQQPQQF
+355|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQQQQLPQQPQQF
+356|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQQQQLPQQPQQF
+357|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQEQQLPQQPQQF
+358|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQQQELPQQPQQF
+359|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQQQQLPQQPQQF
+360|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQEQQLPQQPQQF
+361|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQQQELPQQPQQF
+362|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQEQQLPQQPQQF
+363|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQQQELPQQPQQF
+364|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPQLPQEQELPQQPQQF
+365|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQEQQLPQQPQQF
+366|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQQQELPQQPQQF
+367|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPQLPQEQELPQQPQQF
+368|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQISQPELPQEQELPQQPQQF
+369|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QEISQPELPQEQELPQQPQQF
+370|gamma-gliadin or LMW glutenin|Glu-5|Immunogenic|Native|DQ2|19|21|QQLSQPQLPQQQQLPQQPQQF
+371|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQQQQLPQQPQQF
+372|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQQQQLPQQPQQF
+373|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQEQQLPQQPQQF
+374|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQQQELPQQPQQF
+375|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQQQQLPQQPQQF
+376|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQEQQLPQQPQQF
+377|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQQQELPQQPQQF
+378|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQEQQLPQQPQQF
+379|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQQQELPQQPQQF
+380|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPQLPQEQELPQQPQQF
+381|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQEQQLPQQPQQF
+382|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQQQELPQQPQQF
+383|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPQLPQEQELPQQPQQF
+384|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QQLSQPELPQEQELPQQPQQF
+385|gamma-gliadin or LMW glutenin|Glu-5 in Deamidated form|Immunogenic|Deamidated|DQ2|19|21|QELSQPELPQEQELPQQPQQF
+386|gamma-gliadin|gamma-gliadin P08079|Immunogenic|Native|DQ8|54|20|QQFLQPQQPFPQQPQQPYPQ
+387|gamma-gliadin|gamma-gliadin P08079|Immunogenic|Native|DQ8|54|17|QQFLQPQQPFPQQPQQP
+388|gamma-gliadin|gamma-5 gliadin (p59-p84)|Immunogenic|Native|DQ2|48|26|FLQPQQPFPQQPQQPYPQQPQQPFPQ
+389|gamma-gliadin|gamma-5 gliadin (p59-p84; E63)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPQQPQQPYPQQPQQPFPQ
+390|gamma-gliadin|gamma-5 gliadin (p59-p84; E68)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPQQPYPQQPQQPFPQ
+391|gamma-gliadin|gamma-5 gliadin (p59-p84; E71)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPEQPYPQQPQQPFPQ
+392|gamma-gliadin|gamma-5 gliadin (p59-p84; E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPQQPYPEQPQQPFPQ
+393|gamma-gliadin|gamma-5 gliadin (p59-p84; E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPQQPYPQQPEQPFPQ
+394|gamma-gliadin|gamma-5 gliadin (p59-p84; E63 and E68)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPEQPQQPYPQQPQQPFPQ
+395|gamma-gliadin|gamma-5 gliadin (p59-p84; E63 and E71)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPQQPEQPYPQQPQQPFPQ
+396|gamma-gliadin|gamma-5 gliadin (p59-p84; E63 and E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPQQPQQPYPEQPQQPFPQ
+397|gamma-gliadin|gamma-5 gliadin (p59-p84; E63 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPQQPQQPYPQQPEQPFPQ
+398|gamma-gliadin|gamma-5 gliadin (p59-p84; E68 and E71)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPEQPYPQQPQQPFPQ
+399|gamma-gliadin|gamma-5 gliadin (p59-p84; E68 and E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPQQPYPEQPQQPFPQ
+400|gamma-gliadin|gamma-5 gliadin (p59-p84; E68 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPQQPYPQQPEQPFPQ
+401|gamma-gliadin|gamma-5 gliadin (p59-p84; E71 and E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPEQPYPEQPQQPFPQ
+402|gamma-gliadin|gamma-5 gliadin (p59-p84; E71 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPEQPYPQQPEQPFPQ
+403|gamma-gliadin|gamma-5 gliadin (p59-p84; E76 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPQQPYPEQPEQPFPQ
+404|gamma-gliadin|gamma-5 gliadin (p59-p84; E63| E68 and E71)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPEQPEQPYPQQPQQPFPQ
+405|gamma-gliadin|gamma-5 gliadin (p59-p84; E63| E68 and E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPEQPQQPYPEQPQQPFPQ
+406|gamma-gliadin|gamma-5 gliadin (p59-p84; E63| E68 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPEQPQQPYPQQPEQPFPQ
+407|gamma-gliadin|gamma-5 gliadin (p59-p84; E68| E71 and E76)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPEQPYPEQPQQPFPQ
+408|gamma-gliadin|gamma-5 gliadin (p59-p84; E68| E71 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPEQPEQPYPQQPEQPFPQ
+409|gamma-gliadin|gamma-5 gliadin (p59-p84; E71| E76 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPQQPFPQQPEQPYPEQPEQPFPQ
+410|gamma-gliadin|gamma-5 gliadin (p59-p84; E63| E68| E71|E76 and E79)|Immunogenic|Deamidated|DQ2|48|26|FLQPEQPFPEQPEQPYPEQPEQPFPQ
+411|gamma-gliadin|gamma-5 gliadin (p60-p79) ; DQ2-gamma-V  gamma-Glia (p78 –p97); gamma-3 and gamma-5 peptide 1317|Immunogenic|Native|DQ2|23|48|2|57|20|LQPQQPFPQQPQQPYPQQPQ
+412|gamma-gliadin|DQ2-gamma-V  gamma-Glia (p78 –p97; E81)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPQQPQQPYPQQPQ
+413|gamma-gliadin|DQ2-gamma-V  gamma-Glia (p78 –p97; E86)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPEQPQQPYPQQPQ
+414|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E89)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPQQPEQPYPQQPQ
+415|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPQQPQQPYPEQPQ
+416|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81 and E86)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPEQPQQPYPQQPQ
+417|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81 and E89)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPQQPEQPYPQQPQ
+418|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81 and E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPQQPQQPYPEQPQ
+419|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E86 and E89)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPEQPEQPYPQQPQ
+420|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E86 and E64)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPEQPQQPYPEQPQ
+421|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E89 and E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPQQPEQPYPEQPQ
+422|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81| E86 and E89)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPEQPEQPYPQQPQ
+423|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81| E86 and E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPEQPQQPYPEQPQ
+424|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E86| E89 and E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPQQPFPEQPEQPYPEQPQ
+425|gamma-gliadin|DQ2-gamma-V  gamma-Glia  (p78 –p97; E81| E86| E89 and E94)|Immunogenic|Deamidated|DQ2|23|2|57|20|LQPEQPFPEQPEQPYPEQPQ
+426|gamma-gliadin|gamma3/gamma4|Immunogenic|Native|DQ2|25|17|PQQPFPQQPQQPYPQQP
+427|gamma-gliadin|gamma5 (p62-p74)|Immunogenic|Native|DQ2|25|13|PQQPFPQQPQQPY
+428|gamma-gliadin|gamma5 (p62-p74; E68)|Immunogenic|Deamidated|DQ2|25|13|PQQPFPEQPQQPY
+429|gamma-gliadin|gamma5 (p62-p74; E63 and E68)|Immunogenic|Deamidated|DQ2|25|13|PEQPFPEQPQQPY
+430|gamma-gliadin|gamma5 (p62-p74; E68 and E71)|Immunogenic|Deamidated|DQ2|25|13|PQQPFPEQPEQPY
+431|gamma-gliadin|gamma5 (p62-p74; E63| E68 and E71)|Immunogenic|Deamidated|DQ2|25|13|PEQPFPEQPEQPY
+432|gamma-gliadin|gamma-5 gliadin (p62-p72)|Immunogenic|Native|DQ2|47|48|11|PQQPFPQQPQQ
+433|gamma-gliadin|gamma5-gliadin (p62-p72; E68)|Immunogenic|Deamidated|DQ2|47|11|PQQPFPEQPQQ
+434|gamma-gliadin|gamma5 (p62-p72; E68| E63 and E71)|Immunogenic|Deamidated|DQ2|25|11|PEQPFPEQPEQ
+435|gamma-gliadin|gamma23mer|Immunogenic|Native|DQ2.5|61|23|QQPFPQQPQQPYPQQPQQPFPQP
+436|gamma-gliadin|gamma23mer (in considered Deamidated form)|Immunogenic|Deamidated|DQ2.5|61|23|EQPFPEQPEQPYPEQPEQPFPQP
+437|gamma-gliadin|gamma5-gliadin (p60-p79)|Immunogenic|Native|DQ2|21|14|QQPFPQQPQQPYPQ
+438|gamma-5 gliadin|DQ2.5_glia_gamma 5|Immunogenic|Native|DQ2.5|90|23|25|9|QQPFPQQPQ
+439|gamma-5 gliadin|DQ2.5_glia_gamma 5|Immunogenic|Deamidated|DQ2.5|90|23|25|9|QQPFPEQPQ
+440|gamma-gliadin|CAUTION 100% match to Archaea protein lower to others and to gamma5 (p63-p71; E63| E68 and E71)|Immunogenic|Deamidated|DQ2|25|9|EQPFPEQPE
+441|gamma-gliadin|DQ2-gamma-III gamma-Glia (p83–p97)|Immunogenic|Native|DQ2|48|23|2|57|15|PFPQQPQQPYPQQPQ
+442|gamma-gliadin|DQ2-gamma-III gamma-Glia (p83–p97; E86)|Immunogenic|Deamidated|DQ2|57|48|23|2|15|PFPEQPQQPYPQQPQ
+443|gamma-gliadin|DQ2-gamma-III gamma-Glia (p83–p97; E89)|Immunogenic|Deamidated|DQ2|57|48|23|2|15|PFPQQPEQPYPQQPQ
+444|gamma-gliadin|DQ2-gamma-III gamma-Glia (p83–p97; E86 and E89)|Immunogenic|Deamidated|DQ2|57|48|23|2|15|PFPEQPEQPYPQQPQ
+445|gamma-gliadin|Wheat peptide W23|Immunogenic|Native|DQ2|62|12|PFPQQPQQPYPQ
+446|gamma-gliadin|gamma-gliadin (p66-p80) AJ416339|Immunogenic|Native|DQ8| DQ2|17|15|FPQQPQQPYPQQPQQ
+447|gamma-gliadin|gamma-gliadin (p66-p80; E68) AJ416339|Immunogenic|Deamidated|DQ8|17|83|15|FPEQPQQPYPQQPQQ
+448|gamma-gliadin|gamma-gliadin (p66-p80; E71) AJ416339|Immunogenic|Deamidated|DQ2|17|15|FPQQPEQPYPQQPQQ
+449|gamma-gliadin|gamma-gliadin (p66-p80; E76) AJ416339|Immunogenic|Deamidated|DQ8| DQ2|17|15|FPQQPQQPYPEQPQQ
+450|gamma-gliadin|gamma-gliadin (p66-p80; E71 and 76) AJ416339|Immunogenic|Deamidated|DQ8|17|15|FPEQPQQPYPEQPQQ
+451|gamma-gliadin|gamma5 (p66-p78)|Immunogenic|Native|DQ2|23|13|FPQQPQQPYPQQP
+452|gamma-gliadin|gamma5 (p66-p78; E68 and E71)|Immunogenic|Deamidated|DQ2|23|13|FPEQPEQPYPQQP
+453|gamma-gliadin|gamma5 (p66-p78; E68 and E72)|Immunogenic|Deamidated|DQ2|23|13|FPEQPQEPYPQQP
+454|gamma-gliadin|gamma5 (p66-p77)|Immunogenic|Native|DQ2|25|12|FPQQPQQPYPQQ
+455|gamma-gliadin|gamma5 (p66-p77; E71)|Immunogenic|Deamidated|DQ2|25|12|FPQQPEQPYPQQ
+456|gamma-gliadin|gamma5 (p66-p77; E68| E71 and E76)|Immunogenic|Deamidated|DQ2|25|12|FPEQPEQPYPEQ
+457|gamma-gliadin|gamma5 (p67-p77; E68| E71 and E76)|Immunogenic|Deamidated|DQ2|25|11|PEQPEQPYPEQ
+458|gamma-1 and gamma 5 gliadin|CAUTION 100% matches to many fungal and parasite proteins as well as DQ2.5_glia_gamma 3 DQ8_glia_gamma 1b|Immunogenic|Native|DQ2.5/DQ8|17|23|78|9|QQPQQPYPQ
+459|gamma-5 gliadin|DQ2.5_glia_gamma 3 DQ8_glia_gamma1b|Immunogenic|Deamidated|DQ2.5/DQ8|25|17|78|9|EQPEQPYPE
+460|gamma-1 gliadin|DQ2.5_glia_gamma 3 DQ8_glia_gamma 1b|Immunogenic|Deamidated|DQ2.5/DQ8|25|17|78|9|EQPQQPYPE
+461|gamma-1 gliadin|DQ2.5_glia_gamma 3 DQ8_glia_gamma 1b|Immunogenic|Deamidated|DQ2.5/DQ8|17|78|9|EQPQQPFPE
+462|gamma-III gliadin|CAUTION 100% identity matches to fungal and lower to other fungal proteins as DQ2.5_glia_gamma 3 DQ8_glia_gamma 1b|Immunogenic|Deamidated|DQ2.5/DQ8|17|78|9|QQPEQPYPQ
+463|gamma-gliadin|Predicted gamma-gliadin peptide|Immunogenic|Native|DQ8 (DQ2/8)|22|14|QQPYPQQPQQPFPQ
+464|gamma-gliadin|CAUTION many 100% identity matches to legume and bacterial proteins and also gamma-Vib gliadin|Immunogenic|Native|DQ2|25|9|QQPYPQQPQ
+465|gamma-gliadin|CAUTION 100% match to bacterial protein and lower to others and gamma-Vib gliadin in Deamidated form|Immunogenic|Deamidated|DQ2|25|9|EQPYPQQPQ
+466|gamma-gliadin|CAUTION 100% identity to bacterial protein and lower to others and gamma-Vib gliadin in Deamidated form|Immunogenic|Deamidated|DQ2|25|9|QQPYPEQPQ
+467|gamma-gliadin|gamma-Vib gliadin in Deamidated form|Immunogenic|Deamidated|DQ2|25|9|EQPYPEQPQ
+468|gamma-gliadin|CAUTION many 100% matches to fish| fungi and other non-wheat family proteins also a few to Secalin Glia-gamma2|Immunogenic|Native|DQ2 (DQ2.2 and DQ2.5)|44|9|PYPQQPQQP
+469|gamma-gliadin|Glia-gamma2 in Deamidated form|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|44|83|9|PYPEQPQQP
+470|gamma-gliadin|Glia-gamma2 in Deamidated form|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|44|9|PYPQQPEQP
+471|gamma-gliadin|CAUTION 100% match to bacterial protein and lizard protein lower to grapes and wheat Glia-gamma2 in Deamidated form|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|44|9|PYPEQPEQP
+472|gamma-gliadin|CAUTION 100% 4 matches to Candida 2 to bacteria and many to secalins and wheat  gamma2-gliadin|Immunogenic|Native|DQ2.5/DQ8|90|17|8|9|QQPQQPFPQ
+473|gamma-2 gliadin|CAUTION 100% match to fungal protein and lower to Candida and to Gliadin epitope: gamma-I|Immunogenic|Deamidated|DQ2.5/DQ8|90|17|8|9|EQPQQPFPQ
+474|gamma-2 gliadin|Gliadin epitope: gamma-VII|Immunogenic|Deamidated|DQ2.5/DQ8|90|17|8|9|QQPEQPFPQ
+475|gamma-2 gliadin|CAUTION 100% match to a bacterial protein / lower to triticum gammaVII-gliadin in Deamidated form|Immunogenic|Deamidated|DQ2.5/DQ8|25|90|17|9|EQPEQPFPQ
+476|gamma-gliadin|gamma-Glia (p105–p118)|Immunogenic|Native|DQ2|57|14|PQQQTLQPQQPAQL
+477|gamma-gliadin|gamma-Glia (p105–p118; E113)|Immunogenic|Deamidated|DQ2|57|14|PQQQTLQPEQPAQL
+478|gamma1-gliadin|Wheat peptide W37|Immunogenic|Native|DQ2|62|20|ATANMQVDPSGQVQWPQQQP
+479|gamma1-gliadin|Wheat peptide W37|Immunogenic|Native|DQ2|62|12|QVDPSGQVQWPQ
+480|gamma1-gliadin|gamma-gliadin 1370 (p1-p30) ; gamma-gliadin M2 M36999 (p11-p30) homologous to DQ2-alpha-I|Immunogenic|Native|DQ2| DQ8|17|23|20|WPQQQPFPQPQQPFCQQPQR
+481|gamma1-gliadin|gamma-gliadin 1371 (p21-p40)|Immunogenic|Native|DQ2|17|20|QQPFCQQPQRTIPQPHQTFH
+482|gamma1-gliadin|gamma-gliadin 1372 (p31-p50)|Immunogenic|Native|DQ2|17|20|TIPQPHQTFHHQPQQTFPQP
+483|gamma1-gliadin|gamma-gliadin 1372 (p41-p60)|Immunogenic|Native|DQ2| DQ8|17|20|HQPQQTFPQPQQTYPHQPQQ
+484|gamma1-gliadin|gamma-gliadin 1372 (p51-p70)|Immunogenic|Native|DQ2|17|20|QQTYPHQPQQQFPQTQQPQQ
+485|gamma1-gliadin|gamma-gliadin 1375 (p61-p80) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Native|DQ2| DQ8|25|17|23|20|QFPQTQQPQQPFPQPQQTFP
+486|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETQQPQQPFPQPQQTFP
+487|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E66) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTEQPQQPFPQPQQTFP
+488|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E69) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTQQPEQPFPQPQQTFP
+489|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTQQPQQPFPQPEQTFP
+490|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64 and E66) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETEQPQQPFPQPQQTFP
+491|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64 and E69) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETQQPEQPFPQPQQTFP
+492|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETQQPQQPFPQPEQTFP
+493|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E66 and E69) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTEQPEQPFPQPQQTFP
+494|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E66 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTEQPQQPFPQPEQTFP
+495|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E69 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTQQPEQPFPQPEQTFP
+496|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64| E66 and E69) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETEQPEQPFPQPQQTFP
+497|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64| E66 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETEQPQQPFPQPEQTFP
+498|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64| E69 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETQQPEQPFPQPEQTFP
+499|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E66| E69 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPQTEQPEQPFPQPEQTFP
+500|gamma1-gliadin|gamma-gliadin 1375 (p61-p80; E64| E66| E69 and E76) ; gamma-gliadin M7 M36999 (p61-p80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|20|QFPETEQPEQPFPQPEQTFP
+501|gamma1-gliadin|Wheat peptide W28| W33|Immunogenic|Native|DQ2|62|20|PQQPFPQPQQTFPQQPQLPF
+502|gamma1-gliadin|gamma-gliadin 1376 (p71-p90); gamma-gliadin M8 M36999 (71-80) homologous to DQ2-alpha-I and DQ2-gamma-IV|Immunogenic|Native|DQ2| DQ8|17|23|20|PFPQPQQTFPQQPQLPFPQQ
+503|gamma1-gliadin|Wheat peptide W33|Immunogenic|Native|DQ2|62|11|PFPQPQQTFPQ
+504|gamma1-gliadin|Wheat peptide W28|Immunogenic|Native|DQ2|62|12|PQQTFPQQPQLP
+505|gamma1-gliadin|Wheat peptide W10|Immunogenic|Native|DQ2|62|20|SQQPQQQFSQPQQQFPQPQQ
+506|gamma1-gliadin|DQ2-y-IV y-Glia (p117–p132)|Immunogenic|Native|DQ2|57|23|15|QQFSQPQQQFPQPQQ
+507|gamma1-gliadin|DQ2-y-IV y-Glia (p117–p132; E123)|Immunogenic|Deamidated|DQ2|57|23|15|QQFSQPEQQFPQPQQ
+508|gamma1-gliadin|DQ2-y-IV y-Glia (p117–p132; E125)|Immunogenic|Deamidated|DQ2|57|23|15|QQFSQPQQEFPQPQQ
+509|gamma1-gliadin|DQ2-y-IV y-Glia (p117–p132; E123 and E125)|Immunogenic|Deamidated|DQ2|57|23|15|QQFSQPEQEFPQPQQ
+510|gamma1-gliadin|Wheat peptide W10|Immunogenic|Native|DQ2|62|12|QQFSQPQQQFPQ
+511|gamma1-gliadin|gamma-IV (p101-p113)|Immunogenic|Native|DQ2|23|13|QFSQPQQQFPQPQ
+512|gamma1-gliadin|gamma-gliadin (gamma5 p102-p113)|Immunogenic|Native|DQ2|23|12|FSQPQQQFPQPQ
+513|gamma1-gliadin|gamma5 (p102-p113; E106)|Immunogenic|Deamidated|DQ2|23|12|FSQPEQQFPQPQ
+514|gamma1-gliadin|gamma5 (p102-p113; E108)|Immunogenic|Deamidated|DQ2|23|12|FSQPQQEFPQPQ
+515|gamma1-gliadin|gamma5 (p102-p113; E106 and E108)|Immunogenic|Deamidated|DQ2|25|23|12|FSQPEQEFPQPQ
+516|gamma1-gliadin|gamma5 (p102-p111)|Immunogenic|Native|DQ2|25|10|FSQPQQQFPQ
+517|gamma1-gliadin|gamma5 (p102-p111; E106)|Immunogenic|Deamidated|DQ2|25|10|FSQPEQQFPQ
+518|gamma1-gliadin|gamma5 (p102-p111; E108)|Immunogenic|Deamidated|DQ2|25|10|FSQPQQEFPQ
+519|gamma1-gliadin|gamma5 (p102-p111; E106 and E108)|Immunogenic|Deamidated|DQ2|25|10|FSQPEQEFPQ
+520|gamma1-gliadin|gamma-IV (p103-p114)|Immunogenic|Native|DQ2|23|12|SQPQQQFPQPQQ
+521|gamma-5 gliadin|CAUTION 100% match to fungal protein and many wheat proteins glia-gamma 4a|Immunogenic|Native|DQ2.5|90|25|23|9|SQPQQQFPQ
+522|gamma-5 gliadin|glia-gamma 4a|Immunogenic|Deamidated|DQ2.5|90|25|23|9|SQPEQEFPQ
+523|gamma1-gliadin|gamma-gliadin of GDB2_WHEAT (SwissProt P08453 GI:121101) (p140–p150)|Immunogenic|Native|DQ2|24|11|QQPQQSFPQQQ
+524|gamma1-gliadin|gamma-gliadin of GDB2_WHEAT (SwissProt P08453 GI170738) (p141–p150)|Immunogenic|Native|DQ2|24|10|QPQQSFPQQQ
+525|gamma1-gliadin|gamma-gliadin of GDB2_WHEAT (SwissProt P08453 GI170738) (p141–p150; E148)|Immunogenic|Deamidated|DQ2|24|10|QPQQSFPEQQ
+526|gamma-gliadin|Wheat peptide W07|Immunogenic|Native|DQ2|62|20|WPQQQPFPQPQQPFCQQPQQ
+527|gamma-gliadin|Wheat peptide W07|Immunogenic|Deamidated|DQ2|62|20|WPQQQPFPQPEQPFCQQPQQ
+529|gamma-gliadin|Wheat peptide W07|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFCQ
+530|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|14|QFPQTQQPQQPFPQ
+531|gamma-gliadin|gamma-gliadin M36999 (p63-p76; E66)|Immunogenic|Synthesised as Deamidated|DQ8|17|14|PQTEQPQQPFPQPQ
+532|gamma-gliadin|gamma-gliadin M36999 (p63-p76; E69)|Immunogenic|Synthesised as Deamidated|DQ2|17|14|PQTQQPEQPFPQPQ
+533|gamma-gliadin|gamma-gliadin M36999 (p63-p76; E66 and E69)|Immunogenic|Synthesised as Deamidated|DQ2| DQ8|17|14|PQTEQPEQPFPQPQ
+534|gamma-gliadin|gamma-gliadin 1375 (p61-p80) ; gamma-gliadin M7 M36999 (61-80) homologous to DQ2-gamma-III|Immunogenic|Native|DQ2|25|11|TQQPQQPFPQP
+535|gamma-gliadin|gamma-gliadin 1375 (p61-p80; E62 and E65)| ; gamma-gliadin M7 M36999 (61-80) homologous to DQ2-gamma-III|Immunogenic|Deamidated|DQ2|25|11|TEQPEQPFPQP
+536|gamma-gliadin|gamma-gliadin 1377 (p81-p100)|Immunogenic|Native|DQ2| DQ8|17|20|QQPQLPFPQQPQQPFPQPQQ
+537|gamma-gliadin|gamma-gliadin (p84-p97)|Immunogenic|Native|DQ8 (DQ2/8)|22|14|QLPFPQQPQQPFPQ
+538|gamma-gliadin|Glia-gamma2 (p89-p102)|Immunogenic|Native|DQ2|20|10|PFPQQPQQPF
+539|gamma-gliadin|Glia-gamma2 (p89-p102; E92)|Immunogenic|Deamidated|DQ2|20|10|PFPEQPQQPF
+540|gamma-gliadin|Glia-gamma2 (p89-p102; E94)|Immunogenic|Deamidated|DQ2|20|10|PFPQQPEQPF
+541|gamma-gliadin|Glia-gamma2 (p89-p102; E92 and E94)|Immunogenic|Deamidated|DQ2|20|10|PFPEQPEQPF
+542|gamma-gliadin|CAUTION 100% match to a fungal protein and many Secalins gamma-Gliadin (p90-p102)|Immunogenic|Native|DQ2|27|9|FPQQPQQPF
+543|gamma-gliadin|gamma-Gliadin (p90-p102; E92)|Immunogenic|Deamidated|DQ2|27|9|FPEQPQQPF
+544|gamma-gliadin|gamma-Gliadin (p90-p102; E96)|Immunogenic|Deamidated|DQ2|27|9|FPQQPQEPF
+545|gamma-gliadin|gamma-Gliadin (p90-p102; E92 and E96)|Immunogenic|Deamidated|DQ2|27|9|FPEQPQEPF
+546|gamma-gliadin|gamma-gliadin 1378 (p91-p110)|  ; gamma-gliadin M10 M36999 (91-110) homologous to DQ2-alpha-I|Immunogenic|Native|DQ2| DQ8|17|23|20|PQQPFPQPQQPQQPFPQSQQ
+547|gamma-gliadin|Wheat peptide W36|Immunogenic|Native|DQ2|62|20|QQPAQYEVIRSLVLRTLPNM
+548|gamma-gliadin|Wheat peptide W36|Immunogenic|Native|DQ2|62|16|QYEVIRSLVLRTLPNM
+549|gamma-gliadin|Wheat peptide W36|Immunogenic|Deamidated|DQ2|62|15|EYEVIRSLVLRTLPN
+550|gamma-gliadin|Wheat peptide W36|Immunogenic|Native|DQ2|62|15|QYQVIRSLVLRTLPN
+551|gamma-gliadin|gamma-gliadin AAK84778 (p74-p93)|Immunogenic|Native|DQ8|54|20|QQQFIQPQQPFPQQPQQTYP
+552|gamma-gliadin|Wheat peptide W14|Immunogenic|Native|DQ2|62|12|QQFIQPQQPFPQ
+553|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|14|PFPQTQQPQQPFPQ
+554|gamma-gliadin|gamma-gliadin 1379 (p101-p120)|Immunogenic|Native|DQ2| DQ8|17|20|PQQPFPQSQQPQQPFPQPQQ
+555|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|14|PFPQSQQPQQPFPQ
+556|gamma-gliadin|Wheat peptide W16|Immunogenic|Native|DQ2|62|20|SQQPQQPFPQPQQQFPQPQQ
+557|gamma-gliadin|gamma-gliadin 1380 (p111-p130) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Native|DQ2|25|17|23|20|PQQPFPQPQQQFPQPQQPQQ
+558|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPQQQFPQPQQPQQ
+559|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E119) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPEQQFPQPQQPQQ
+560|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E121) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPQQEFPQPQQPQQ
+561|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPQQQFPQPEQPQQ
+562|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112 and E119) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPEQQFPQPQQPQQ
+563|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112 and E121) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPQQEFPQPQQPQQ
+564|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPQQQFPQPEQPQQ
+565|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E119 and E121) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPEQEFPQPQQPQQ
+566|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E119 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPEQQFPQPEQPQQ
+567|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E121 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPQQEFPQPEQPQQ
+568|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112| E119 and E121) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPEQEFPQPQQPQQ
+569|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112| E119 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPEQQFPQPEQPQQ
+570|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112| E121 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPQQEFPQPEQPQQ
+571|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E119| E121 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PQQPFPQPEQEFPQPEQPQQ
+572|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E112| E119| E121 and E126) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|20|PEQPFPQPEQEFPQPEQPQQ
+573|gamma-gliadin|gamma-gliadin 1380 (p111-p130) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV  ; W16|Immunogenic|Native|DQ2|25|62|12|FPQPQQQFPQPQ
+574|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E115) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|12|FPQPEQQFPQPQ
+575|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E117) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|12|FPQPQQEFPQPQ
+576|gamma-gliadin|gamma-gliadin 1380 (p111-p130; E115 and E117) ; gamma-gliadin M12 M36999 (111-130) homologous to DQ2-gamma-IV|Immunogenic|Deamidated|DQ2|25|12|FPQPEQEFPQPQ
+577|gamma-gliadin|CAUTION 100% matches to 3 fungal and metazoan proteins and wheat glia-gamma 4b|Immunogenic|Native|DQ2.5|90|25|9|PQPQQQFPQ
+578|gamma-gliadin|glia-gamma 4b|Immunogenic|Deamidated|DQ2.5|90|25|9|PQPEQQFPQ
+579|gamma-gliadin|glia gamma 4b|Immunogenic|Deamidated|DQ2.5|90|25|9|PQPQQEFPQ
+580|gamma-gliadin|glia-gamma 4b|Immunogenic|Deamidated|DQ2.5|90|25|9|PQPEQEFPQ
+581|gamma-gliadin|Wheat peptide W16|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQEFPQPG
+582|gamma-gliadin|Wheat peptide W16|Immunogenic|Deamidated|DQ2|62|13|QPFPQPEQEFPQP
+583|gamma-1 gliadin|glia-alpha 1| glia-gamma 1|Immunogenic|Native|DQ2.5/DQ8|8|74|76|24|9|PQQSFPQQQ
+584|gamma-gliadin|glia-alpha1| glia-gamma1|Immunogenic|Deamidated|DQ2.5/DQ8|8|74|76|24|9|PQQSFPQQE
+585|gamma-1 gliadin|glia-alpha 1| glia-gamma 1|Immunogenic|Deamidated|DQ2.5/DQ8|8|76|24|9|PQQSFPEQE
+586|gamma-1 gliadin|glia-alpha1| glia-gamma1|Immunogenic|Deamidated|DQ2.5| DQ8|8|17|76|24|9|PQQSFPEQQ
+587|gamma-gliadin|Glia-gamma30-gliadin (p222–p236)|Immunogenic|Native|DQ2|19|15|VQGQGIIQPQQPAQL
+588|gamma-gliadin|Glia-gamma30-gliadin (p222–236; E225)|Immunogenic|Deamidated|DQ2|19|15|VQGEGIIQPQQPAQL
+589|gamma-gliadin|Glia-gamma30-gliadin (p222–236; E231)|Immunogenic|Deamidated|DQ2|19|15|VQGQGIIQPEQPAQL
+590|gamma-gliadin|Glia-gamma30-gliadin (p222–236; E225 and E231)|Immunogenic|Deamidated|DQ2|19|15|VQGEGIIQPEQPAQL
+591|gamma-gliadin|DQ2-y -II  y-Glia (p222–p236)|Immunogenic|Native|DQ2|57|15|GQGIIQPQQPAQLIR
+592|gamma-gliadin|DQ2-y -II  y-Glia (p222–p236; E229)|Immunogenic|Deamidated|DQ2|57|15|GQGIIQPEQPAQLIR
+593|gamma-gliadin|gamma5-gliadin (p227–p237) ; gamma-II epitope|Immunogenic|Native|DQ2|25|11|GIIQPQQPAQL
+594|gamma-gliadin|gamma5-gliadin (p227–237; E232)|Immunogenic|Deamidated|DQ2|25|11|GIIQPEQPAQL
+595|gamma-gliadin|gamma5-gliadin (p228–237)|Immunogenic|Native|DQ2|47|25|10|IIQPQQPAQL
+596|gamma-gliadin|gamma5-gliadin (p228–237; E232)|Immunogenic|Deamidated|DQ2|47|25|10|IIQPEQPAQL
+597|gamma-gliadin|gamma-2 peptide 1306; Glia-gamma30-gliadin (p227-p235) minimal epitope|Immunogenic|Native|DQ2|19|23|2|9|IIQPQQPAQ
+598|gamma-gliadin|gamma-2 peptide 1306; Glia-gamma30-gliadin (p228-p235; E232) minimal epitope|Immunogenic|Deamidated|DQ2|19|9|IIQPEQPAQ
+599|gamma-5 gliadin|glia-gamma 2|Immunogenic|Native|DQ2.5|90|8|25|9|IQPQQPAQL
+600|gamma-5 gliadin|glia-gamma 2|Immunogenic|Deamidated|DQ2.5|90|8|25|9|IQPEQPAQL
+601|gamma-gliadin|gamma-gliadin 1381 (p121-p140) ; gamma-gliadin M13 M36999 (121-140) identical to DQ2-gamma-I|Immunogenic|Native|DQ2| DQ8|17|23|20|QFPQPQQPQQSFPQQQQPAI
+602|gamma-gliadin|DQ2-gamma-I  gamma-Glia (p139 –p153)|Immunogenic|Native|DQ2|57|15|PQQPQQSFPQQQQPA
+603|gamma-gliadin|DQ2-gamma-I  gamma-Glia (p139 –p153; E147)|Immunogenic|Deamidated|DQ2|57|15|PQQPQQSFPEQQQPA
+604|gamma-gliadin|DQ2-gamma-I  gamma-Glia (p139 –p153; E150)|Immunogenic|Deamidated|DQ2|57|15|PQQPQQSFPQQEQPA
+605|gamma-gliadin|DQ2-gamma-I  gamma-Glia (p139 –p153; E147 and E150)|Immunogenic|Deamidated|DQ2|57|15|PQQPQQSFPEQEQPA
+606|gamma-gliadin|gamma-gliadin 1382 (p131-p150)|Immunogenic|Native|DQ8|17|20|SFPQQQQPAIQSFLQQQMNP
+607|gamma-gliadin|gamma-gliadin 1383 (p141-p160)|Immunogenic|Native|DQ8|17|20|QSFLQQQMNPCKNFLLQQCN
+608|gamma-gliadin|gamma-gliadin 1388 (p201-p220)|Immunogenic|Native|DQ2|17|20|IHSVAHSIIMQQEQQQGVPI
+609|gamma-gliadin|gamma-gliadin M23 M36999 (221-240) homologous to DQ2-gamma-II|Immunogenic|Native|DQ2|17|23|20|LRPLFQLAQGLGIIQPQQPA
+610|gamma-gliadin|gamma-gliadin 1391 (p231-p250) ; gamma-gliadin M24 M36999 (231-250) identical to DQ2-gamma-II|Immunogenic|Native|DQ2|17|23|20|LGIIQPQQPAQLEGIRSLVL
+611|gamma-gliadin|Gluten peptide #19|Immunogenic|Native|DQ2 (DQ2.5)|61|18|PHQPQQQVPQPQQPQQPF
+612|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|8|14|QQPFPQQPQQPFPQ
+613|gamma-gliadin|Glia-gamma2  in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFPEQPEQPFPQ
+614|gamma-gliadin|Glia-gamma2 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFPQQPEQPFPQ
+615|gamma-gliadin|Glia-gamma2 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFPEQPQQPFPQ
+616|gamma-gliadin|gamma-gliadin P08453 (p94-p113)|Immunogenic|Deamidated|DQ8|54|20|QTQQPQQPFPQQPQQPFPQT
+617|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|14|PFPQLQQPQQPFPQ
+618|gamma-gliadin|gamma-I gliadin 1206|Immunogenic|Native|DQ2|2|21|YQQLPQPQQPQQSFPQQQRPF
+619|gamma-gliadin|gamma-type gliadin of GDB2_WHEAT (SwissProt P08453) (p134–p153)|Immunogenic|Deamidated|DQ2|24|20|QQLPQPQQPQQSFPQQQRPF
+620|gamma-gliadin|Glia-gamma1 epitope|Immunogenic|Native|DQ2|9|17|QPQQPQQSFPQQQRPFI
+621|gamma-gliadin|Glia-gamma1(p138-p153)|Immunogenic|Native|DQ2|19|16|QPQQPQQSFPQQQRPF
+622|gamma-gliadin|Glia-gamma1 (p139–p153)|Immunogenic|Native|DQ2|8|15|PQQPQQSFPQQQRPF
+623|gamma-gliadin|Glia-gamma1 (p139–p153; E148)|Immunogenic|Deamidated|DQ2|8|15|PQQPQQSFPEQQRPF
+624|gamma-gliadin|Glia-gamma1 (p139–p153; E140 and E148)|Immunogenic|Deamidated|DQ2|8|15|PEQPQQSFPEQQRPF
+625|gamma-gliadin|Glia-gamma1 (p139–p153; E148 and E150)|Immunogenic|Deamidated|DQ2|8|15|PQQPQQSFPEQERPF
+626|gamma-gliadin|Glia-gamma1 (p139–p153; E140| E148 and E150)|Immunogenic|Deamidated|DQ2|8|15|PEQPQQSFPEQERPF
+627|gamma-gliadin|gamma-I| gamma-Gliadin (p139–p152)|Immunogenic|Native|DQ2|25|43|14|PQQPQQSFPQQQRP
+628|gamma-gliadin|gamma-Gliadin (p139–p152;  E140| E148 and E150) E residues in the gliadin peptides are introduced to mimic the deamidation mediated by tissue transglutaminase.|Immunogenic|Deamidated|DQ2|25|43|14|PEQPQQSFPEQERP
+629|gamma-gliadin|gamma-gliadin (p139-p152; E148)|Immunogenic|Deamidated|DQ2|55|14|PQQPQQSFPEQQRP
+630|gamma-gliadin|gamma-gliadin (p139-p152; E140 and E148)|Immunogenic|Deamidated|DQ2 (DQ2.2 and DQ2.5)|25|14|PEQPQQSFPEQQRP
+631|gamma-gliadin|P-3 gamma-gliadin (p139–p152; K139| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|KEQPQQSFPEQERP
+632|gamma-gliadin|P-2 gamma-gliadin  (p139–p152; K140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PKQPQQSFPEQERP
+633|gamma-gliadin|P-1 gamma-gliadin  (p139–p152; K141| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEKPQQSFPEQERP
+634|gamma-gliadin|P1 y-gliadin(p139–p152; K142| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQKQQSFPEQERP
+635|gamma-gliadin|P2 y-gliadin (p139–p152; K143| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQPKQSFPEQERP
+636|gamma-gliadin|P4 y-gliadin (p139–p152; K144| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQPQQKFPEQERP
+637|gamma-gliadin|P9 gamma-gliadin (p139–p152; E140| E148 and K150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQPQQSFPEQKRP
+638|gamma-gliadin|P10 gamma-gliadin (p139–p152; K151| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQPQQSFPEQEKP
+639|gamma-gliadin|P11 y-gliadin (p139–p152; K152| E140| E148 and E150)|Immunogenic|Synthesised as Deamidated|DQ2|56|14|PEQPQQSFPEQERK
+640|gamma-gliadin|gamma-I epitope in native form|Immunogenic|Native|DQ2|47|12|QPQQSFPQQQRP
+641|gamma-gliadin|Deamidated form of gamma-I epitope|Immunogenic|Deamidated|DQ2|47|12|QPQQSFPEQQRP
+642|gamma-gliadin|Glia-alpha20|Immunogenic|Native|DQ2|9|16|QQSFPQQQRPFIQPSL
+643|gamma-gliadin|gamma-gliadin AAK84772 (p130-p149)|Immunogenic|Native|DQ8|54|20|PQPQQPQLPFPQQPQQPFPQ
+644|gamma-gliadin|Predicted gamma-gliadin|Immunogenic|Native|DQ8 (DQ2/8)|22|14|PFPQPQQPQQPFPQ
+645|gamma-gliadin|gamma-gliadin AAK84776 (p102-p121)|Immunogenic|Native|DQ8|54|20|QQPLPQPQQPQQPFPQSQQP
+646|gamma-gliadin|gamma-gliadin AAK84772 (p121-p140)|Immunogenic|Native|DQ8|54|20|QPQQPQQPFPQQQQPLIQPY
+647|gamma-gliadin|Wheat peptide W35|Immunogenic|Native|DQ2|62|20|PQQPFPQQPQQQFPQPQQPQ
+648|gamma-gliadin|Wheat peptide W35|Immunogenic|Native|DQ2|62|12|PFPQQPQQQFPQ
+649|gamma-gliadin|Wheat peptide W31|Immunogenic|Native|DQ2|62|20|QPFPQLQQPQQPLPQPQQPQ
+650|gamma-gliadin|Wheat peptide W31|Immunogenic|Native|DQ2|62|12|QPFPQLQQPQQP
+651|LMW glutenin|Wheat peptide W15 LMW|Immunogenic|Native|DQ2|62|20|SHIPGLERPWQQQPLPPQQT
+652|LMW glutenin|Wheat peptide W15 LMW|Immunogenic|Native|DQ2|62|15|QGLERPWQQQPLPPQ
+653|LMW glutenin|Wheat peptide W15 LMW|Immunogenic|Deamidated|DQ2|62|15|EGLERPWQEQPLPPQ
+654|LMW glutenin|Wheat peptide W15 LMW|Immunogenic|Native|DQ2|62|12|LERPWQQQPLPP
+655|LMW glutenin|Wheat peptide W11|Immunogenic|Deamidated|DQ2|62|16|GQQAFPQPEQTFPHQG
+656|LMW glutenin|Wheat peptide W11|Immunogenic|Native|DQ2|62|15|QQAFPQPQQTFPHQP
+657|LMW glutenin|Wheat peptide W11|Immunogenic|Deamidated|DQ2|62|15|EQAFPQPEQTFPHQP
+658|LMW glutenin|Wheat peptide W11|Immunogenic|Native|DQ2|62|20|QAFPQPQQTFPHQPQQQFPQ
+659|LMW glutenin|Wheat peptide W11|Immunogenic|Native|DQ2|62|12|QAFPQPQQTFPH
+660|LMW glutenin|Wheat peptide W11|Immunogenic|Deamidated|DQ2|62|12|QAFPQPEQTFPH
+661|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60)|Immunogenic|Native|DQ2|19|15|QQPPFSQQQQQPLPQ
+662|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEQQQQPLPQ
+663|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E53)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQEQQQPLPQ
+664|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E55)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQQQEQPLPQ
+665|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQQQQEPLPQ
+666|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52 and 53)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEEQQQPLPQ
+667|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52 and 55)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEQQEQPLPQ
+668|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEQQQEPLPQ
+669|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E53 and 55)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQEQEQPLPQ
+670|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E53 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQEQQEPLPQ
+671|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E55 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQQQEEPLPQ
+672|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52| 53 and 55)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEEQEQPLPQ
+673|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52| 53 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEEQQEPLPQ
+674|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E53| 55 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSQEQEEPLPQ
+675|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52| 55 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEQQEEPLPQ
+676|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p46-p60; E52| 53| 55 and 56)|Immunogenic|Deamidated|DQ2|19|15|QQPPFSEEQEEPLPQ
+693|gamma-gliadin or LMW glutenin|CAUTION 100% matches to 5 microbial proteins and to wheat proteins Glutenin-Glt-17 (p50-p58)|Immunogenic|Native|DQ2|27|9|FSQQQQQPL
+694|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E52)|Immunogenic|Deamidated|DQ2|27|9|FSEQQQQPL
+695|gamma-gliadin or LMW glutenin|CAUTION 100% matches to two Pinus proteins / not wheat Glutenin-Glt-17 (p50-p58; E53)|Immunogenic|Deamidated|DQ2|27|9|FSQEQQQPL
+696|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E55)|Immunogenic|Deamidated|DQ2|27|9|FSQQQEQPL
+697|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E52 and E53)|Immunogenic|Deamidated|DQ2|27|9|FSEEQQQPL
+698|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E52 and E55)|Immunogenic|Deamidated|DQ2|27|9|FSEQQEQPL
+699|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E53 and E55)|Immunogenic|Deamidated|DQ2|27|9|FSQEQEQPL
+700|gamma-gliadin or LMW glutenin|Glutenin-Glt-17 (p50-p58; E52| E53 and E55)|Immunogenic|Deamidated|DQ2|27|9|FSEEQQEPL
+701|gamma-gliadin or LMW glutenin|Glutenin-17 epitope homolog|Immunogenic|Native|DQ2|8|19|15|QQPPFSQQQQPVLPQ
+702|gamma-gliadin or LMW glutenin|Glutenin-17 epitope homolog in Deamidated form|Immunogenic|Deamidated|DQ2|8|15|QQPPFSEQQQPVLPQ
+703|gamma-gliadin or LMW glutenin|Glutenin-17 epitope homolog in Deamidated form|Immunogenic|Deamidated|DQ2|8|15|QQPPFSQQEQPVLPQ
+704|gamma-gliadin or LMW glutenin|Glutenin-17 epitope homolog in Deamidated form|Immunogenic|Deamidated|DQ2|8|15|QQPPFSEQEQPVLPQ
+705|gamma-gliadin or LMW glutenin|LMW T cell epitope|Immunogenic|Deamidated|DQ2|62|15|EQPPFSEQEQPVLPQ
+706|Glut-L1|CAUTION 100% match to a fungal protien Hebeloma sp. & many wheat Glt-17 (Var1)|Immunogenic|Native|DQ2.2|44|90|9|PFSQQQQPV
+707|glut-L1|Glt-17 (Var1)|Immunogenic|Deamidated|DQ2.2|44|90|9|PFSEQQQPV
+708|glut-L1|Glt-17 (Var1)|Immunogenic|Deamidated|DQ2.2|44|90|9|PFSQQEQPV
+709|glut-L1|Glt-17 (Var1)|Immunogenic|Deamidated|DQ2.2|44|90|9|PFSEQEQPV
+710|gamma-gliadin or LMW glutenin|Wheat peptide W12|Immunogenic|Native|DQ2|62|20|CKVFLQQQCSPVAMPQRLAR
+711|gamma-gliadin or LMW glutenin|Wheat peptide W12|Immunogenic|Native|DQ2|62|16|LQQQCSPVAMPQRLAR
+712|gamma-gliadin or LMW-glutenin|Wheat peptide W05|Immunogenic|Native|DQ2|62|20|PQQQQPFPQPQQPFSQQPQQ
+713|gamma-gliadin or LMW-glutenin|Wheat peptide W05|Immunogenic|Deamidated|DQ2|62|20|PQQQQPFPQPEQPFSQQPQQ
+714|gamma-gliadin or LMW-glutenin|Wheat peptide W05|Immunogenic|Native|DQ2|62|12|QPFPQPQQPFSQ
+715|gamma-gliadin or LMW-glutenin|Wheat peptide W05|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFSQ
+716|gamma-gliadin or LMW-glutenin|Wheat peptide W17|Immunogenic|Native|DQ2|62|20|QQPFPQPQQPQLPFPQQPQQ
+717|gamma-gliadin or LMW-glutenin|Wheat peptide W17|Immunogenic|Native|DQ2|62|15|QPFPQPQQPQLPFPQ
+718|gamma-gliadin or LMW-glutenin|Wheat peptide W17|Immunogenic|Deamidated|DQ2|62|15|EPFPQPEQPELPFPQ
+719|gamma-gliadin or LMW-glutenin|Wheat peptide W17|Immunogenic|Native|DQ2|62|12|QPFPQPQQPQLP
+720|LMW glutenin|GLT/GLIA homologue peptide 12|Immunogenic|Native|DQ2|19|15|QQPPFSQQQQPPFSQ
+721|LMW glutenin|LMW glutenin-glt-156 (p40-p59)|Immunogenic|Native|DQ2|19|20|QQQQPPFSQQQQSPFSQQQQ
+722|LMW glutenin|LMW glutenin-glt-156 (p40-p59; E48)|Immunogenic|Deamidated|DQ2|19|20|QQQQPPFSEQQQSPFSQQQQ
+723|LMW glutenin|LMW glutenin-glt-156 (p40-p59; E51)|Immunogenic|Deamidated|DQ2|19|20|QQQQPPFSQQQESPFSQQQQ
+724|LMW glutenin|LMW glutenin-glt-156 (p40-p59; E48 and E51)|Immunogenic|Deamidated|DQ2|19|20|QQQQPPFSEQQESPFSQQQQ
+725|LMW glutenin|Homolog of Deamidated Glt-156 minimal epitope (p40-p59)|Immunogenic|Deamidated|DQ2|20|15|QQQQPPFSEEQESPY
+726|LMW glutenin|Homolog of Deamidated Glt-156 minimal epitope (p40-p59)|Immunogenic|Deamidated|DQ2|20|15|QQQQPPFSEEQESPL
+727|LMW glutenin|Deamidated Glt-156 minimal epitope (p40-p59)|Immunogenic|Deamidated|DQ2|20|15|QQQQPPFSEEQESPF
+728|LMW glutenin|Glt-156 minimal epitope (p41-p55)|Immunogenic|Deamidated|DQ2|20|15|QQQPPFSEEQESPFS
+729|LMW glutenin|Glt-156 minimal epitope in considered native form|Immunogenic|Native|DQ2|20|15|QQPPFSQQQQSPFSQ
+730|LMW glutenin|Glt-156 minimal epitope in considered Deamidated form|Immunogenic|Deamidated|DQ2|20|15|QQPPFSEEQESPFSQ
+731|LMW glutenin|GLT/GLIA homologue peptide 4|Immunogenic|Native|DQ2|19|12|QQPPFSQQQQSP
+732|LMW glutenin|Glt-156 minimal epitope|Immunogenic|Deamidated|DQ2|20|15|QPPFSEEQESPFSQQ
+733|LMW glutenin|LMW glutenin-glt-156 (p40-p59)|Immunogenic|Native|DQ2|16|14|QPPFSQQQQSPFSQ
+734|LMW glutenin|Glt-156 minimal epitope in considered native form|Immunogenic|Native|DQ2|20|15|PPFSQQQQSPFSQQQ
+735|LMW glutenin|Glt-156 minimal epitope in considered Deamidated form|Immunogenic|Deamidated|DQ2|20|15|PPFSEEQESPFSQQQ
+736|LMW glutenin|Glt-156 minimal epitope in considered native form|Immunogenic|Native|DQ2|20|15|PFSQQQQSPFSQQQQ
+737|LMW glutenin|Glt-156 minimal epitope in considered Deamidated form|Immunogenic|Deamidated|DQ2|20|15|PFSEEQESPFSQQQQ
+738|LMW glutenin|LMW glutenin-glt-156 (p45-p54) minimal epitope|Immunogenic|Native|DQ2|20|19|10|PFSQQQQSPF
+739|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E48) minimal epitope|Immunogenic|Deamidated|DQ2|20|19|10|PFSEQQQSPF
+740|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E49) minimal epitope|Immunogenic|Deamidated|DQ2|20|10|PFSQEQQSPF
+741|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E51) minimal epitope|Immunogenic|Deamidated|DQ2|20|19|10|PFSQQQESPF
+742|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E48 and E51) minimal epitope|Immunogenic|Deamidated|DQ2|20|19|10|PFSEQQESPF
+743|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E48 and E49) minimal epitope|Immunogenic|Deamidated|DQ2|20|10|PFSEEQQSPF
+745|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E49 and E49) minimal epitope|Immunogenic|Deamidated|DQ2|20|10|PFSQEQESPF
+746|LMW glutenin|LMW glutenin-glt-156 (p45-p54; E48| E49 and E51) minimal epitope|Immunogenic|Deamidated|DQ2|20|10|PFSEEQESPF
+747|glut-L2|LMW glutenin-glt-156 (p46-p54)|Immunogenic|Native|DQ2.5|90|27|19|9|FSQQQQSPF
+748|glut-L2|LMW glutenin-glt-156 (p46-p54; E48)|Immunogenic|Deamidated|DQ2.5|90|27|19|9|FSEQQQSPF
+749|glut-L2|LMW glutenin-glt-156 (p46-p54; E51)|Immunogenic|Deamidated|DQ2.5|90|27|19|9|FSQQQESPF
+750|glut-L2|LMW glutenin-glt-156 (p46-p54; E48 and E51)|Immunogenic|Deamidated|DQ2.5|90|27|19|9|FSEQQESPF
+751|LMW glutenin|GLT/GLIA homologue peptide 13|Immunogenic|Native|DQ2|19|15|QQPPFSQQQQPQFSQ
+752|LMW glutenin|Gluten peptide #25|Immunogenic|Native|DQ2 (DQ2.5)|61|19|SHQQQPFPQQPYPQQPYPS
+753|gamma-gliadin|14-mer-2 gamma-Glia (p173–p186)|Immunogenic|Native|DQ2|57|14|PQQPFPSQQQQPLI
+754|gamma-gliadin|14-mer-2 gamma-Glia (p173–p186) in Deamidated form|Immunogenic|Deamidated|DQ2|57|14|PQQPFPSQQEQPLI
+755|LMW glutenin|GLT/GLIA homologue peptide 17|Immunogenic|Native|DQ2|19|15|QQPPFSQQQQPILPQ
+756|LMW glutenin|Glt-156 homolog|Immunogenic|Native|DQ2|21|14|QPPFSQQQQPILPQ
+757|LMW glutenin|Glt-156 homolog in Deamidated form|Immunogenic|Deamidated|DQ2|21|14|QPPFSEQEQPILPQ
+762|LMW glutenin|GLT/GLIA homologue peptide 16|Immunogenic|Native|DQ2|19|15|QQPPFSQQQQQPILL
+763|LMW glutenin|Glt-156 homolog|Immunogenic|Native|DQ2|21|14|QPPFSQQQQQPILL
+764|LMW glutenin|Glt-156 homolog in Deamidated form|Immunogenic|Deamidated|DQ2|21|14|QPPFSEEQEQPILL
+765|HMW glutenin|Wheat peptide W21 HMW|Immunogenic|Native|DQ2|62|20|QGQQGYYPISPQQSGQGQQP
+766|HMW glutenin|Wheat peptide W21 HMW|Immunogenic|Native|DQ2|62|16|QGQQGYYPISPQQSGQ
+767|HMW glutenin|Wheat peptide W21 HMW|Immunogenic|Deamidated|DQ2|62|16|EGQQGYYPISPQQSGQ
+768|HMW glutenin|Naturally occurring glutenins p722-p736 (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQAGYYPTSPQQSGQ
+769|HMW glutenin|Naturally occurring glutenins p722-p736 (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQQPGQ
+770|HMW glutenin|Naturally occurring glutenins p722-p736 (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPISPQQSGQ
+771|HMW glutenin|Wheat peptide W29|Immunogenic|Native|DQ2|62|20|GQGQSGYYPTSPQQSGQEAT
+772|HMW glutenin|Wheat peptide W29|Immunogenic|Native|DQ2|62|16|GQGQSGYYPTSPQQSG
+773|HMW glutenin|Wheat peptide W24 HMW|Immunogenic|Native|DQ2|62|20|PGQGQSGYYPTSPQQSGQKQ
+774|HMW glutenin|Wheat peptide W24 HMW|Immunogenic|Native|DQ2|62|16|PGQGQSGYYPTSPQQS
+775|HMW glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQSGYYPTSPQQSGQ
+776|HMW glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPISPQQLGQ
+777|HMW glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQLGYYPTSPQQSGQ
+778|HMW glutenin|Wheat peptide W22 HMW|Immunogenic|Native|DQ2|62|20|LQPGQGQPGYYPTSPQQIGQ
+779|HMW glutenin|Wheat peptide W22 HMW|Immunogenic|Native|DQ2|62|16|QGQPGYYPTSPQQIGQ
+780|HMW glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQPGYYPTSPQQIGQ
+781|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQPGYYPTSPQQPGQ
+782|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQPGYYPTSPQQSGQ
+783|HMW-Glutenin|Naturally occurring glutenins p722-p736 (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSLQQPGQ
+784|HMW-Glutenin|HMW glutenin-glt04 (p707–p742)|Immunogenic|Native|DQ8 (DQ2/8)|7|36|SGQGQRPGQWLQPGQGQQGYYPTSPQQSGQGQQLGQ
+785|HMW-Glutenin|HMW glutenin-glt04 (p719–p736)|Immunogenic|Native|DQ8 (DQ2/8)|7|18|PGQGQQGYYPTSPQQSGQ
+786|HMW-Glutenin|glt04 (p722-p736)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQQSGQ
+787|HMW-Glutenin|glt04 (p722-p735)|Immunogenic|Native|DQ8 (DQ2/8)|7|14|GQQGYYPTSPQQSG
+788|HMW-Glutenin|glt04 (p722-p734)|Immunogenic|Native|DQ8 (DQ2/8)|7|13|GQQGYYPTSPQQS
+789|HMW-Glutenin|glt04 (p723-p736)|Immunogenic|Native|DQ8 (DQ2/8)|7|14|QQGYYPTSPQQSGQ
+790|HMW-Glutenin|glt04 (p723-p735)|Immunogenic|Native|DQ8 (DQ2/8)|7|13|QQGYYPTSPQQSG
+791|HMW-Glutenin|glt04 (p723-p735; E724)|Immunogenic|Deamidated|DQ8 (DQ2/8)|7|83|13|QEGYYPTSPQQSG
+792|HMW-Glutenin|glt04 (p723-p734)|Immunogenic|Native|DQ8 (DQ2/8)|52|12|QQGYYPTSPQQS
+793|HMW-Glutenin|glt04 (p724–p735)|Immunogenic|Native|DQ8 (DQ2/8)|7|12|QGYYPTSPQQSG
+794|glut-H1|HMW glutenin (p724-p734)|Immunogenic|Native|DQ8| DQ8.5|7|76|27|11|QGYYPTSPQQS
+797|HMW-Glutenin|glt04 (p725-p735)|Immunogenic|Native|DQ8 (DQ8.5)|7|83|11|GYYPTSPQQSG
+798|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPISPQQPGQ
+799|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQQSPQ
+800|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQQLGQ
+801|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQHPGQ
+802|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQPGYYPTSPLQSGQ
+803|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQHGYYPTSPQLSGQ
+804|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSPQQPPQ
+805|HMW-Glutenin|Naturally occurring glutenins (p722-p736) (homolog of glt04)|Immunogenic|Native|DQ8 (DQ2/8)|7|15|GQQGYYPTSVQQPGQ
+806|Hordein|Barley peptide B04| B17|Immunogenic|Native|DQ2|62|20|QPQQPQPFPQQPVPQQPQPY
+807|Hordein|Barley peptide B17|Immunogenic|Native|DQ2|62|16|PQQPQPFPQQPVPQQP
+808|Hordein|Barley peptide B04|Immunogenic|Native|DQ2|62|12|PQQPVPQQPQPY
+809|Hordein|Barley peptide B05| B08 in native form|Immunogenic|Native|DQ2|62|20|PQPFPQQPIPQQPQPYPQQP
+810|Hordein|Barley peptide B05| B08 in Deamidated form|Immunogenic|Deamidated|DQ2|62|20|PQPFPQQPIPEQPQPYPQQP
+811|Hordein|Barley peptide B05|Immunogenic|Native|DQ2|62|16|PQPFPQQPIPQQPQPY
+812|Hordein|Barley peptide B05|Immunogenic|Deamidated|DQ2|62|16|PQPFPQQPIPEQPQPY
+813|Hordein|Barley peptide B06|Immunogenic|Native|DQ2|62|20|QQPQPFSQQPIPQQPQPYPQ
+814|Hordein|Barley peptide B06|Immunogenic|Deamidated|DQ2|62|20|QQPQPFSQQPIPEQPQPYPQ
+815|Hordein|Barley peptide B06|Immunogenic|Native|DQ2|62|12|SQQPIPQQPQPY
+816|Hordein|Barley peptide B06|Immunogenic|Deamidated|DQ2|62|12|SQQPIPEQPQPY
+817|Hordein|Barley peptide B18|Immunogenic|Native|DQ2|62|20|QPQPFPQQPIPLQPHQPYTQ
+818|Hordein|Barley peptide B18|Immunogenic|Native|DQ2|62|12|QPQPFPQQPIPL
+819|Hordein|Barley peptide B13|Immunogenic|Native|DQ2|62|20|PQPYPQQPQPFPQQPPFCQQ
+820|Hordein|Barley peptide B13|Immunogenic|Native|DQ2|62|16|PQPYPQQPQPFPQQPP
+821|Hordein|Barley peptide B09| B12| B30|Immunogenic|Native|DQ2|62|20|QQPFPQQPFPQQPQPYPQQP
+822|Hordein|Barley peptide B09|Immunogenic|Native|DQ2|62|16|QQPFPQQPFPQQPQPY
+823|Hordein|Barley peptide B30|Immunogenic|Native|DQ2|62|11|QQPFPQQPFPQ
+824|Hordein|Barley peptide B12|Immunogenic|Native|DQ2|62|16|PQQPFPQQPQPYPQQP
+825|Hordein|Barley peptide B11|Immunogenic|Native|DQ2|62|20|QPQPYPQQPQPYPQQPFQPQ
+826|Hordein|Barley peptide B11|Immunogenic|Native|DQ2|62|12|QPQPYPQQPQPY
+827|gamma-gliadin or LMW glutenin|Glu-21 in considered native form|Immunogenic|Native|DQ2|19|21|QPQPFPQQSEQSQQPFQPQPF
+828|Hordein|Barley peptide B03|Immunogenic|Native|DQ2|62|20|QPQQPFPQPQQPIPYQPQQP
+829|Hordein|Barley peptide B03|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQPIPYQG
+830|Hordein|Barley peptide B03|Immunogenic|Native|DQ2|62|12|QPFPQPQQPIPY
+831|Hordein|Barley peptide B03|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPIPY
+832|Hordein|Barley peptide B02|Immunogenic|Native|DQ2|62|20|WQPQQPFPQPQQPFPLQPQQ
+833|Hordein|Barley peptide B02|Immunogenic|Deamidated|DQ2|62|20|WQPQQPFPQPEQPFPLQPQQ
+834|Hordein|Barley peptide B02|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQPFPLQG
+835|Hordein|Barley peptide B02|Immunogenic|Native|DQ2|62|12|QPFPQPQQPFPL
+836|Hordein|Barley peptide B02|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFPL
+837|Hordein|Barley peptide B19|Immunogenic|Native|DQ2|62|20|LPRPQQPFPWQPQQPFPQPQ
+838|Hordein|Barley peptide B26|Immunogenic|Native|DQ2|62|20|QPQQPFPLQPQQPFPWQPQQ
+839|Hordein|Barley peptide B26|Immunogenic|Native|DQ2|62|12|PFPLQPQQPFPW
+840|Hordein|Barley peptide B29|Immunogenic|Native|DQ2|62|20|QPQQPFSFSQQPQQPFPLQP
+841|Hordein|Barley peptide B29|Immunogenic|Deamidated|DQ2|62|16|GFSFSQQPEQPFPLQG
+842|Hordein|Barley peptide B14|Immunogenic|Native|DQ2|62|20|FQQPQQSYPVQPQQPFPQPQ
+843|Hordein|Barley peptide B14|Immunogenic|Deamidated|DQ2|62|16|GQSYPVQPEQPFPQPG
+844|Hordein|Barley peptide B14|Immunogenic|Native|DQ2|62|12|SYPVQPQQPFPQ
+845|Hordein|Barley peptide B14|Immunogenic|Deamidated|DQ2|62|12|SYPVQPEQPFPQ
+846|Hordein|Barley peptide B29|Immunogenic|Native|DQ2|62|12|SFSQQPQQPFPL
+847|Hordein|Barley peptide B29|Immunogenic|Deamidated|DQ2|62|12|SFSQQPEQPFPL
+848|omega-gliadin|Wheat peptide W19|Immunogenic|Deamidated|DQ2|62|16|GQPFPWQPEQPFPQPG
+849|Hordein|Barley peptide B15|Immunogenic|Native|DQ2|62|20|YPQQPQPFPQQPIPQQPQPY
+850|Hordein|Barley peptide B15|Immunogenic|Native|DQ2|62|12|QPQPFPQQPIPQ
+851|hor-3|Hor-I|Immunogenic|Native|DQ2.5|62|88|9|PIPQQPQPY
+852|hor-3|Hor-I|Immunogenic|Deamidated|DQ2.5|62|88|9|PIPEQPQPY
+853|Hordein|Barley peptide B16|Immunogenic|Native|DQ2|62|20|QQQPFPQQPIPQQPQPYPQQ
+854|Hordein|Barley peptide B16|Immunogenic|Native|DQ2|62|11|QQPFPQQPIPQ
+855|Hordein|Barley peptide B08|Immunogenic|Deamidated|DQ2|62|16|PQQPIPQQPQPYPQQP
+856|Hordein|Barley peptide B08|Immunogenic|Deamidated|DQ2|62|16|PQQPIPEQPQPYPQQP
+857|Hordein|Barley peptide B08|Immunogenic|Native|DQ2|62|86|16|QPQQPIPQQPQPYPQQ
+858|Hordein|Barley peptide B08|Immunogenic|Deamidated|DQ2|62|86|16|EPEQPIPEQPQPYPQQ
+859|Hordein|Hordein core epitope in native form|Immunogenic|Native|DQ2|27|9|FPPQQPFPQ
+860|Hordein|Hordein core epitope in demainated form|Immunogenic|Deamidated|DQ2|27|9|FPPEQPFPQ
+861|Hordein|Barley peptide B21| B25|Immunogenic|Native|DQ2|62|20|PFPQQPQQPFPQPQQPFRQQ
+862|Hordein|Barley peptide B21|Immunogenic|Deamidated|DQ2|62|20|PFPQQPQQPFPQPEQPFRQQ
+863|Hordein|alpha9-Hordein in native form|Immunogenic|Native|DQ2|8|14|PQQPFPQPQQPFRQ
+864|Hordein|alpha9-Hordein in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PQQPFPQPEQPFRQ
+865|Hordein|Barley peptide B21|Immunogenic|Native|DQ2|62|13|QQPFPQPQQPFRQ
+866|Hordein|Barley peptide B21|Immunogenic|Deamidated|DQ2|62|13|QQPFPQPEQPFRQ
+867|hor-1|Hordein/Secalin|Immunogenic|Native|DQ2.5|90|8|27|62|88|9|PFPQPQQPF
+868|hor-1|Hordein/Secalin|Immunogenic|Deamidated|DQ2.5|90|8|27|62|88|9|PFPQPEQPF
+869|Hordein|Barley peptide B22|Immunogenic|Native|DQ2|62|20|PQQPFQPQQPFPQQTIPQQP
+870|Hordein|Barley peptide B22|Immunogenic|Native|DQ2|62|12|QQPFQPQQPFPQ
+871|Hordein|Barley peptide B27|Immunogenic|Native|DQ2|62|20|TFPPSQQPNPLQPQQPFPLQ
+872|Hordein|Barley peptide B27|Immunogenic|Native|DQ2|62|13|PNPLQPQQPFPLQ
+873|Hordein|Barley peptide B23| B24|Immunogenic|Native|DQ2|62|20|NPLQPQQPFPLQPQPPQQPF
+874|Hordein|Barley peptide B23|Immunogenic|Native|DQ2|62|16|NPLQPQQPFPLQPQPP
+875|Hordein|Barley peptide B24|Immunogenic|Native|DQ2|62|16|PLQPQQPFPLQPQPPQ
+876|Hordein|Barley peptide B10|Immunogenic|Native|DQ2|62|20|PQQPQQPFPQPQQPFSWQPQ
+877|Hordein|Barley peptide B10|Immunogenic|Deamidated|DQ2|62|20|PQQPQQPFPQPEQPFSWQPQ
+878|Hordein|Barley peptide B10|Immunogenic|Native|DQ2|62|12|QPFPQPQQPFSW
+879|Hordein|Barley peptide B10|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFSW
+880|Hordein|Barley peptide B28|Immunogenic|Native|DQ2|62|20|PQQTIPQQPQQPFPLQPQQP
+881|Hordein|Barley peptide B28|Immunogenic|Native|DQ2|62|12|TIPQQPQQPFPL
+882|Hordein|Barley peptide B20|Immunogenic|Native|DQ2|62|20|QQPFPLQPQQPFPQPQPFPQ
+883|gamma-gliadin|Wheat peptide W26|Immunogenic|Deamidated|DQ2|62|16|GQPFPLQPEQPFPQPG
+884|gamma-gliadin|Wheat peptide W26|Immunogenic|Deamidated|DQ2|62|12|PFPLQPEQPFPQ
+885|gamma-hordein|Barley peptide B07|Immunogenic|Native|DQ2|62|20|QSQQQFPQPQQPFPQQPQQP
+886|gamma-hordein|alpha2-Hordein in native form|Immunogenic|Native|DQ2|8|14|QQFPQPQQPFPQQP
+887|gamma-hordein|alpha2-Hordein in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QEFPQPQQPFPQQP
+888|gamma-hordein|alpha2-Hordein in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQFPQPEQPFPQQP
+889|gamma-hordein|alpha2-Hordein in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QEFPQPEQPFPQQP
+890|gamma-hordein|Barley peptide B07|Immunogenic|Native|DQ2|62|12|QQFPQPQQPFPQ
+891|hor-2|Hordein/Secalin|Immunogenic|Native|DQ2.5|90|8|27|9|PQPQQPFPQ
+892|hor-2|Hordein/Secalin|Immunogenic|Deamidated|DQ2.5|90|8|27|9|PQPEQPFPQ
+893|Secalin|Rye peptide R05|Immunogenic|Deamidated|DQ2|62|16|GQPAPIQPEQPFPQQG
+894|Secalin|Rye peptide R05| R26|Immunogenic|Native|DQ2|62|20|PAPIQPQQPFPQQPQQPFPQ
+895|Secalin|Rye peptide R05|Immunogenic|Deamidated|DQ2|62|12|PAPIQPEQPFPQ
+896|Secalin|Rye peptide R05|Immunogenic|Native|DQ2|62|12|PAPIQPQQPFPQ
+897|Secalin|Rye peptide R12|Immunogenic|Native|DQ2|62|20|FPQQPQQPFPQPQQQLPLQP
+898|Secalin|Rye peptide R12|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQELPLQG
+899|Secalin|Rye peptide R12|Immunogenic|Native|DQ2|62|12|QPFPQPQQQLPL
+900|Secalin|Rye peptide R12|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQELPL
+901|Secalin|Rye peptide R29|Immunogenic|Native|DQ2|62|20|PTPIQPQQPFPQRPQQPFPQ
+902|Secalin|Rye peptide R29|Immunogenic|Native|DQ2|62|12|PFPQRPQQPFPQ
+903|Secalin|gamma1-Secalin in native form|Immunogenic|Native|DQ2|90|27|9|PQQSFPQQP
+904|Secalin|gamma1-Secalin in Deamidated form|Immunogenic|Deamidated|DQ2|90|27|9|PQQSFPEQP
+905|Secalin|Rye peptide R10|Immunogenic|Native|DQ2|62|20|FPLQPQQPFPQQPEQIISQQ
+906|Secalin|Rye peptide R10|Immunogenic|Native|DQ2|62|12|PFPQQPEQIISQ
+907|Secalin|Rye peptide R25|Immunogenic|Native|DQ2|62|20|FPQQPEQIISQQPQQPFPLQ
+908|Secalin|Rye peptide R25|Immunogenic|Native|DQ2|62|15|PEQIISQQPQQPFPL
+909|Secalin|Rye peptide R22|Immunogenic|Native|DQ2|62|20|PQQLFPLPQQPFPQPQQPFP
+910|Secalin|Rye peptide R22|Immunogenic|Native|DQ2|62|11|LFPLPQQPFPQ
+911|Secalin|alpha9-Secalin in native form|Immunogenic|Native|DQ2|8|14|PQQPFPQPQQPFPQ
+912|Secalin|alpha9-Secalin in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPFPQPQQPFPQ
+913|Secalin|alpha9-Secalin in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PQQPFPQPEQPFPQ
+914|Secalin|alpha9-Secalin in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPFPQPEQPFPQ
+915|Secalin|alpha2-Secalin in native form|Immunogenic|Native|DQ2|8|14|QPFPQPQQPFPQSQ
+916|Secalin|alpha2-Secalin in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QPFPQPEQPFPQSQ
+917|gamma-secalin|Rye peptide R21|Immunogenic|Native|DQ2|62|20|NMQVGPSGQVEWPQQQPLPQ
+918|gamma-secalin|Rye peptide R21|Immunogenic|Native|DQ2|62|16|GMQVGPSGEVEWPQQG
+919|gamma-secalin|Rye peptide R21|Immunogenic|Native|DQ2|62|12|QVGPSGQVEWPQ
+920|gamma-secalin|Rye peptide R21|Immunogenic|Native|DQ2|62|12|QVGPSGEVEWPQ
+921|gamma-secalin|Rye peptide R13| R28|Immunogenic|Native|DQ2|62|20|SPQPQQPYPQQPFPQQPQQP
+922|gamma-secalin|Rye peptide R13|Immunogenic|Deamidated|DQ2|62|16|GQPEQPYPEQPFPQQG
+923|gamma-secalin|Rye peptide R13|Immunogenic|Native|DQ2|62|12|PQQPYPQQPFPQ
+924|gamma-secalin|Rye peptide R13|Immunogenic|Deamidated|DQ2|62|12|PEQPYPEQPFPQ
+925|gamma-secalin|Rye peptide R23|Immunogenic|Native|DQ2|62|20|PQTQQPQQPFPQPQQPQQLF
+926|gamma-secalin|Rye peptide R23|Immunogenic|Native|DQ2|62|12|PQTQQPQQPFPQ
+927|gamma-secalin|Rye peptide R27|Immunogenic|Native|DQ2|62|20|PQEPQQLFPQSQQPQQPFPQ
+928|gamma-secalin|Rye peptide R27|Immunogenic|Native|DQ2|62|12|PQSQQPQQPFPQ
+929|gamma-secalin|Rye peptide R17|Immunogenic|Native|DQ2|62|20|QTQQSIPQPQQPFPQPQQPF
+930|gamma-secalin|Rye peptide R17|Immunogenic|Native|DQ2|62|12|QSIPQPQQPFPQ
+931|gamma-secalin|Rye peptide R02|Immunogenic|Native|DQ2|62|20|SIPQPQQPFPQPQQPFPQSQ
+932|gamma-secalin|Rye peptide R02|Immunogenic|Deamidated|DQ2|62|20|SIPQPQQPFPQPEQPFPQSQ
+933|gamma-secalin|Rye peptide R02|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQPFPQSG
+934|gamma-secalin|Rye peptide R02|Immunogenic|Deamidated|DQ2|62|13|QPFPQPEQPFPQS
+935|gamma-secalin|Rye peptide R02|Immunogenic|Native|DQ2|62|12|QPFPQPQQPFPQ
+936|gamma-secalin|Rye peptide R02|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPFPQ
+937|omega-Secalin|Rye peptide R07|Immunogenic|Native|DQ2|62|20|QYSPYQPQQPFPQPQQPTPI
+938|omega-Secalin|Rye peptide R07|Immunogenic|Deamidated|DQ2|62|16|GQYSPYQPEQPFPQPG
+939|omega-Secalin|Rye peptide R07|Immunogenic|Native|DQ2|62|12|YSPYQPQQPFPQ
+940|omega-Secalin|Rye peptide R07|Immunogenic|Deamidated|DQ2|62|12|YSPYQPEQPFPQ
+941|omega-Secalin|Rye peptide R03|Immunogenic|Deamidated|DQ2|62|16|GQQPFPQPEQPTPIQG
+942|omega-Secalin|Rye peptide R03| R04|Immunogenic|Native|DQ2|62|20|QPFPQPQQPTPIQPQQPFPQ
+943|omega-Secalin|Rye peptide R03|Immunogenic|Deamidated|DQ2|62|12|QPFPQPEQPTPI
+944|omega-Secalin|Rye peptide R03|Immunogenic|Native|DQ2|62|12|QPFPQPQQPTPI
+945|omega-Secalin|Rye peptide R04|Immunogenic|Deamidated|DQ2|62|16|GQPTPIQPEQPFPQQG
+946|omega-Secalin|Rye peptide R04|Immunogenic|Native|DQ2|62|12|PTPIQPQQPFPQ
+947|omega-Secalin|Rye peptide R04|Immunogenic|Deamidated|DQ2|62|12|PTPIQPEQPFPQ
+948|omega-Secalin|Rye peptide R01| R09|Immunogenic|Native|DQ2|62|20|QQLPLQPQQPFPQPQQPIPQ
+949|omega-Secalin|Rye peptide R09|Immunogenic|Native|DQ2|62|12|QLPLQPQQPFPQ
+950|omega-Secalin|Rye peptide R01|Immunogenic|Native|DQ2|62|12|QPFPQPQQPIPQ
+951|omega-Secalin|Sec-gamma1|Immunogenic|Native|DQ2|8|14|PQQPQQSFPQQPQR
+952|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPQQSFPQQPQR
+953|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PQQPEQSFPQQPQR
+954|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PQQPQQSFPEQPQR
+955|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPEQSFPQQPQR
+956|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPQQSFPEQPQR
+957|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PQQPEQSFPEQPQR
+958|omega-Secalin|Sec-gamma1 in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|PEQPEQSFPEQPQR
+959|omega-Secalin|Rye peptide R20|Immunogenic|Native|DQ2|62|20|EQIISQQPFPLQPQQPFSQP
+960|omega-Secalin|Rye peptide R20|Immunogenic|Native|DQ2|62|12|PFPLQPQQPFSQ
+961|omega-Secalin|Rye peptide R6|Immunogenic|Deamidated|DQ2|62|16|GQPQQPFPEQPEQIIG
+962|omega-Secalin|Rye peptide R06| R11| R16|Immunogenic|Native|DQ2|62|20|PQQPFPQQPEQIIPQQPQQP
+963|omega-Secalin|Rye peptide R6|Immunogenic|Native|DQ2|62|12|PQQPFPQQPEQI
+964|omega-Secalin|Rye peptide R6|Immunogenic|Deamidated|DQ2|62|12|PQQPFPEQPEQI
+965|omega-Secalin|Rye peptide R11|Immunogenic|Native|DQ2|62|16|QQPFPQQPEQIIPQQP
+966|omega-Secalin|Rye peptide R11|Immunogenic|Deamidated|DQ2|62|16|EQPFPEQPEQIIPQQP
+967|omega-Secalin|Rye peptide R11|Immunogenic|Deamidated|DQ2|62|16|GQPFPQQPEQIIPQQG
+968|omega-Secalin|Rye peptide R11|Immunogenic|Deamidated|DQ2|62|12|PFPQQPEQIIPQ
+969|omega-Secalin|Rye peptide R16|Immunogenic|Native|DQ2|62|12|PEQIIPQQPQQP
+970|omega-Secalin|Rye peptide R08|Immunogenic|Native|DQ2|62|20|SQQPQRPQQPFPQQPQQIIP
+971|omega-Secalin|Rye peptide R08|Immunogenic|Native|DQ2|62|13|RPQQPFPQQPQQI
+972|omega-Secalin|Rye peptide R15|Immunogenic|Native|DQ2|62|20|QPQQIIPQQPQQPFPLQPQQ
+973|omega-Secalin|Rye peptide R15|Immunogenic|Native|DQ2|62|12|IIPQQPQQPFPL
+974|omega-Secalin|Rye peptide R14| R19|Immunogenic|Native|DQ2|62|20|QQPQQPFPLQPQQPVPQQPQ
+975|omega-Secalin|Rye peptide R14|Immunogenic|Native|DQ2|62|16|QQPQQPFPLQPQQPVP
+976|omega-Secalin|Rye peptide R19|Immunogenic|Native|DQ2|62|16|QPFPLQPQQPVPQQPQ
+977|omega-Secalin|Rye peptide R18|Immunogenic|Native|DQ2|62|20|QQPFLLQPQQPFSQPQQPFL
+978|omega-Secalin|Rye peptide R18|Immunogenic|Native|DQ2|62|11|FLLQPQQPFSQ
+979|omega-Secalin|Rye peptide R24|Immunogenic|Native|DQ2|62|20|SPQQPQLPFPQPQQPFVVVV
+980|omega-Secalin|Rye peptide R24|Immunogenic|Deamidated|DQ2|62|20|SPQQPQLPFPQPEQPFVVVV
+981|omega-Secalin|Rye peptide R24|Immunogenic|Native|DQ2|62|12|LPFPQPQQPFVV
+982|omega-Secalin|Rye peptide R24|Immunogenic|Deamidated|DQ2|62|12|LPFPQPEQPFVV
+983|gamma-avenin|Av-alpha9B in native form|Immunogenic|Native|DQ2|8|14|QYQPYPEQQQPFVQ
+984|gamma-avenin|Av-alpha9B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QYQPYPEQEQPFVQ
+985|gamma-avenin|Homolog of oat avenin–derived T cell–stimulatory peptide in Deamidated form|Immunogenic|Deamidated|DQ2|62|15|EYQPYPEQEQPILQQ
+986|gamma-avenin|Homolog of oat avenin–derived T cell–stimulatory peptide in native form|Immunogenic|Native|DQ2|62|15|QYQPYPQQQQPILQQ
+987|ave-1b|gliadin alpha avenin-9|Immunogenic|Native|DQ2.5|90|18|8|9|PYPEQQQPF
+988|ave-1b|gliadin alpha avenin-9|Immunogenic|Deamidated|DQ2.5|90|18|8|9|PYPEQEQPF
+989|Avenin|T cell recognized Avenin epitope HPLC fraction 9|Immunogenic|Native|DQ2|18|31|TTTVQYDPSEQYQPYPEQQEPFVQQQPPFVQ
+990|Avenin|T cell recognized Avenin epitope HPLC fraction 4|Immunogenic|Native|DQ2|18|22|TTTVQYDPSEQYQPYPEQQEPF
+991|Avenin|T cell recognized Avenin epitope HPLC fraction 9|Immunogenic|Native|DQ2|18|28|TTTVQYNPSEQYQPYPEQQEPFVQQQPF
+992|Avenin|T cell recognized Avenin epitope HPLC fraction 9|Immunogenic|Native|DQ2|18|27|TTVQYNPSEQYQPYPEQQEPFVQQQPF
+993|Avenin|T cell recognized Avenin epitope HPLC fraction 9|Immunogenic|Native|DQ2|18|25|VQYNPSEQYQPYPEQQEPFVQQQPF
+994|Avenin|T cell recognized Avenin epitope HPLC fraction 3|Immunogenic|Native|DQ2|18|22|TTTVQYNPSEQYQPYPEQQEPF
+995|Avenin|T cell recognized Avenin epitope HPLC fraction 8|Immunogenic|Native|DQ2|18|29|TTTVQYDPSEQYQPYPEQQEPFVQQQQPF
+996|Avenin|T cell recognized Avenin epitope HPLC fraction 8|Immunogenic|Native|DQ2|18|30|TTTVQYNPSEQYQPYPEQQEPFVQQQQPFV
+997|Avenin|T cell recognized Avenin epitope HPLC fraction 9|Immunogenic|Native|DQ2|18|29|PSEQYQPYPEQQEPFVQQQQPFVQQQQPF
+998|Avenin|Avenin 1490 in native form|Immunogenic|Native|DQ2|18|19|SEQYQPYPEQQEPFVQQQQ
+999|Avenin|Avenin 1490 in Deamidated form|Immunogenic|Deamidated|DQ2|18|19|SEQYQPYPEQEEPFVQQQQ
+1000|Avenin|Av-alpha9A in native form|Immunogenic|Native|DQ2|8|14|QYQPYPEQQEPFVQ
+1001|Avenin|Av-alpha9A in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QYQPYPEQEEPFVQ
+1002|Avenin|Avenin 1505|Immunogenic|Native|DQ2|18|12|YQPYPEQQEPFV
+1003|Avenin|Avenin 1504 (deamidated form of Avenin 1505)|Immunogenic|Deamidated|DQ2|18|12|YQPYPEQEEPFV
+1004|ave-1|gliadin alpha avenin-9|Immunogenic|Native|DQ2.5|90|18|8|9|PYPEQQEPF
+1005|ave-1|gliadin alpha avenin-9|Immunogenic|Deamidated|DQ2.5|90|18|8|9|PYPEQEEPF
+1006|Avenin|Av-gamma2B|Immunogenic|Native|DQ2|8|14|QQPFVQQQQPFVQQ
+1007|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVQQQQPFVQQ
+1008|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVEQQQPFVQQ
+1009|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVEQQQPFVQQ
+1010|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVQEQQPFVQQ
+1011|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVQEQQPFVQQ
+1012|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVEEQQPFVQQ
+1013|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVEEQQPFVQQ
+1014|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVQQEQPFVQQ
+1015|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVQQEQPFVQQ
+1016|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVEQEQPFVQQ
+1017|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVEQEQPFVQQ
+1018|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVQEEQPFVQQ
+1019|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVQEEQPFVQQ
+1020|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|QQPFVEEEQPFVQQ
+1021|Avenin|Av-gamma2B in Deamidated form|Immunogenic|Deamidated|DQ2|8|14|EQPFVEEEQPFVQQ
+1022|Avenin|Avenin core epitope in native form|Immunogenic|Native|DQ2|27|9|FVQQQQQPF
+1023|Avenin|Avenin core epitope in Deamidated form|Immunogenic|Deamidated|DQ2|27|9|FVQQQEQPF
+1024|gamma-gliadin or LMW glutenin|Glu-21 minimal epitope  in considered native form|Immunogenic|Native|DQ2|19|12|QSEQSQQPFQPQ
+1025|glia-gamma 3| glia-gamma 1b|gamma gliadin|Immunogenic|Deamidated|DQ2.5 or DQ8|90|17|23|9|EQPQQPYPQ
+1026|glia-gamma 3| glia-gamma 1b|gamma gliadin|Immunogenic|Deamidated|DQ2.5 or DQ8|90|17|23|9|QQPQQPYPE
+1027|glia-gamma 3| glia-gamma 1b|gamma gliadin|Immunogenic|Deamidated|DQ2.5 or DQ8|90|78|23|9|EQPEQPYPQ
+1028|glia-gamma 3| glia-gamma 1b|CAUTION| 100% match to Candida protein / gamma gliadin|Immunogenic|Deamidated|DQ2.5 or DQ8|90|78|23|9|QQPEQPYPE
+1029|glia-gamma 3|gamma 5 gliadin|Immunogenic|Deamidated|DQ2.5|90|78|23|9|SQPEQQFPQ
+1030|glia-gamma 3|gamma 5 gliadin|Immunogenic|Deamidated|DQ2.5|90|78|23|9|SQPQQEFPQ
+1031|glia-gamma 1b| glia-gamma 4c|gammaVII-gliadin|Immunogenic|Deamidated|DQ2.5|90|17|25|9|QQPQQPFPE
+1032|glia-gamma 4c| glia-gamma 1b|gammaVII-gliadin|Immunogenic|Deamidated|DQ2.5|90|17|25|8|9|QQPEQPFPE
+1033|glia-gamma 4c| glia-gamma 1b|gammaVII-gliadin|Immunogenic|Deamidated|DQ2.5|90|17|25|9|EQPEQPFPE
+1034|glia-gamma 4c|gamma gliadin|Immunogenic|Native|DQ2.5|90|62|78|81|9|PQPQQPFCQ
+1035|glia-gamma 4d|gamma gliadin|Immunogenic|Deamidated|DQ2.5|90|62|78|81|9|PQPEQPFCQ
+1036|glia-gamma 4d|gamma gliadin|Immunogenic|Deamidated|DQ2.5|90|62|78|81|9|PQPQQPFCE
+1037|glia-gamma 4d|gamma gliadin|Immunogenic|Deamidated|DQ2.5|90|62|78|81|9|PQPEQPFCE
+1038|glia-gamma 4e|gliadin omega 1|Immunogenic|Native|DQ2.5|90|86|9|PQPQQPFSQ
+1039|glia-gamma 4e|gliadin omega 1|Immunogenic|Deamidated|DQ2.5|90|86|9|PQPEQPFSQ
+1040|glia-omega 3|gliadin omega 3|Immunogenic|Native|DQ2.5|90|86|9|PFPQPQQPI
+1041|glia-omega 3|gliadin omega 3|Immunogenic|Deamidated|DQ2.5|90|86|9|PFPQPEQPI
+1042|glia-omega 4|CAUTION 100% match to 2 Prunus sp. peptides / gliadin omega 4|Immunogenic|Native|DQ2.5|90|86|9|PQPQQPIPV
+1043|glia-omega 4|gliadin omega 4|Immunogenic|Deamidated|DQ2.5|90|86|9|PQPEQPIPV
+1044|glia-omega 5|gliadin omega 5|Immunogenic|Native|DQ2.5|90|86|9|LQPQQPFPQ
+1045|glia-omega 5|gliadin omega 5|Immunogenic|Deamidated|DQ2.5|90|86|9|LQPEQPFPQ
+1046|Avenin Q|avenin-gliadin like|Immunogenic|Native|DQ2 or DQ8|87|14|QQPFMQQQQPFMQP
+1047|Avenin Q-5|avenin-gliadin like|Immunogenic|Native|DQ2 or DQ8|88|14|QQPFVQQQQQPFVQ
+1048|glia-gamma 1|gamma gliadin 1|Immunogenic|Deamidated|DQ2.5|90|74|9|PEQSFPQQQ
+1049|glia-gamma 1|gamma gliadin|Immunogenic|Deamidated|DQ2.5|90|74|9|PEQSFPQQE
+1050|ave-1 06|Avenin gliadin like|Immunogenic|Native|DQ2.5|88|16|QYQPYPEQQQPILQQQ
+1051|ave-1 06|avenin-gliadin like|Immunogenic|Deamidated|DQ2.5|88|16|QYQPYPEQEQPILQQQ
+1052|ave-1 04|avenin-gliadin like|Immunogenic|Native|DQ2.5|88|16|QQYQPYPQQQPFMQPL
+1053|ave-1 04|avenin-gliadin like|Immunogenic|Deamidated|DQ2.5|88|16|EQYQPYPEQQPFMQPL
+||||||||

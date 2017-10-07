@@ -10,7 +10,6 @@ myRequests = requests.session()
 
 lampData = myRequests.get("http://biotechlab.fudan.edu.cn/database/lamp/db/lamp.fasta")
 
-with open('lampdb.csv','wb') as csvfile:
+with open('../downloads/lampdb.csv','wb') as csvfile:
 	csvfile.write(lampData.content)
 	csvfile.close()
-	
