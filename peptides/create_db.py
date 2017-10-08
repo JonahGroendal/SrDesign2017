@@ -1,8 +1,8 @@
 import db
 
 # create database
-db_object = peptide_db.PeptideDB()
+db_object = db.PeptideDB()
 
 # import csv
-db_object.import_csv("../csv/aonline_scrubbed.csv", delimiter=",")
+db_object.import_csv("../data/clean/allergenonline.csv")
 #db_object.import_csv("../csv/lampCleaned.csv")

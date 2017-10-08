@@ -18,8 +18,8 @@ class PeptideDB:
         self.sources = self.db[source_coll_name]
         # Create dictionary of fields for each collection
         self.collection_fields = {}
-        self.collection_fields["peptide"] = definitions.peptide
-        self.collection_fields["source"] = definitions.source
+        self.collection_fields["peptide"] = definitions.collection_fields["peptide"]
+        self.collection_fields["source"] = definitions.collection_fields["source"]
 
     def create_collections(self, source_coll_name="source", peptide_coll_name="peptide"):
         self.db.create_collection(peptide_coll_name)
@@ -63,7 +63,7 @@ class PeptideDB:
         for row in csv_list[2:]:
             document_data = {}
             for count, value in enumerate(row):
-                if csv_list[1][count] in collection_fields["peptide"]:
+                if csv_list[1][count] in self.collection_fields["peptide"]:
                     document_data[csv_list[1][count]] = self.convert_data_type("peptide", csv_list[1][count], value)
             document_data["url"] = source_url
             collection_data.append(document_data)
