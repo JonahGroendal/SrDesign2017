@@ -11,6 +11,7 @@
 			   ?>
 			   <li>
 				   <a class="page-scroll" href="login.php">Login</a>
+				   <a class="page-scroll" onclick="test()">TEST</a>
 			   </li>
 			   <?php
 			   } else {
