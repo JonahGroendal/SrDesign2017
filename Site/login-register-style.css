@@ -1,0 +1,21 @@
+.btn {
+    webkit-border-radius: 0px;
+    background-color: #D3D3D3;
+    border:2px #C3C3C3 solid;
+}
+
+.field-style{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.0);
+  border: none;
+  border-bottom: 2px solid;
+  outline: Black;
+  font-size:24px;
+}
+
+.borders {
+  border-radius: 0px;
+}
