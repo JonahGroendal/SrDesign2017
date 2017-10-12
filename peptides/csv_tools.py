@@ -1,10 +1,11 @@
 import definitions
+import xlrd
 
 class Scrub:
     def __init__(self, delimiter="|"):
         self.delimiter = delimiter
 
-    def csv_str_to_list(self, file_str):
+    def list_from_csv_str(self, file_str):
         lines = file_str.split("\n")
         for i in range(len(lines)):
             lines[i] = lines[i].split(self.delimiter)
@@ -17,10 +18,10 @@ class Scrub:
 
         return lines
 
-    def quoted_csv_str_to_list(self, file_str):
+    def list_from_quoted_csv_str(self, file_str):
         temp = self.delimiter
         self.delimiter='","'
-        file_list = self.csv_str_to_list(file_str)
+        file_list = self.list_from_csv_str(file_str)
         self.delimiter = temp
         file_list = self.remove_all(file_list, '"')
         # remove trailing line if it's empty
@@ -31,7 +32,7 @@ class Scrub:
         if empty: del file_list[len(file_list)-1]
         return file_list
 
-    def list_to_csv_str(self, file_list):
+    def csv_str_from_list(self, file_list):
         file_str = ""
         for row in file_list:
             for count, value in enumerate(row):
@@ -52,7 +53,7 @@ class Scrub:
     # Converts all field names of a formatted csv to lower case
     # Optionally, replace can be set to replace a field name.
     # replace can be used to override the lowercase conversion of a field name.
-    def conform_field_names_csv(self, file_str, replace={}):
+    def conform_field_names_csv(self, file_str, rename={}):
         split_str = file_str.split("\n", 2)
         for i in range(len(split_str)):
             # replace newline that split() removed
@@ -66,21 +67,24 @@ class Scrub:
                     split_str[i] = split_str[i].replace(key.lower(), replace[key])
         return ''.join(split_str)
 
-    def conform_field_names(self, file_list, replace={}):
+    # Converts all field names to lowercase
+    # Optionally, rename can be set to replace a field names.
+    def conform_field_names(self, file_list, rename={}):
         for i in range(len(file_list[1])):
-            file_list[1][i] = file_list[1][i].lower()
-            if file_list[1][i] in replace:
-                file_list[1][i] = replace[file_list[1][i]]
+            if file_list[1][i] in rename:
+                file_list[1][i] = rename[file_list[1][i]]
+            else:
+                file_list[1][i] = file_list[1][i].lower()
         return file_list
 
-    def convert_quoted_csv(self, file_str, current_delimiter=","):
+    def csv_from_quoted_csv(self, file_str, current_delimiter=","):
         self.delimiter = ","
-        file_list = self.csv_str_to_list(file_str)
+        file_list = self.list_from_csv_str(file_str)
         self.delimiter = '|'
         for row in file_list:
             for i in range(len(row)):
                 row[i] = row[i].replace('"', '')
-        return self.list_to_csv_str(file_list)
+        return self.csv_str_from_list(file_list)
 
     # Creates a new, boolean field based on the value in another field.
     # Ex: An existing "toxicity" field can contain the values "Toxic" or
@@ -132,9 +136,19 @@ class Scrub:
                 row[i] = row[i].replace(char, '')
         return file_list
 
+    def csv_from_excel(self, csv_file, workbook_filepath, sheet_name):
+        wb = xlrd.open_workbook(workbook_filepath)
+        sh = wb.sheet_by_name('Sheet1')
+        sh.row_values(rownum)
+
+
 class Inspect:
     def __init__(self):
         pass
+
+    def get_excel_sheet_names(self, workbook_filepath):
+        wb = xlrd.open_workbook(workbook_filepath)
+        return wb.sheets()
 
     # Assumes field names are on second line of file
     def get_field_values(self, file_str, field_name, only_unique=False):

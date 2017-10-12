@@ -6,7 +6,7 @@ collection_fields["peptide"] = {
     "name": {"type": str},
     "type": {"type": str},
     "source": {"type": str},
-    "hydrophobicity": {"type": int, "min": 0, "max": 100},
+    "hydrophobicity": {"type": float, "min": 0, "max": 1},
     "toxic": {"type": bool},
     "immunogenic": {"type": bool},
     "allergen": {"type": bool},
