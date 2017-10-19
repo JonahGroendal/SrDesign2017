@@ -1,9 +1,121 @@
-import definitions
+import definitions   # ./definitions.py
+import urllib.request
 import xlrd
+
+class Dataset:
+    # params (class attributes):
+    #   - source_info - A list in the form of:
+    #   [urlOfSource, InstitutionName, ContributorName1, ContributorName2, ... ContirbutorNameN]
+    #   - table - A 2D list with the first row being column names and the rest values
+    def __init__(self, source_info, table=None):
+        self.source_info = source_info
+        self.table = table
+
+    def import_from_csv(self, csv_str, delimiter="|"):
+        self.table = csv_str.split("\n")
+        for i in range(len(self.table)):
+            self.table[i] = self.table[i].split(delimiter)
+        # remove trailing line if it's empty
+        empty = True
+        print(self.table[len(self.table)-1])
+        for value in self.table[len(self.table)-1]:
+            if value != '' and value != None:
+                empty = False
+        if empty: del self.table[len(self.table)-1]
+
+    def to_csv_string(self, delimiter="|"):
+        csv_str = ""
+        for data in ((self.source_info,), self.table):
+            for row in data:
+                for count, value in enumerate(row):
+                    if value == True:
+                        csv_str += "1"
+                    elif value == False:
+                        csv_str += "0"
+                    else:
+                        csv_str += str(value)
+                    if count < len(row)-1:
+                        csv_str += delimiter
+                csv_str += "\n"
+        return csv_str
+
+    # Converts all field (column) names to lowercase
+    # Optionally, rename can be set to replace field names.
+    def conform_field_names(self, rename={}):
+        for i in range(len(self.table[0])):
+            if self.table[0][i] in rename:
+                self.table[0][i] = rename[self.table[0][i]]
+            else:
+                self.table[0][i] = self.table[0][i].lower()
+
+    # Creates a new, boolean field based on the value in another field.
+    # Ex: An existing "toxicity" field can contain the values "Toxic" or
+    # "Immunogenic". This fuction can create a new field named "Immunogenic"
+    # and insert into it the value "True" in every record that contains the value
+    # "Immunogenic" within the "toxicity" field.
+    # params:
+    #   file_list - a 2D list created from the csv
+    #   source_field - the field in which the original value is located (Ex: toxicity)
+    #   value - an existing value from within the field source_filed (Ex: Immunogenic)
+    #   assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
+    def create_bool_field_from_value(self, source_field, value, assume_false=False):
+        # add value as new field
+        self.table[0].append(value)
+        index = self.table[0].index(source_field)
+
+        for row in self.table[1:]:
+            if row[index] == value:
+                row.append(True)
+            else:
+                if assume_false:
+                    row.append(False)
+                else:
+                    row.append(None)
+
+    def remove_undefined_fields(self, collection_name):
+        fields = list(self.table[0]) # make a copy of field names
+        for field in fields:
+            if field not in definitions.collection_fields[collection_name]:
+                self.remove_field(field)
+
+    def remove_field(self, field):
+        index = self.table[0].index(field)
+        for row in self.table:
+            del row[index]
+
+    def remove_last_row(self):
+        del self.table[len(self.table)-1]
 
 class Scrub:
     def __init__(self, delimiter="|"):
         self.delimiter = delimiter
+
+    def read_from_file(self, filepath):
+        with open(filepath) as f:
+            file_str = f.read()
+        return file_str
+
+    def write_to_file(self, filepath, str_to_write):
+        with open(filepath, "w") as f:
+            f.write(str_to_write)
+
+    def download_html_to_file(self, filepath, url):
+        response = urllib.request.urlopen(url)
+        data = response.read()      # bytes object
+        html = data.decode('utf-8') # str
+        with open(filepath, "w") as f1:
+            f1.write(html)
+        return html
+
+    def csv_str_from_quoted_csv_str(self, file_str, current_delimiter=","):
+        temp = self.delimiter
+        self.delimiter = '","'
+        file_list = self.list_from_csv_str(file_str)
+        self.delimiter = temp
+        for row in file_list:
+            for i in range(len(row)):
+                row[i] = row[i].replace('"', '')
+        return self.csv_str_from_list(file_list)
 
     def list_from_csv_str(self, file_str):
         lines = file_str.split("\n")
@@ -17,20 +129,6 @@ class Scrub:
         if empty: del lines[len(lines)-1]
 
         return lines
-
-    def list_from_quoted_csv_str(self, file_str):
-        temp = self.delimiter
-        self.delimiter='","'
-        file_list = self.list_from_csv_str(file_str)
-        self.delimiter = temp
-        file_list = self.remove_all(file_list, '"')
-        # remove trailing line if it's empty
-        empty = True
-        for value in file_list[len(file_list)-1]:
-            if value != '' and value != None:
-                empty = False
-        if empty: del file_list[len(file_list)-1]
-        return file_list
 
     def csv_str_from_list(self, file_list):
         file_str = ""
@@ -50,10 +148,24 @@ class Scrub:
     def prepend_list(self, file_list, values):
         return [list(values)] + file_list
 
+    def list_from_quoted_csv_str(self, file_str):
+        temp = self.delimiter
+        self.delimiter='","'
+        file_list = self.list_from_csv_str(file_str)
+        self.delimiter = temp
+        file_list = self.remove_all(file_list, '"')
+        # remove trailing line if it's empty
+        empty = True
+        for value in file_list[len(file_list)-1]:
+            if value != '' and value != None:
+                empty = False
+        if empty: del file_list[len(file_list)-1]
+        return file_list
+
     # Converts all field names of a formatted csv to lower case
     # Optionally, replace can be set to replace a field name.
     # replace can be used to override the lowercase conversion of a field name.
-    def conform_field_names_csv(self, file_str, rename={}):
+    def conform_field_names(self, file_str, rename={}):
         split_str = file_str.split("\n", 2)
         for i in range(len(split_str)):
             # replace newline that split() removed
@@ -66,69 +178,6 @@ class Scrub:
                 for key in replace:
                     split_str[i] = split_str[i].replace(key.lower(), replace[key])
         return ''.join(split_str)
-
-    # Converts all field names to lowercase
-    # Optionally, rename can be set to replace a field names.
-    def conform_field_names(self, file_list, rename={}):
-        for i in range(len(file_list[1])):
-            if file_list[1][i] in rename:
-                file_list[1][i] = rename[file_list[1][i]]
-            else:
-                file_list[1][i] = file_list[1][i].lower()
-        return file_list
-
-    def csv_from_quoted_csv(self, file_str, current_delimiter=","):
-        self.delimiter = ","
-        file_list = self.list_from_csv_str(file_str)
-        self.delimiter = '|'
-        for row in file_list:
-            for i in range(len(row)):
-                row[i] = row[i].replace('"', '')
-        return self.csv_str_from_list(file_list)
-
-    # Creates a new, boolean field based on the value in another field.
-    # Ex: An existing "toxicity" field can contain the values "Toxic" or
-    # "Immunogenic". This fuction can create a new field named "Immunogenic"
-    # and insert into it the value "True" in every record that contains the value
-    # "Immunogenic" within the "toxicity" field.
-    # params:
-    #   file_list - a 2D list created from the csv
-    #   source_field - the field in which the original value is located (Ex: toxicity)
-    #   value - an existing value from within the field source_filed (Ex: Immunogenic)
-    #   assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
-    def create_bool_field_from_value(self, file_list, source_field, value, assume_false=False):
-        # add value as new field
-        file_list[1].append(value)
-        index = file_list[1].index(source_field)
-
-        for row in file_list[2:]:
-            if row[index] == value:
-                row.append(True)
-            else:
-                if assume_false:
-                    row.append(False)
-                else:
-                    row.append(None)
-        return file_list
-
-    def remove_field(self, file_list, field):
-        index = file_list[1].index(field)
-        for row in file_list[1:]:
-            del row[index]
-        return file_list
-
-    def remove_none_rows(self, file_list):
-        for i in range(len(file_list)):
-            if all(file_list[i]):
-                del file_list[i]
-        return file_list
-
-    def remove_unwanted_fields(self, file_list, document_name):
-        fields = list(file_list[1])
-        for field in fields:
-            if field not in definitions.collection_fields["peptide"]:
-                file_list = self.remove_field(file_list, field)
-        return file_list
 
     def remove_all(self, file_list, char):
         for row in file_list:
