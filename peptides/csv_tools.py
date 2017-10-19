@@ -17,7 +17,6 @@ class Dataset:
             self.table[i] = self.table[i].split(delimiter)
         # remove trailing line if it's empty
         empty = True
-        print(self.table[len(self.table)-1])
         for value in self.table[len(self.table)-1]:
             if value != '' and value != None:
                 empty = False
