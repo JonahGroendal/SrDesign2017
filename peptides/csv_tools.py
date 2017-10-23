@@ -4,14 +4,36 @@ import xlrd
 
 class Dataset:
     # params (class attributes):
-    #   - source_info - A list in the form of:
-    #   [urlOfSource, InstitutionName, ContributorName1, ContributorName2, ... ContirbutorNameN]
     #   - table - A 2D list with the first row being column names and the rest values
-    def __init__(self, source_info, table=None):
-        self.source_info = source_info
+    def __init__(self, csv_filepath=None, table=None):
         self.table = table
+        if csv_filepath is not None:
+            self.import_csv(csv_filepath)
 
-    def import_from_csv(self, csv_str, delimiter="|"):
+    def __iter__(self):
+        self.assert_iterability()
+        self.index = 0
+        return self
+
+    def __next__(self):
+        doc = {}
+        try:
+            for count in range(len(self.table[0])):
+                doc[self.table[0][count]] = self.table[self.index+1][count]
+        except IndexError:
+            raise StopIteration
+        else:
+            self.index += 1
+        return doc
+
+    def assert_iterability(self):
+        num_fields = len(self.table[0])
+        for row in self.table[1:]:
+            if len(row) != num_fields:
+                raise TypeError("{0} object is not iterable because a row is of different length than the rest".format(type(self)))
+
+    # Reads csv_str into self.table
+    def csv_into_table(self, csv_str, delimiter="|"):
         self.table = csv_str.split("\n")
         for i in range(len(self.table)):
             self.table[i] = self.table[i].split(delimiter)
@@ -22,20 +44,31 @@ class Dataset:
                 empty = False
         if empty: del self.table[len(self.table)-1]
 
+
+    def import_csv(self, filepath, delimiter="|"):
+        with open(filepath) as f:
+            file_str = f.read()
+        self.csv_into_table(file_str, delimiter)
+
+    # Exports self with identifier so it can be imported
+    def export_csv(self, filepath):
+        with open(filepath, "w") as f:
+            f.write(self.to_csv_string())
+
+    # Returns a string representation of self.table in csv format
     def to_csv_string(self, delimiter="|"):
         csv_str = ""
-        for data in ((self.source_info,), self.table):
-            for row in data:
-                for count, value in enumerate(row):
-                    if value == True:
-                        csv_str += "1"
-                    elif value == False:
-                        csv_str += "0"
-                    else:
-                        csv_str += str(value)
-                    if count < len(row)-1:
-                        csv_str += delimiter
-                csv_str += "\n"
+        for row in self.table:
+            for count, value in enumerate(row):
+                if value == True:
+                    csv_str += "1"
+                elif value == False:
+                    csv_str += "0"
+                else:
+                    csv_str += str(value)
+                if count < len(row)-1:
+                    csv_str += delimiter
+            csv_str += "\n"
         return csv_str
 
     # Converts all field (column) names to lowercase
