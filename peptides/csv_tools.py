@@ -11,26 +11,25 @@ class Dataset:
             self.import_csv(csv_filepath)
 
     def __iter__(self):
-        self.assert_iterability()
         self.index = 0
         return self
 
     def __next__(self):
+        unknown_count = 1
         doc = {}
         try:
-            for count in range(len(self.table[0])):
-                doc[self.table[0][count]] = self.table[self.index+1][count]
+            for col_index, value in enumerate(self.table[self.index+1]):
+                try:
+                    doc[self.table[0][col_index]] = value
+                except IndexError:
+                    # label for this col doesn't exist, use "unknown_n" as substitute
+                    doc["unknown_{0}".format(unknown_count)] = value
+                    unknown_count += 1
         except IndexError:
             raise StopIteration
         else:
             self.index += 1
         return doc
-
-    def assert_iterability(self):
-        num_fields = len(self.table[0])
-        for row in self.table[1:]:
-            if len(row) != num_fields:
-                raise TypeError("{0} object is not iterable because a row is of different length than the rest".format(type(self)))
 
     # Reads csv_str into self.table
     def csv_into_table(self, csv_str, delimiter="|"):
@@ -44,13 +43,12 @@ class Dataset:
                 empty = False
         if empty: del self.table[len(self.table)-1]
 
-
     def import_csv(self, filepath, delimiter="|"):
         with open(filepath) as f:
             file_str = f.read()
         self.csv_into_table(file_str, delimiter)
 
-    # Exports self with identifier so it can be imported
+    # Exports to csv
     def export_csv(self, filepath):
         with open(filepath, "w") as f:
             f.write(self.to_csv_string())
@@ -104,10 +102,10 @@ class Dataset:
                 else:
                     row.append(None)
 
-    def remove_undefined_fields(self, collection_name):
+    def remove_all_fields_except(self, keep_fields):
         fields = list(self.table[0]) # make a copy of field names
         for field in fields:
-            if field not in definitions.collection_fields[collection_name]:
+            if field not in keep_fields:
                 self.remove_field(field)
 
     def remove_field(self, field):

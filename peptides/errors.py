@@ -13,6 +13,6 @@ class ConflictingUpdateError(PeptidesError):
     def __init__(self, existing_document, conflicting_document):
         self.existing_document = existing_document
         self.conflicting_document = conflicting_document
-        super().__init__(("Field value of document in database conflicts with "
-                "field value of document being inserted. existing document: {0}"
-                " conflicing document: {1}").format(existing_document, conflicting_document))
+        super().__init__(("field value of document in database conflicts with "
+                "field value of document being inserted\n    existing document: {0}"
+                "\n    conflicing document: {1}").format(existing_document, conflicting_document))

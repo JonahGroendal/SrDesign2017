@@ -2,6 +2,7 @@ import sys
 sys.path.append('../')
 
 import csv_tools
+import definitions
 
 #http://www.allergenonline.org/celiacbrowse.shtml
 
@@ -16,6 +17,6 @@ allergenonline.conform_field_names()
 allergenonline.create_bool_field_from_value("toxicity", "Immunogenic", assume_false=True)
 allergenonline.create_bool_field_from_value("toxicity", "Toxic", assume_false=True)
 allergenonline.conform_field_names()
-allergenonline.remove_undefined_fields("peptide")
+allergenonline.remove_all_fields_except([k for k in definitions.collection_peptide["fields"]])
 allergenonline.export_csv("../../data/clean/allergenonline.csv")
 #scrub.write_to_file("../../data/clean/allergenonline.csv", allergenonline.to_csv_string())

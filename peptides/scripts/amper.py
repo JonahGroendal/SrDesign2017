@@ -2,6 +2,7 @@ import sys
 sys.path.append('../')
 import csv_tools
 from bs4 import BeautifulSoup
+import definitions
 
 scrub = csv_tools.Scrub()
 
@@ -20,10 +21,8 @@ for row in table.find_all("tr"):
 del table_list[0][len(table_list[0])-1]
 
 # Conform field names and remove undefined fields
-amper = csv_tools.Dataset(("http://www.cnbi2.com/cgi-bin/amp.pl", ("Division of Infectious Diseases, "
-        "Department of Medicine, Faculty of Medicine, University of British Columbia, Vancouver, BC, "
-"Canada"), "Fjell CD", "Hancock RE", "Cherkasov A"), table=table_list)
+amper = csv_tools.Dataset(table=table_list)
 amper.conform_field_names(rename={"HydrophobicFraction": "hydrophobicity", "Source Organism": "source"})
-amper.remove_undefined_fields("peptide")
+amper.remove_all_fields_except([k for k in definitions.collection_peptide["fields"]])
 
 scrub.write_to_file("../../data/clean/amper.csv", amper.to_csv_string())

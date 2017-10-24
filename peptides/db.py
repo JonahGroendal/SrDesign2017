@@ -4,11 +4,10 @@ import definitions
 import errors
 import csv_tools
 
-class PeptideDB:
-    def __init__(self, db_name, source_collection_name, peptide_collection_name):
+class DB:
+    def __init__(self, db_name, collection_definitions):
         self.db_name = db_name
-        self.source_collection_name = source_collection_name
-        self.peptide_collection_name = peptide_collection_name
+        self.collections = collection_definitions
         # Connect to server
         self.client = MongoClient()
         # Use desired database
@@ -17,25 +16,42 @@ class PeptideDB:
         existing_dbs = self.client.database_names()
         if self.db_name not in existing_dbs:
             print("Creating collections...")
-            self.create_collections(source_collection_name, peptide_collection_name)
-        # Create attributes for collections
-        self.peptides = self.db[peptide_collection_name]
-        self.sources = self.db[source_collection_name]
+            self.create_collections()
 
     # Creates collections. Names of collections are specified with *args
     # Names of all collections must exist in definitions.collections
     # Automatically indexes collections
-    def create_collections(self, *args):
-        for collection_name in args:
-            self.db.create_collection(collection_name)
+    def create_collections(self):
+        for collection in self.collections:
+            self.db.create_collection(collection["name"])
             collection_keys = []
-            for field in definitions.indexed_fields(collection_name):
-                if field in definitions.unique_indexed_fields(collection_name):
+            for field in self.indexed_fields(collection):
+                if field in self.unique_indexed_fields(collection):
                     collection_keys.append((field, 1))
                 else:
-                    self.db[collection_name].create_index(field, unique=False)
+                    self.db[collection["name"]].create_index(field, unique=False)
             if len(collection_keys) > 0:
-                self.db[collection_name].create_index(collection_keys, unique=True)
+                self.db[collection["name"]].create_index(collection_keys, unique=True)
+
+    # Returns fields with attribute "indexed"
+    def indexed_fields(self, collection):
+        for field in collection["fields"]:
+            if "indexed" in collection["fields"][field]:
+                yield field
+    # Returns fields with attribute "indexed":{"unique":True}
+    def unique_indexed_fields(self, collection):
+        for field in collection["fields"]:
+            if "indexed" in collection["fields"][field]:
+                if collection["fields"][field]["indexed"]["unique"] is True:
+                    yield field
+
+class PeptideDB(DB):
+    def __init__(self, db_name, source_coll_def, peptide_coll_def):
+        super().__init__(db_name, (source_coll_def, peptide_coll_def))
+        self.source_coll_def = source_coll_def
+        self.peptide_coll_def = peptide_coll_def
+        self.sources = self.db[source_coll_def["name"]]
+        self.peptides = self.db[peptide_coll_def["name"]]
 
     def import_dataset(self, filepath, source_doc):
         # Import cleaned csv back into a Dataset object
@@ -47,14 +63,14 @@ class PeptideDB:
         for peptide_doc in dataset:
             # Convert strings to correct data types
             for field in peptide_doc:
-                peptide_doc[field] = self.convert_data_type(self.db_name, field, peptide_doc[field])
+                peptide_doc[field] = self.convert_data_type(self.peptide_coll_def, field, peptide_doc[field])
 
             # Insert into database
             try:
                 self.insert_peptide_doc(peptide_doc, source_id)
             # If already in database, augment existing document instead
             except pymongo.errors.WriteError:
-                uif = list(definitions.unique_indexed_fields(self.peptide_collection_name))
+                uif = list(self.unique_indexed_fields(self.peptide_coll_def))
                 peptide_doc_uif = {k:v for k,v in peptide_doc.items() if k in uif}
                 print("{0} already exists. Merging data...".format(peptide_doc_uif))
                 self.augment_peptide_doc(peptide_doc, source_id)
@@ -66,7 +82,7 @@ class PeptideDB:
 
     def augment_peptide_doc(self, fields_to_add, source_id):
         fields_to_add = self.embed_source_id(fields_to_add, source_id)
-        uif = list(definitions.unique_indexed_fields(self.peptide_collection_name))
+        uif = list(self.unique_indexed_fields(self.peptide_coll_def))
         fields_to_add_uif = {k:v for k,v in fields_to_add.items() if k in uif}
         fields_to_add = {k:v for k,v in fields_to_add.items() if k not in uif}
         peptide_doc = self.peptides.find_one(fields_to_add_uif)
@@ -74,6 +90,10 @@ class PeptideDB:
         for field in fields_to_add:
             if field in peptide_doc:
                 if fields_to_add[field]["value"] != peptide_doc[field]["value"]:
+                    peptide_doc.pop("_id")
+                    fields_to_add.update(fields_to_add_uif)
+                    peptide_doc = self.remove_source_id(peptide_doc)
+                    fields_to_add = self.remove_source_id(fields_to_add)
                     raise errors.ConflictingUpdateError(peptide_doc, fields_to_add)
                 elif fields_to_add[field]["sources"][0] not in peptide_doc[field]["sources"]:
                     fields_to_add[field]["sources"].extend(peptide_doc[field]["sources"])
@@ -99,26 +119,34 @@ class PeptideDB:
         return source_id
 
     def embed_source_id(self, peptide_doc, source_id):
-        embedded_dict = {}
+        doc = {}
         for field in peptide_doc:
-            if field in definitions.unique_indexed_fields(self.peptide_collection_name):
+            if field in self.unique_indexed_fields(self.peptide_coll_def):
                 # Don't embed source_id
-                embedded_dict[field] = peptide_doc[field]
+                doc[field] = peptide_doc[field]
             else:
                 # Embed source_id
-                embedded_dict[field] = {"value": peptide_doc[field], "sources": [source_id]}
-        return embedded_dict
+                doc[field] = {"value": peptide_doc[field], "sources": [source_id]}
+        return doc
+
+    def remove_source_id(self, peptide_doc):
+        doc = {}
+        doc = dict(peptide_doc)
+        for field in doc:
+            if type(doc[field]) is dict and "value" in doc[field]:
+                doc[field] = doc[field]["value"]
+        return doc
 
     def validate_document(self, doc, source_or_peptide):
         pass
 
-    def convert_data_type(self, coll_name, field_name, data):
+    def convert_data_type(self, collection, field_name, data):
         # Ensure field is defined
-        if field_name not in definitions.collections[coll_name]:
+        if field_name not in collection["fields"]:
             raise errors.UndefinedFieldError(field_name)
 
         # If this field's data type is bool, convert by hand
-        if definitions.collections[coll_name][field_name]["type"] is bool:
+        if collection["fields"][field_name]["type"] is bool:
             if data == "1" or data == "True" or data == "true":
                 return True
             elif data == "0" or data == "False" or data == "false":
@@ -127,4 +155,4 @@ class PeptideDB:
                 return bool(data)
         # Otherwise use this data type's function for conversion
         else:
-            return definitions.collections[coll_name][field_name]["type"](data)
+            return collection["fields"][field_name]["type"](data)
