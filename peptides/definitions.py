@@ -14,13 +14,15 @@ collection_peptide = {
         "hydrophobicity": {"type": float, "min": 0, "max": 1},
         "toxic": {"type": bool},
         "immunogenic": {"type": bool},
+        "insecticidal": {"type": bool},
         "allergen": {"type": bool},
-        "antiviral": {"type": bool},
-        "antimicrobial": {"type": bool},
         "antibacterial": {"type": bool},
-        "antihyptertensive": {"type": bool},
         "anticancer": {"type": bool},
-        "antiparasitic": {"type": bool}
+        "antifungal": {"type": bool},
+        "antihyptertensive": {"type": bool},
+        "antimicrobial": {"type": bool},
+        "antiparasitic": {"type": bool},
+        "antiviral": {"type": bool}
     }
 }
 collection_source = {
