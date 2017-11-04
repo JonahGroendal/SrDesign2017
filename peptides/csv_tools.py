@@ -4,7 +4,7 @@ import xlrd
 
 class Dataset:
     # params (class attributes):
-    #   - table - A 2D list with the first row being column names and the rest values
+    #   - table - A 2D list with the first row being column names and the rest data
     def __init__(self, csv_filepath=None, table=None):
         self.table = table
         if csv_filepath is not None:
@@ -18,9 +18,15 @@ class Dataset:
         unknown_count = 1
         doc = {}
         try:
-            for col_index, value in enumerate(self.table[self.index+1]):
+            for col_index, value in enumerate(self.table[self.index + 1]):
                 try:
-                    doc[self.table[0][col_index]] = value
+                    col_name = self.table[0][col_index]
+                    if col_name in doc:
+                        if type(doc[col_name]) is not list:
+                            doc[col_name] = list((doc[col_name],))
+                        doc[col_name].append(value)
+                    else:
+                        doc[col_name] = value
                 except IndexError:
                     # label for this col doesn't exist, use "unknown_n" as substitute
                     doc["unknown_{0}".format(unknown_count)] = value
@@ -78,9 +84,12 @@ class Dataset:
             else:
                 self.table[0][i] = self.table[0][i].lower()
 
-    # Creates a new, boolean field based on the value in another field.
-    # Ex: An existing "toxicity" field can contain the values "Toxic" or
-    # "Immunogenic". This fuction can create a new field named "Immunogenic"
+    def remove_duplicate_rows(self):
+        self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
+
+    # Creates a new boolean field based on the value in another field.
+    # Ex: An existing "toxicity" field contains the values "Toxic" or
+    # "Immunogenic" or both. This fuction can create a new field named "Immunogenic"
     # and insert into it the value "True" in every record that contains the value
     # "Immunogenic" within the "toxicity" field.
     # params:
@@ -103,7 +112,7 @@ class Dataset:
                     row.append(None)
 
     def remove_all_fields_except(self, keep_fields):
-        fields = list(self.table[0]) # make a copy of field names
+        fields = list(self.table[0])  # make a copy of field names
         for field in fields:
             if field not in keep_fields:
                 self.remove_field(field)
@@ -114,7 +123,7 @@ class Dataset:
             del row[index]
 
     def remove_last_row(self):
-        del self.table[len(self.table)-1]
+        del self.table[len(self.table) - 1]
 
 class Scrub:
     def __init__(self, delimiter="|"):
@@ -131,8 +140,8 @@ class Scrub:
 
     def download_html_to_file(self, filepath, url):
         response = urllib.request.urlopen(url)
-        data = response.read()      # bytes object
-        html = data.decode('utf-8') # str
+        data = response.read()          # bytes object
+        html = data.decode('utf-8')     # str
         with open(filepath, "w") as f1:
             f1.write(html)
         return html
@@ -153,10 +162,10 @@ class Scrub:
             lines[i] = lines[i].split(self.delimiter)
         # remove trailing line if it's empty
         empty = True
-        for value in lines[len(lines)-1]:
-            if value != '' and value != None:
+        for value in lines[len(lines) - 1]:
+            if value != '' and value is not None:
                 empty = False
-        if empty: del lines[len(lines)-1]
+        if empty: del lines[len(lines) - 1]
 
         return lines
 
@@ -164,13 +173,13 @@ class Scrub:
         file_str = ""
         for row in file_list:
             for count, value in enumerate(row):
-                if value == True:
+                if value is True:
                     file_str += "1"
-                elif value == False:
+                elif value is False:
                     file_str += "0"
                 else:
                     file_str += str(value)
-                if count < len(row)-1:
+                if count < len(row) - 1:
                     file_str += self.delimiter
             file_str += "\n"
         return file_str
@@ -180,16 +189,16 @@ class Scrub:
 
     def list_from_quoted_csv_str(self, file_str):
         temp = self.delimiter
-        self.delimiter='","'
+        self.delimiter = '","'
         file_list = self.list_from_csv_str(file_str)
         self.delimiter = temp
         file_list = self.remove_all(file_list, '"')
         # remove trailing line if it's empty
         empty = True
-        for value in file_list[len(file_list)-1]:
-            if value != '' and value != None:
+        for value in file_list[len(file_list) - 1]:
+            if value != '' and value is not None:
                 empty = False
-        if empty: del file_list[len(file_list)-1]
+        if empty: del file_list[len(file_list) - 1]
         return file_list
 
     # Converts all field names of a formatted csv to lower case
