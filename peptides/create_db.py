@@ -2,7 +2,7 @@ import db
 import definitions
 
 # create database
-db_object = db.PeptideDB("peptide", definitions.collection_source, definitions.collection_peptide)
+db_object = db.PeptideDB(db_name="peptide")
 
 # import csv
 db_object.import_dataset("../data/clean/allergenonline.csv", {

@@ -1,5 +1,6 @@
 import pymongo
 from pymongo import MongoClient
+import definitions
 import errors
 import csv_tools
 
@@ -64,12 +65,12 @@ class DB:
                     yield field
 
 class PeptideDB(DB):
-    def __init__(self, db_name, source_coll_def, peptide_coll_def):
-        super().__init__(db_name, (source_coll_def, peptide_coll_def))
-        self.source_coll_def = source_coll_def
-        self.peptide_coll_def = peptide_coll_def
-        self.sources = self.db[source_coll_def["name"]]
-        self.peptides = self.db[peptide_coll_def["name"]]
+    def __init__(self, db_name="peptide"):
+        self.source_coll_def = definitions.collection_source
+        self.peptide_coll_def = definitions.collection_peptide
+        super().__init__(db_name, (self.source_coll_def, self.peptide_coll_def))
+        self.sources = self.db[self.source_coll_def["name"]]
+        self.peptides = self.db[self.peptide_coll_def["name"]]
 
     def import_dataset(self, filepath, source_doc):
         # Import cleaned csv back into a Dataset object
