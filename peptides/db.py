@@ -80,11 +80,15 @@ class PeptideDB(DB):
         source_id = self.insert_source_doc(source_doc, replace_existing=True)
 
         for peptide_doc in dataset:
+            # Remove None fields
+            for field_name in list(peptide_doc):
+                if peptide_doc[field_name] == "None":
+                    peptide_doc.pop(field_name)
             # Convert strings to correct data types
             for field_name in peptide_doc:
                 peptide_doc[field_name] = self.convert_data_type(
-                        self.peptide_coll_def["fields"][field_name],
-                        peptide_doc[field_name])
+                    self.peptide_coll_def["fields"][field_name],
+                    peptide_doc[field_name])
             # Insert into database
             try:
                 self.insert_peptide_doc(peptide_doc, source_id)

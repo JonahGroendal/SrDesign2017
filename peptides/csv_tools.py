@@ -3,9 +3,16 @@ import urllib.request
 import xlrd
 
 class Dataset:
-    # params (class attributes):
-    #   - table - A 2D list with the first row being column names and the rest data
+    """
+    For clarity, the term "field" refers to A COLUMN IN self.table where
+    self.table[0] equals the "field_name"
+    """
+
     def __init__(self, csv_filepath=None, table=None):
+        """
+        params (class attributes):
+            table - A 2D list with the first row being column names and the rest data
+        """
         self.table = table
         if csv_filepath is not None:
             self.import_csv(csv_filepath)
@@ -37,47 +44,49 @@ class Dataset:
             self.index += 1
         return doc
 
-    # Reads csv_str into self.table
     def csv_into_table(self, csv_str, delimiter="|"):
+        """ Reads csv_str into self.table """
         self.table = csv_str.split("\n")
         for i in range(len(self.table)):
             self.table[i] = self.table[i].split(delimiter)
         # remove trailing line if it's empty
         empty = True
-        for value in self.table[len(self.table)-1]:
-            if value != '' and value != None:
+        for value in self.table[len(self.table) - 1]:
+            if value != '' and value is not None:
                 empty = False
-        if empty: del self.table[len(self.table)-1]
+        if empty: del self.table[len(self.table) - 1]
 
-    def import_csv(self, filepath, delimiter="|"):
-        with open(filepath) as f:
+    def import_csv(self, filepath, delimiter="|", encoding="utf-8"):
+        with open(filepath, encoding=encoding) as f:
             file_str = f.read()
         self.csv_into_table(file_str, delimiter)
 
-    # Exports to csv
     def export_csv(self, filepath):
+        """ Exports to csv """
         with open(filepath, "w") as f:
             f.write(self.to_csv_string())
 
-    # Returns a string representation of self.table in csv format
     def to_csv_string(self, delimiter="|"):
+        """ Returns a string representation of self.table in csv format """
         csv_str = ""
         for row in self.table:
             for count, value in enumerate(row):
-                if value == True:
+                if value is True:
                     csv_str += "1"
-                elif value == False:
+                elif value is False:
                     csv_str += "0"
                 else:
                     csv_str += str(value)
-                if count < len(row)-1:
+                if count < len(row) - 1:
                     csv_str += delimiter
             csv_str += "\n"
         return csv_str
 
-    # Converts all field (column) names to lowercase
-    # Optionally, rename can be set to replace field names.
     def conform_field_names(self, rename={}):
+        """
+        Converts all field (column) names to lowercase
+        Optionally, rename can be set to replace field names.
+        """
         for i in range(len(self.table[0])):
             if self.table[0][i] in rename:
                 self.table[0][i] = rename[self.table[0][i]]
@@ -87,23 +96,27 @@ class Dataset:
     def remove_duplicate_rows(self):
         self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
 
-    # Creates a new boolean field based on the value in another field.
-    # Ex: An existing "toxicity" field contains the values "Toxic" or
-    # "Immunogenic" or both. This fuction can create a new field named "Immunogenic"
-    # and insert into it the value "True" in every record that contains the value
-    # "Immunogenic" within the "toxicity" field.
-    # params:
-    #   file_list - a 2D list created from the csv
-    #   source_field - the field in which the original value is located (Ex: toxicity)
-    #   value - an existing value from within the field source_filed (Ex: Immunogenic)
-    #   assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
     def create_bool_field_from_value(self, source_field, value, assume_false=False):
+        """
+        Creates a new boolean field based on the value in another field.
+
+        Ex: An existing "toxicity" field contains the values "Toxic" or
+        "Immunogenic" or both. This fuction can create a new field named "Immunogenic"
+        and insert into it the value "True" in every record that contains the value
+        "Immunogenic" within the "toxicity" field.
+
+        params:
+            file_list - a 2D list created from the csv
+            source_field - the field in which the original value is located (Ex: toxicity)
+            value - an existing value from within the field source_filed (Ex: Immunogenic)
+            assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
+        """
         # add value as new field
         self.table[0].append(value)
         index = self.table[0].index(source_field)
 
         for row in self.table[1:]:
-            if row[index] == value:
+            if value in row[index]:        # changed from row[index] == value might've broken another script
                 row.append(True)
             else:
                 if assume_false:
@@ -125,12 +138,34 @@ class Dataset:
     def remove_last_row(self):
         del self.table[len(self.table) - 1]
 
+    def remove_rows_where_equals(self, field_name, value):
+        """ Removes all rows where column of field == value """
+        index = self.table[0].index(field_name)
+        indices_to_delete = []
+        for count, row in enumerate(self.table):
+            if row[index] == value:
+                indices_to_delete.append(count)
+        for i in range(len(indices_to_delete)):
+            del self.table[indices_to_delete[len(indices_to_delete) - 1 - i]]
+
+    def combine_rows(self, row_indices):
+        new_row_index = row_indices[0]
+        for index in row_indices[1:]:
+            self.table[new_row_index].extend(self.table[index])
+        for index in row_indices[1:]:
+            del self.table[index]
+
+    def unique_values_of_field(self, field_name):
+        """ Returns list of all unique values for a field """
+        index = self.table[0].index(field_name)
+        return list(set([v[index] for v in self.table[1:]]))
+
 class Scrub:
     def __init__(self, delimiter="|"):
         self.delimiter = delimiter
 
-    def read_from_file(self, filepath):
-        with open(filepath) as f:
+    def read_from_file(self, filepath, encoding="utf-8"):
+        with open(filepath, encoding=encoding) as f:
             file_str = f.read()
         return file_str
 

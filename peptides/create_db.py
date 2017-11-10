@@ -16,4 +16,7 @@ db_object.import_dataset("../data/clean/amper.csv", {
             " of Medicine, University of British Columbia, Vancouver, BC, Canada"),
     "authors": ["Fjell CD", "Hancock RE", "Cherkasov A"]
 })
-#db_object.import_dataset("../csv/lampCleaned.csv")
+db_object.import_dataset("../data/clean/lamp.csv", {
+    "url": "http://biotechlab.fudan.edu.cn/database/lamp/",
+    "institution": "Fudan University"
+})
