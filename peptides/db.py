@@ -170,3 +170,13 @@ class PeptideDB(DB):
             if type(doc[field]) is dict and "value" in doc[field]:
                 doc[field] = doc[field]["value"]
         return doc
+
+    def export_peptides_to_csv(self, filepath, field_names):
+        cursor = self.peptides.find({}, {v: True for v in field_names})
+        documents = []
+        peptides = csv_tools.Dataset()
+        peptides.column_names = field_names
+        for document in cursor:
+            document.pop("_id")
+            peptides.append_row(self.remove_source_id(document))
+        peptides.export_csv(filepath, pretty=True)

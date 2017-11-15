@@ -20,9 +20,10 @@ for row in table.find_all("tr"):
     table_list.append([td.get_text() for td in row.find_all("td")])
 del table_list[0][len(table_list[0])-1]
 
-# Conform field names and remove undefined fields
-amper = csv_tools.Dataset(table=table_list)
-amper.conform_field_names(rename={"HydrophobicFraction": "hydrophobicity", "Source Organism": "source"})
-amper.remove_all_fields_except([k for k in definitions.collection_peptide["fields"]])
+# Conform column names and remove undefined columns
+amper = csv_tools.Dataset()
+amper.table = table_list
+amper.conform_column_names(rename={"HydrophobicFraction": "hydrophobicity", "Source Organism": "source"})
+amper.remove_all_columns_except([k for k in definitions.collection_peptide["fields"]])
 
 scrub.write_to_file("../../data/clean/amper.csv", amper.to_csv_string())

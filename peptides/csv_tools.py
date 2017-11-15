@@ -1,21 +1,32 @@
-import definitions   # ./definitions.py
 import urllib.request
 import xlrd
 
 class Dataset:
     """
-    For clarity, the term "field" refers to A COLUMN IN self.table where
-    self.table[0] equals the "field_name"
+    For clarity, the term "column" refers to A COLUMN IN self.table where
+    self.table[0] == self.column_names
     """
 
-    def __init__(self, csv_filepath=None, table=None):
+    def __init__(self, csv_filepath=None, column_names=[None]):
         """
         params (class attributes):
             table - A 2D list with the first row being column names and the rest data
         """
-        self.table = table
+        self.table = [[]]
         if csv_filepath is not None:
             self.import_csv(csv_filepath)
+
+    @property
+    def column_names(self):
+        return self.table[0]
+
+    @column_names.setter
+    def column_names(self, v):
+        self.table[0] = v
+
+    @column_names.deleter
+    def column_names(self):
+        self.table[0] = [None]
 
     def __iter__(self):
         self.index = 0
@@ -27,7 +38,7 @@ class Dataset:
         try:
             for col_index, value in enumerate(self.table[self.index + 1]):
                 try:
-                    col_name = self.table[0][col_index]
+                    col_name = self.column_names[col_index]
                     if col_name in doc:
                         if type(doc[col_name]) is not list:
                             doc[col_name] = list((doc[col_name],))
@@ -43,6 +54,12 @@ class Dataset:
         else:
             self.index += 1
         return doc
+
+    def append_row(self, row_dict):
+        row = [None] * len(self.column_names)
+        for key in row_dict:
+            row[self.column_names.index(key)] = row_dict[key]
+        self.table.append(row)
 
     def csv_into_table(self, csv_str, delimiter="|"):
         """ Reads csv_str into self.table """
@@ -61,59 +78,72 @@ class Dataset:
             file_str = f.read()
         self.csv_into_table(file_str, delimiter)
 
-    def export_csv(self, filepath):
+    def export_csv(self, filepath, pretty=False):
         """ Exports to csv """
         with open(filepath, "w") as f:
-            f.write(self.to_csv_string())
+            f.write(self.to_csv_string(pad_values=pretty))
 
-    def to_csv_string(self, delimiter="|"):
+    def to_csv_string(self, delimiter="|", pad_values=False):
         """ Returns a string representation of self.table in csv format """
+        def pad(value, index):
+            if pad_values:
+                format_str = "{{:<{}}}".format(col_lengths[index])
+                return format_str.format(value)
+            else:
+                return value
+
+        if pad_values:
+            col_lengths = [None] * len(self.column_names)
+            for i, v in enumerate(col_lengths):
+                column_values = [c[i] for c in self.table]
+                col_lengths[i] = max([len(str(x)) for x in column_values])
+
         csv_str = ""
         for row in self.table:
             for count, value in enumerate(row):
                 if value is True:
-                    csv_str += "1"
+                    csv_str += pad("1", count)
                 elif value is False:
-                    csv_str += "0"
+                    csv_str += pad("0", count)
                 else:
-                    csv_str += str(value)
+                    csv_str += pad(str(value), count)
                 if count < len(row) - 1:
                     csv_str += delimiter
             csv_str += "\n"
         return csv_str
 
-    def conform_field_names(self, rename={}):
+    def conform_column_names(self, rename={}):
         """
-        Converts all field (column) names to lowercase
-        Optionally, rename can be set to replace field names.
+        Converts all column names to lowercase.
+        Optionally, rename can be set to replace column names.
         """
-        for i in range(len(self.table[0])):
-            if self.table[0][i] in rename:
-                self.table[0][i] = rename[self.table[0][i]]
+        for i in range(len(self.column_names)):
+            if self.column_names[i] in rename:
+                self.column_names[i] = rename[self.column_names[i]]
             else:
-                self.table[0][i] = self.table[0][i].lower()
+                self.column_names[i] = self.column_names[i].lower()
 
     def remove_duplicate_rows(self):
         self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
 
-    def create_bool_field_from_value(self, source_field, value, assume_false=False):
+    def create_bool_column_from_value(self, source_column, value, assume_false=False):
         """
-        Creates a new boolean field based on the value in another field.
+        Creates a new boolean column based on the value in another column.
 
-        Ex: An existing "toxicity" field contains the values "Toxic" or
-        "Immunogenic" or both. This fuction can create a new field named "Immunogenic"
+        Ex: An existing "toxicity" column contains the values "Toxic" or
+        "Immunogenic" or both. This fuction can create a new column named "Immunogenic"
         and insert into it the value "True" in every record that contains the value
-        "Immunogenic" within the "toxicity" field.
+        "Immunogenic" within the "toxicity" column.
 
         params:
             file_list - a 2D list created from the csv
-            source_field - the field in which the original value is located (Ex: toxicity)
-            value - an existing value from within the field source_filed (Ex: Immunogenic)
+            source_column - the column in which the original value is located (Ex: toxicity)
+            value - an existing value from within the column source_filed (Ex: Immunogenic)
             assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
         """
-        # add value as new field
-        self.table[0].append(value)
-        index = self.table[0].index(source_field)
+        # add value as new column
+        self.column_names.append(value)
+        index = self.column_names.index(source_column)
 
         for row in self.table[1:]:
             if value in row[index]:        # changed from row[index] == value might've broken another script
@@ -124,23 +154,23 @@ class Dataset:
                 else:
                     row.append(None)
 
-    def remove_all_fields_except(self, keep_fields):
-        fields = list(self.table[0])  # make a copy of field names
-        for field in fields:
-            if field not in keep_fields:
-                self.remove_field(field)
+    def remove_all_columns_except(self, keep_columns):
+        columns = list(self.column_names)  # make a copy of column names
+        for column in columns:
+            if column not in keep_columns:
+                self.remove_column(column)
 
-    def remove_field(self, field):
-        index = self.table[0].index(field)
+    def remove_column(self, column):
+        index = self.column_names.index(column)
         for row in self.table:
             del row[index]
 
     def remove_last_row(self):
         del self.table[len(self.table) - 1]
 
-    def remove_rows_where_equals(self, field_name, value):
-        """ Removes all rows where column of field == value """
-        index = self.table[0].index(field_name)
+    def remove_rows_where_equals(self, column_name, value):
+        """ Removes all rows where value of column == value """
+        index = self.column_names.index(column_name)
         indices_to_delete = []
         for count, row in enumerate(self.table):
             if row[index] == value:
@@ -155,9 +185,9 @@ class Dataset:
         for index in row_indices[1:]:
             del self.table[index]
 
-    def unique_values_of_field(self, field_name):
-        """ Returns list of all unique values for a field """
-        index = self.table[0].index(field_name)
+    def unique_values_of_column(self, column_name):
+        """ Returns list of all unique values for a column """
+        index = self.column_names.index(column_name)
         return list(set([v[index] for v in self.table[1:]]))
 
 class Scrub:
@@ -236,19 +266,19 @@ class Scrub:
         if empty: del file_list[len(file_list) - 1]
         return file_list
 
-    # Converts all field names of a formatted csv to lower case
-    # Optionally, replace can be set to replace a field name.
-    # replace can be used to override the lowercase conversion of a field name.
-    def conform_field_names(self, file_str, rename={}):
+    # Converts all column names of a formatted csv to lower case
+    # Optionally, replace can be set to replace a column name.
+    # replace can be used to override the lowercase conversion of a column name.
+    def conform_column_names(self, file_str, rename={}):
         split_str = file_str.split("\n", 2)
         for i in range(len(split_str)):
             # replace newline that split() removed
             if i != 2:
                 split_str[i] = split_str[i] + '\n'
             if i == 1:
-                # convert field names to lowercase
+                # convert column names to lowercase
                 split_str[i] = split_str[i].lower()
-                # replace fields
+                # replace columns
                 for key in replace:
                     split_str[i] = split_str[i].replace(key.lower(), replace[key])
         return ''.join(split_str)
@@ -273,36 +303,36 @@ class Inspect:
         wb = xlrd.open_workbook(workbook_filepath)
         return wb.sheets()
 
-    # Assumes field names are on second line of file
-    def get_field_values(self, file_str, field_name, only_unique=False):
-        field_index = self.get_field_index(file_str, field_name)
+    # Assumes column names are on second line of file
+    def get_column_values(self, file_str, column_name, only_unique=False):
+        column_index = self.get_column_index(file_str, column_name)
         lines = file_str.split("\n")
         values = []
         for line in lines[2:]:
             line_values = line.split(self.delimiter)
             if only_unique:
-                if line_values[field_index] not in values:
-                    values.append(line_values[field_index])
+                if line_values[column_index] not in values:
+                    values.append(line_values[column_index])
             else:
-                values.append(line_values[field_index])
+                values.append(line_values[column_index])
         return values
 
-    # Assumes field names are on second line of file
+    # Assumes column names are on second line of file
     # substring of file can be given as arugment
-    def get_field_index(self, file_str, field_name):
+    def get_column_index(self, file_str, column_name):
         lines = file_str.split("\n", 2)
         for line_count, line in enumerate(lines):
             if line_count == 1:
-                fields = line.split(self.delimiter)
-                for field_count, field in enumerate(fields):
-                    if field == field_name:
-                        return field_count
+                columns = line.split(self.delimiter)
+                for column_count, column in enumerate(columns):
+                    if column == column_name:
+                        return column_count
 
-    def get_row_indexes_where_equals(self, file_list, field, value):
-        field_index = file_list[1].index(field)
+    def get_row_indexes_where_equals(self, file_list, column, value):
+        column_index = file_list[1].index(column)
         indexes = []
         for count, row in enumerate(file_list):
             if count > 1:
-                if row[field_index] == value:
+                if row[column_index] == value:
                     indexes.append(count)
         return indexes
