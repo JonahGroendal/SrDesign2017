@@ -52,6 +52,18 @@
   max-width: 800px;
 }
 
+.tabepage {
+	background-color: rgba(255, 255, 255, .8);
+    outline: #000000 solid thin;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-bottom: 1%;
+	padding-top:1%;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1600px;
+}
+
 textarea:focus, input:focus{
     outline: none;
 }

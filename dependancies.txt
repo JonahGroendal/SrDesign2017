@@ -1,1 +1,9 @@
+#!/bin/sh
+sudo apt-get update
+
+#LAMP: Ubuntu 16.04, Apache2, MongoDB, PHP7, and python3 (python3 should be installed by default, this is precautionary)
+sudo apt-get install apache2 libapache2-mod-php7.0 mongodb-org-server python3 -y
+
+#Need to install pip3 before you can use pip3 -y
+sudo apt-get install python3-pip -y
 sudo pip3 install xlrd

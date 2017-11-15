@@ -1,0 +1,141 @@
+
+lots of investigating you can do before then looking at sites. As we have 
+discussed, even though you have signed NDAs we are not exposing you to
+details of anything happening at Zoetis and you must clear any public 
+mention of Zoetis beforehand.
+
+Our overall long term goal is to build a free (Richard Stallings) database from
+free online sources (50 +) on peptides:
+* a survey of current (50+) online sources
+* papers and references
+* tools for helping download, validate and merge various data sources
+* downloaded of (12+) databases with sequences - activities
+* various feature vector extraction and selection methods, with code
+* various ML methods. with code
+
+Initially we are interested only in sequences shorter than 51 amino acids
+and actually measured activities. Known inactive peptides and toxic peptides 
+are of interest. We only want to use "unrestricted" databases.
+
+We can define releases based on completing the steps below and
+putting them into "stories"
+
+These steps need to be documented and automated as much as reasonable,
+python may be the choice of code, but others can be considered. It 
+appears that SVMs (Support Vector Machines) are often used as the ML 
+(Machine Learning) engine here, DL (Deep Learning) might be interesting 
+and others will likely come up.
+
+We will collect and build up references for you and explain them as we go.
+The initial chapter passed out was chapter 14 Feature Extraction from
+"Machine Learning Approaches to Bioinformatics" (Science, Engineering, and i
+Biology Informatics) 1st Edition by Zheng Rong Yang (2010).   I'll go over thie
+in more detail with you after break.
+
+---------------------------------------------------------
+
+Initially, get some background in Peptides and activities. I can review this 
+with you and talk about some ways this is done. Some of these we have used in
+computational chemistry (e.g.rosetta, BLAST) as well as statistical machine learning 
+(SVMs, fuzzy clustering etc...). You will also need brief introductions to ML methods
+you see, such as SVMs via Trenary and me.
+
+At some point, after checking the 50+ sites, a review of needed ML software 
+that might be used should be done and selected. python packages, R packages, 
+SAS, IBM, Google, ... 
+
+I suspect the down loads (when possible), clean ups and merging will be done
+via careful python scripts and the process carefully documented.. 
+ 
+Divide up the 50 database sites into 10 per person for initial review (note the 5 
+"important" sites). You should:
+* look for general peptide database review papers.
+* check for other peptide databases available?
+* review the CAMP site, as that is the one I already downloaded and validated.
+
+-------------------------------------------------------------------
+RELEASE 1
+Consider what we should look for on the sites for initial review (this can be modified 
+when we meet after initially reviewing sites), this should likely become a checklist 
+and "other". Here is a start to consider:
+1) Title and Location of database
+     url, country, organization
+     Preferred reference to database in publications
+2) Date review was done 
+3) Purpose of Database
+4) Status
+   Is database live? 
+   Is it temporally offline? 
+   Has it moved?
+   How active is it?
+   Date Created and date of last update
+   Is it being updated?
+   Published references to database
+   Size of database 
+5) Licensing type of database
+6) Source of Peptides 
+   (are there any central sites with "standard" peptide IDs, beyond these sites)
+8) What peptide information can be downloaded, 
+   sequence, activities and beyond ... (3D folding structure?)
+9) What activities are available 
+   (anti-fungal, anti-viral, anti-bacterial, anti-cancer, toxic, ...)
+   We will want canonical names for activities later
+10) Can activities be selected as measured vs computed
+   Does lack of an activity mean it was tested and is no present or that it was not tested?
+11) Are peptides with no activity included, meaning they were tested and there is no activity
+12) Are peptide naturally occurring
+13) Are there papers/references on the database?
+   Any papers/references on feature extraction or feature selection?
+   Is the solution of the feature extraction problem for peptides clearly defined 
+   Is the solution of the feature selection problem for the peptides clearly defined 
+   Any papers/references on applying ML to the database, what accuracy is claimed?
+   What ML method(s) was applied? 
+   Can these (feature extraction, feature selection, ML) be applied independently of the 
+     site with either supplied code or code we can get or write.
+14) Does the site supply online prediction of activity for inputed peptides.
+   Can it be applied independently applied of the site for an arbitrary peptide, with either
+     provided code or code we can get or write.
+
+Email Bob, Dillon and me with any questions as you work on these.
+After we look at the 50+ sites we will refine this list and complete the survey.
+
+Next we will select the "best" 12 sites, for each:
+    download documentation, papers and licenses
+    download raw information and document it
+    clean up an validate raw information
+    canonicalize information: sequence, activities 
+    code for generating feature vectors... when possible
+
+Next a Survey paper.
+
+-------------------------------------------------------------------
+Release 2
+Next we join canonical information into a single resource : 
+   sequence, activities, 
+   We will need to know is an activity is missing, if it means it is not 
+      active (FALSE) or simply if it was not tested (NA - Not Available)
+   It may be best to keep separate databases for each activity 
+   list of sources where each sequence appears
+
+Next generation of feature vectors using any of the site methods or combining
+them and then using feature selection methods.
+
+Next generation of site ML procedures to apply to each sites' data and 
+validate results,  with information/paper from site
+
+Review measuring ML performance by resampling or cross-validation.
+(Kapenga and Trenary, you code em )
+
+-------------------------------------------------------------------
+Release 3
+
+Next apply ML to joined database(s).
+
+Much later it might be interested for others to compare the results using 
+the joined database and methods with those on a site, which might require 
+downloading of more of the database.
+
+Also later downloading, cleaning,  joining ... more databases following 
+the same methods may be interesting if it appears useful.
+
+

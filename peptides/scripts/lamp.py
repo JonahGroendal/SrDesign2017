@@ -30,8 +30,8 @@ lamp.table[5454][1] = lamp.table[5454][1] + lamp.table[5454][2]
 del lamp.table[5454][2]
 # Exclude all besides "experimental"
 lamp.remove_rows_where_equals("found", "Predicted")
-lamp.remove_rows_where_equals("found", "Patent")
-lamp.remove_rows_where_equals("found", "patent")
+# lamp.remove_rows_where_equals("found", "Patent")
+# lamp.remove_rows_where_equals("found", "patent")
 # Separate activities into their own boolean columns
 # Only using assume_false=True if there are many records with this property
 lamp.create_bool_column_from_value("activities", "Antibacterial", assume_false=True)
