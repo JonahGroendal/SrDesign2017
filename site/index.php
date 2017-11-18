@@ -1,22 +1,21 @@
-<?php session_start(); ?>
 <head>
-    <?php include 'commonLinks.php'; ?>
+    <?php
+		include 'php/commonLinks.php';
+		include 'php/header.php';
+	?>
 </head>
-<body background="res/Homepagebackground.jpg" style="background-position: top center;">
-    <?php include 'header.php'; ?>
     <div class="page">
       <h1>Peptide Database Project</h1>
     </div>
     <div class="page" style="margin-top:10px">
-        <h3>About Us</h3>
+        <h3>About</h3>
         <h4>
-            This website was created to present a collaborated database of peptides.
+            This website has a collection of many different peptide databases used for machine learning purposes.
         </h4>
     </div>
     <div class="page" style="margin-top:10px">
-        <h3>Contact</h3>
-        <h4>Mailing Address:<br>---</h4>
-        <h4>Phone:<br>---</h4>
-        <h4>Email:<br>---</h4>
+        <h3>
+			<a href="php/database.php">Go to Database</a>
+		</h3>
     </div>
 </body>
