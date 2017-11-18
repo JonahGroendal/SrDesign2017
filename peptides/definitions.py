@@ -1,8 +1,8 @@
 # Dictionary of fields that defines each collection
 # Each dictionary represents a collection
 # Indexed but not unique fields contain an {"indexed": { "unique": False}} attribute
-# Unique, indexed fields contain a {"unique": {"indexed": True}}
-# Unique, indexed fields will be indexed together as a compound index and
+# Indexed unique fields contain a {"unique": {"indexed": True}}
+# Indexed unique fields will be indexed together as a compound index and
 # are together used to identify each peptide in peptides.db
 collection_peptide = {
     "name": "peptide",

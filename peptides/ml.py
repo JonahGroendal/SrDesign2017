@@ -54,7 +54,7 @@ class LinearSVM:
             self.input_data["x"]["protein_{0}".format(count)] = []
 
         dbo = db.PeptideDB()
-        input_cursor = dbo.peptides.find({"toxic": {"$exists": True}}, {"sequence": True, "toxic": True})
+        input_cursor = dbo.peptides.find({"antifungal": {"$exists": True}}, {"sequence": True, "antifungal": True})
         for cursor_doc in input_cursor:
             sequence = list(cursor_doc["sequence"])
             sequence_len = len(sequence)
@@ -68,7 +68,7 @@ class LinearSVM:
                 if example_id < 0:
                     example_id *= -1
                 example_id = str(example_id)
-                self.input_data["y"].append(cursor_doc["toxic"]["value"])
+                self.input_data["y"].append(cursor_doc["antifungal"]["value"])
                 self.input_data["x"]["example_id"].append(example_id)
                 for count, letter in enumerate(sequence):
                     self.input_data["x"]["protein_{0}".format(count)].append(letter)

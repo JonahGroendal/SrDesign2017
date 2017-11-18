@@ -13,7 +13,7 @@ db_object.import_dataset("../data/clean/allergenonline.csv", {
 db_object.import_dataset("../data/clean/amper.csv", {
     "url": "http://www.cnbi2.com/cgi-bin/amp.pl",
     "institution": ("Division of Infectious Diseases, Department of Medicine, Faculty"
-            " of Medicine, University of British Columbia, Vancouver, BC, Canada"),
+        " of Medicine, University of British Columbia, Vancouver, BC, Canada"),
     "authors": ["Fjell CD", "Hancock RE", "Cherkasov A"]
 })
 db_object.import_dataset("../data/clean/lamp.csv", {

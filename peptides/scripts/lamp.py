@@ -4,13 +4,15 @@ sys.path.append('../')
 import csv_tools
 import definitions
 
+# http://biotechlab.fudan.edu.cn/database/lamp/db/lamp.fasta
+
 lamp = csv_tools.Dataset()
 lamp.import_csv("../../data/downloads/lampdb.csv", encoding="ISO-8859-1")
 # sequence is stored in every other row, combine to fix
 for i in range(int(len(lamp.table) / 2)):
     lamp.combine_rows((i, i + 1))
 # Insert header row
-lamp.table.insert(0, ["id", "patent_details", "source", "syn_or_nat", "found", "activities", "sequence"])
+lamp.column_names = ["id", "patent_details", "source", "syn_or_nat", "found", "activities", "sequence"]
 # Fix rows that contained an extra "|"
 lamp.table[1092][1] = lamp.table[1092][1] + lamp.table[1092][2]
 del lamp.table[1092][2]
@@ -30,8 +32,8 @@ lamp.table[5454][1] = lamp.table[5454][1] + lamp.table[5454][2]
 del lamp.table[5454][2]
 # Exclude all besides "experimental"
 lamp.remove_rows_where_equals("found", "Predicted")
-lamp.remove_rows_where_equals("found", "Patent")
-lamp.remove_rows_where_equals("found", "patent")
+#lamp.remove_rows_where_equals("found", "Patent")
+#lamp.remove_rows_where_equals("found", "patent")
 # Separate activities into their own boolean columns
 # Only using assume_false=True if there are many records with this property
 lamp.create_bool_column_from_value("activities", "Antibacterial", assume_false=True)

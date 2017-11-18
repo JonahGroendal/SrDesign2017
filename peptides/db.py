@@ -52,6 +52,48 @@ class DB:
         else:
             return field_definition["data_type"](data)
 
+    def adheres_to_defined_constraints(self, field_definition, data):
+        def data_type(data):
+            # Recursively validate items in (nested) lists
+            if type(field_definition["data_type"]) is dict and \
+               list in field_definition["data_type"]:
+                for value in data:
+                    if not self.is_valid_data(field_definition["data_type"][list], value):
+                        return False
+                return True
+            else:
+                return type(data) is field_definition["data_type"]
+
+        def magnitude(data):
+            try:
+                return len(data)
+            except TypeError:
+                return data
+
+        def min_(data):
+            if magnitude(data) >= field_definition["min"]:
+                return True
+            return False
+
+        def max_(data):
+            if magnitude(data) <= field_definition["max"]:
+                return True
+            return False
+
+        constraint_checkers = {
+            "data_type": data_type,
+            "min": min_,
+            "max": max_
+        }
+
+        for constraint_name in field_definition:
+            if constraint_name != "indexed":
+                is_valid = constraint_checkers[constraint_name](data)
+                if not is_valid:
+                    return False
+
+        return True
+
     # Returns fields with attribute "indexed" (unique or otherwise)
     def indexed_fields(self, collection):
         for field in collection["fields"]:
@@ -79,16 +121,31 @@ class PeptideDB(DB):
         # Insert source document and save its ID
         source_id = self.insert_source_doc(source_doc, replace_existing=True)
 
+        docs_to_insert = []
         for peptide_doc in dataset:
             # Remove None fields
             for field_name in list(peptide_doc):
                 if peptide_doc[field_name] == "None":
                     peptide_doc.pop(field_name)
-            # Convert strings to correct data types
+            # Convert strings to correct data types and validate
             for field_name in peptide_doc:
                 peptide_doc[field_name] = self.convert_data_type(
                     self.peptide_coll_def["fields"][field_name],
                     peptide_doc[field_name])
+
+                if not (
+                    self.adheres_to_defined_constraints(
+                        self.peptide_coll_def["fields"][field_name],
+                        peptide_doc[field_name])
+                ):
+                    raise errors.ViolationOfDefinedConstraintError(
+                        {field_name: self.peptide_coll_def["fields"][field_name]},
+                        peptide_doc)
+
+            docs_to_insert.append(peptide_doc)
+
+        for peptide_doc in docs_to_insert:
+            print(peptide_doc)
             # Insert into database
             try:
                 self.insert_peptide_doc(peptide_doc, source_id)
@@ -96,7 +153,7 @@ class PeptideDB(DB):
             except pymongo.errors.WriteError:
                 uif = list(self.unique_indexed_fields(self.peptide_coll_def))
                 peptide_doc_uif = {k: v for k, v in peptide_doc.items() if k in uif}
-                print("{0} already exists. Merging data...".format(peptide_doc_uif))
+                #print("{0} already exists. Merging data...".format(peptide_doc_uif))
                 self.augment_peptide_doc(peptide_doc, source_id)
 
     def insert_peptide_doc(self, peptide_doc, source_id):

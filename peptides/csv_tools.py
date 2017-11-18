@@ -3,16 +3,25 @@ import xlrd
 
 class Dataset:
     """
-    For clarity, the term "column" refers to A COLUMN IN self.table where
-    self.table[0] == self.column_names
+    This class is primarily used to clean csv files. A csv can be read into memory
+    with import_csv(), cleaned using the other functions, and exported to file with
+    export_csv().
+
+    This class has two attributes: a 2D list named self.table, and
+    a list named column_names. self.table contains the data for the dataset.
+    self.column_names IS self.table[0], it is the header for the table
+    (self.column_names and self.table[0] can be used interchangeably).
+
+    Instances of this class are iterable. When iterated over, a dictionary
+    representing each row in self.table is returned. The dictionary is a COPY
+    of what's in self.table, so changing values in the returned dictionary does
+    not effect the data in self.table.
     """
 
     def __init__(self, csv_filepath=None, column_names=[None]):
-        """
-        params (class attributes):
-            table - A 2D list with the first row being column names and the rest data
-        """
+
         self.table = [[]]
+        column_names = column_names
         if csv_filepath is not None:
             self.import_csv(csv_filepath)
 
@@ -55,12 +64,121 @@ class Dataset:
             self.index += 1
         return doc
 
+    ##########################
+    # IMPORT / EXPORT
+    ##########################
+    def import_csv(self, filepath, delimiter="|", encoding="utf-8"):
+        """ import csv into self.table """
+        with open(filepath, encoding=encoding) as f:
+            file_str = f.read()
+        self.csv_into_table(file_str, delimiter)
+
+    def export_csv(self, filepath, pretty=False):
+        """ Exports to csv """
+        with open(filepath, "w") as f:
+            f.write(self.to_csv_string(pad_values=pretty))
+
+    ##########################
+    # ROW OPERATIONS
+    ##########################
     def append_row(self, row_dict):
+        """ append a row of data to self.table """
         row = [None] * len(self.column_names)
         for key in row_dict:
             row[self.column_names.index(key)] = row_dict[key]
         self.table.append(row)
 
+    def remove_last_row(self):
+        """ remove last row in self.table """
+        del self.table[len(self.table) - 1]
+
+    def remove_rows_where_equals(self, column_name, value):
+        """ Removes all rows where value of column == value """
+        index = self.column_names.index(column_name)
+        indices_to_delete = []
+        for count, row in enumerate(self.table):
+            if row[index] == value:
+                indices_to_delete.append(count)
+        for i in range(len(indices_to_delete)):
+            del self.table[indices_to_delete[len(indices_to_delete) - 1 - i]]
+
+    def combine_rows(self, row_indices):
+        """
+        Combines data from all specified row_indices in self.table into
+        self.table[row_indices[0]]
+        """
+        new_row_index = row_indices[0]
+        for index in row_indices[1:]:
+            self.table[new_row_index].extend(self.table[index])
+        for index in row_indices[1:]:
+            del self.table[index]
+
+    def remove_duplicate_rows(self):
+        """ removes any rows that contain all the same data as another row """
+        self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
+
+    ##########################
+    # COLUMN OPERATIONS
+    ##########################
+    def conform_column_names(self, rename={}):
+        """
+        Converts all column names to lowercase.
+        Optionally, rename can be set to replace column names.
+        """
+        for i in range(len(self.column_names)):
+            if self.column_names[i] in rename:
+                self.column_names[i] = rename[self.column_names[i]]
+            else:
+                self.column_names[i] = self.column_names[i].lower()
+
+    def create_bool_column_from_value(self, source_column, value, assume_false=False):
+        """
+        Creates a new boolean column based on the value in another column.
+
+        Ex: An existing "toxicity" column contains the values "Toxic" or
+        "Immunogenic" or both. This fuction can create a new column named "Immunogenic"
+        and insert into it the value "True" in every record that contains the value
+        "Immunogenic" within the "toxicity" column.
+
+        params:
+            source_column - the column in which the original value is located (Ex: toxicity)
+            value - an existing value from within the column source_filed (Ex: Immunogenic)
+            assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
+        """
+        # add value as new column
+        self.column_names.append(value)
+        index = self.column_names.index(source_column)
+
+        for row in self.table[1:]:
+            if value in row[index]:
+                row.append(True)
+            else:
+                if assume_false:
+                    row.append(False)
+                else:
+                    row.append(None)
+
+    def remove_all_columns_except(self, keep_column_names):
+        """ removes all columns in self.table besides those specified """
+        columns = list(self.column_names)  # make a copy of column names
+        for column in columns:
+            if column not in keep_column_names:
+                self.remove_column(column)
+
+    def remove_column(self, column_name):
+        """ remove column from self.table whose column name is column_name """
+        index = self.column_names.index(column_name)
+        for row in self.table:
+            del row[index]
+
+    def unique_values_of_column(self, column_name):
+        """ Returns list of all unique values for a column """
+        index = self.column_names.index(column_name)
+        return list(set([v[index] for v in self.table[1:]]))
+
+    ##########################
+    # HELPER METHODS
+    ##########################
     def csv_into_table(self, csv_str, delimiter="|"):
         """ Reads csv_str into self.table """
         self.table = csv_str.split("\n")
@@ -73,18 +191,12 @@ class Dataset:
                 empty = False
         if empty: del self.table[len(self.table) - 1]
 
-    def import_csv(self, filepath, delimiter="|", encoding="utf-8"):
-        with open(filepath, encoding=encoding) as f:
-            file_str = f.read()
-        self.csv_into_table(file_str, delimiter)
-
-    def export_csv(self, filepath, pretty=False):
-        """ Exports to csv """
-        with open(filepath, "w") as f:
-            f.write(self.to_csv_string(pad_values=pretty))
-
     def to_csv_string(self, delimiter="|", pad_values=False):
-        """ Returns a string representation of self.table in csv format """
+        """
+        Returns a string representation of self.table in csv format.
+        If pad_values, each string in a column will be the same length (padded
+        with spaces)
+        """
         def pad(value, index):
             if pad_values:
                 format_str = "{{:<{}}}".format(col_lengths[index])
@@ -112,84 +224,6 @@ class Dataset:
             csv_str += "\n"
         return csv_str
 
-    def conform_column_names(self, rename={}):
-        """
-        Converts all column names to lowercase.
-        Optionally, rename can be set to replace column names.
-        """
-        for i in range(len(self.column_names)):
-            if self.column_names[i] in rename:
-                self.column_names[i] = rename[self.column_names[i]]
-            else:
-                self.column_names[i] = self.column_names[i].lower()
-
-    def remove_duplicate_rows(self):
-        self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
-
-    def create_bool_column_from_value(self, source_column, value, assume_false=False):
-        """
-        Creates a new boolean column based on the value in another column.
-
-        Ex: An existing "toxicity" column contains the values "Toxic" or
-        "Immunogenic" or both. This fuction can create a new column named "Immunogenic"
-        and insert into it the value "True" in every record that contains the value
-        "Immunogenic" within the "toxicity" column.
-
-        params:
-            file_list - a 2D list created from the csv
-            source_column - the column in which the original value is located (Ex: toxicity)
-            value - an existing value from within the column source_filed (Ex: Immunogenic)
-            assume_false - assume the nonexistance of value to mean "False". If false, inserts "None"
-        """
-        # add value as new column
-        self.column_names.append(value)
-        index = self.column_names.index(source_column)
-
-        for row in self.table[1:]:
-            if value in row[index]:        # changed from row[index] == value might've broken another script
-                row.append(True)
-            else:
-                if assume_false:
-                    row.append(False)
-                else:
-                    row.append(None)
-
-    def remove_all_columns_except(self, keep_columns):
-        columns = list(self.column_names)  # make a copy of column names
-        for column in columns:
-            if column not in keep_columns:
-                self.remove_column(column)
-
-    def remove_column(self, column):
-        index = self.column_names.index(column)
-        for row in self.table:
-            del row[index]
-
-    def remove_last_row(self):
-        del self.table[len(self.table) - 1]
-
-    def remove_rows_where_equals(self, column_name, value):
-        """ Removes all rows where value of column == value """
-        index = self.column_names.index(column_name)
-        indices_to_delete = []
-        for count, row in enumerate(self.table):
-            if row[index] == value:
-                indices_to_delete.append(count)
-        for i in range(len(indices_to_delete)):
-            del self.table[indices_to_delete[len(indices_to_delete) - 1 - i]]
-
-    def combine_rows(self, row_indices):
-        new_row_index = row_indices[0]
-        for index in row_indices[1:]:
-            self.table[new_row_index].extend(self.table[index])
-        for index in row_indices[1:]:
-            del self.table[index]
-
-    def unique_values_of_column(self, column_name):
-        """ Returns list of all unique values for a column """
-        index = self.column_names.index(column_name)
-        return list(set([v[index] for v in self.table[1:]]))
-
 class Scrub:
     def __init__(self, delimiter="|"):
         self.delimiter = delimiter
@@ -203,10 +237,10 @@ class Scrub:
         with open(filepath, "w") as f:
             f.write(str_to_write)
 
-    def download_html_to_file(self, filepath, url):
+    def download_html_to_file(self, filepath, url, encoding="utf-8"):
         response = urllib.request.urlopen(url)
         data = response.read()          # bytes object
-        html = data.decode('utf-8')     # str
+        html = data.decode(encoding)     # str
         with open(filepath, "w") as f1:
             f1.write(html)
         return html
