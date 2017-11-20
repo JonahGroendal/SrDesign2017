@@ -6,9 +6,3 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="icon" type="image/png" href="res/favicon.ico">
 <link rel="stylesheet" type="text/css" href="../css/style.css?v=<?=time();?>">
-
-<script type="text/javascript" charset="utf-8">
-	$(document).ready(function() {
-		$('#example').DataTable();
-	} );
-</script>
