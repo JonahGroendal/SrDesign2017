@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 import tensorflow as tf
 import numpy as np
 import db
@@ -13,7 +15,7 @@ class LinearSVM:
             sequence_letters.append(
                 tf.contrib.layers.feature_column.sparse_column_with_keys(
                     "protein_{0}".format(i),
-                    (' ', 'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V')))
+                    (' ', 'A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V','B','J','O','U','X','Z')))
 
         self.estimator = tf.contrib.learn.SVM(
             example_id_column='example_id',
@@ -21,17 +23,17 @@ class LinearSVM:
             l2_regularization=10.0)
 
     def fit(self):
-        return self.estimator.fit(input_fn=self.input_fn_train, steps=50)
+        return self.estimator.fit(input_fn=self.input_fn_train)
 
     def evaluate(self):
-        return self.estimator.evaluate(input_fn=self.input_fn_eval, steps=50)
+        return self.estimator.evaluate(input_fn=self.input_fn_eval)
 
     def predict(self):
         return self.estimator.predict(input_fn=self.input_fn_eval)
 
     # Input builders
     def input_fn_train(self):
-        split_index = int(len(self.input_data["y"]) * .5)
+        split_index = int(len(self.input_data["y"]) * .8)
         labels = tf.constant(self.input_data["y"][:split_index], dtype=tf.bool)
         feature_cols = {}
         for key in self.input_data["x"]:
@@ -40,7 +42,7 @@ class LinearSVM:
         return feature_cols, labels
 
     def input_fn_eval(self):
-        split_index = int(len(self.input_data["y"]) * .5) + 1
+        split_index = int(len(self.input_data["y"]) * .8) + 1
         labels = tf.constant(self.input_data["y"][split_index:], dtype=tf.bool)
         feature_cols = {}
         for key in self.input_data["x"]:

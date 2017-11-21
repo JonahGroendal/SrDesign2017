@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 class PeptidesError(Exception):
     ''' base exception for this project '''
     pass

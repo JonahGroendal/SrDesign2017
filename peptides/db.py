@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 import pymongo
 from pymongo import MongoClient
 import definitions
@@ -21,27 +23,30 @@ class DB:
     # Creates and indexes collections based on their definitions
     def create_collections(self):
         for collection in self.collection_defs:
-            self.db.create_collection(collection["name"])
+            self.db.create_collection(collection["_name"])
             collection_keys = []
             for field in self.indexed_fields(collection):
                 if field in self.unique_indexed_fields(collection):
                     collection_keys.append((field, 1))
                 else:
-                    self.db[collection["name"]].create_index(field, unique=False)
+                    self.db[collection["_name"]].create_index(field, unique=False)
             if len(collection_keys) > 0:
-                self.db[collection["name"]].create_index(collection_keys, unique=True)
+                self.db[collection["_name"]].create_index(collection_keys, unique=True)
 
     # Can recursively convert data from within nested lists
     def convert_data_type(self, field_definition, data):
-        if type(field_definition["data_type"]) is dict and \
-           list in field_definition["data_type"]:
+        if field_definition["_data_type"] is list:
             if type(data) is not list:
                 data = list((data,))
             for value in data:
-                value = self.convert_data_type(field_definition["data_type"][list], value)
+                value = self.convert_data_type(field_definition["_list_def"], value)
+            return data
+        elif field_definition["_data_type"] is dict:
+            for key in data:
+                data[key] = self.convert_data_type(field_definition["_dict_def"][key], data[key])
             return data
         # If this field's data type is bool, convert by hand
-        elif field_definition["data_type"] is bool:
+        elif field_definition["_data_type"] is bool:
             if data == "1" or data == "True" or data == "true":
                 return True
             elif data == "0" or data == "False" or data == "false":
@@ -50,19 +55,36 @@ class DB:
                 return bool(data)
         # Otherwise use this data type's function for conversion
         else:
-            return field_definition["data_type"](data)
+            return field_definition["_data_type"](data)
 
     def adheres_to_defined_constraints(self, field_definition, data):
+        # Ignore these keys when validating constraints
+        ignore = ("_indexed", "_name")
+
         def data_type(data):
-            # Recursively validate items in (nested) lists
-            if type(field_definition["data_type"]) is dict and \
-               list in field_definition["data_type"]:
-                for value in data:
-                    if not self.is_valid_data(field_definition["data_type"][list], value):
-                        return False
+            return type(data) is field_definition["_data_type"]
+
+        def list_def(data):
+            """ Recursively validate items in (nested) lists """
+            # Ignore this constraint if data_type is not list
+            if field_definition["_data_type"] is not list:
                 return True
-            else:
-                return type(data) is field_definition["data_type"]
+
+            for value in data:
+                if not self.adheres_to_defined_constraints(field_definition["_list_def"], value):
+                    return False
+            return True
+
+        def dict_def(data):
+            """ Recursively validate items in nested dicts (nested documents) """
+            # Ignore this constraint if data_type is not dict
+            if field_definition["_data_type"] is not dict:
+                return True
+
+            for key in data:
+                if not self.adheres_to_defined_constraints(field_definition["_dict_def"][key], data[key]):
+                    return False
+            return True
 
         def magnitude(data):
             try:
@@ -70,40 +92,42 @@ class DB:
             except TypeError:
                 return data
 
-        def min_(data):
-            if magnitude(data) >= field_definition["min"]:
+        def data_min(data):
+            if magnitude(data) >= field_definition["_data_min"]:
                 return True
             return False
 
-        def max_(data):
-            if magnitude(data) <= field_definition["max"]:
+        def data_max(data):
+            if magnitude(data) <= field_definition["_data_max"]:
                 return True
             return False
 
         constraint_checkers = {
-            "data_type": data_type,
-            "min": min_,
-            "max": max_
+            "_data_type": data_type,
+            "_list_def": list_def,
+            "_dict_def": dict_def,
+            "_data_min": data_min,
+            "_data_max": data_max
         }
 
         for constraint_name in field_definition:
-            if constraint_name != "indexed":
+            if constraint_name not in ignore:
                 is_valid = constraint_checkers[constraint_name](data)
                 if not is_valid:
                     return False
 
         return True
 
-    # Returns fields with attribute "indexed" (unique or otherwise)
+    # Returns fields with attribute "_indexed" (unique or otherwise)
     def indexed_fields(self, collection):
-        for field in collection["fields"]:
-            if "indexed" in collection["fields"][field]:
+        for field in collection["_dict_def"]:
+            if "_indexed" in collection["_dict_def"][field]:
                 yield field
-    # Returns fields with attribute "indexed":{"unique":True}
+    # Returns fields with attribute "_indexed":{"_unique":True}
     def unique_indexed_fields(self, collection):
-        for field in collection["fields"]:
-            if "indexed" in collection["fields"][field]:
-                if collection["fields"][field]["indexed"]["unique"] is True:
+        for field in collection["_dict_def"]:
+            if "_indexed" in collection["_dict_def"][field]:
+                if collection["_dict_def"][field]["_indexed"]["_unique"] is True:
                     yield field
 
 class PeptideDB(DB):
@@ -111,8 +135,8 @@ class PeptideDB(DB):
         self.source_coll_def = definitions.collection_source
         self.peptide_coll_def = definitions.collection_peptide
         super().__init__(db_name, (self.source_coll_def, self.peptide_coll_def))
-        self.sources = self.db[self.source_coll_def["name"]]
-        self.peptides = self.db[self.peptide_coll_def["name"]]
+        self.sources = self.db[self.source_coll_def["_name"]]
+        self.peptides = self.db[self.peptide_coll_def["_name"]]
 
     def import_dataset(self, filepath, source_doc):
         # Import cleaned csv back into a Dataset object
@@ -127,41 +151,47 @@ class PeptideDB(DB):
             for field_name in list(peptide_doc):
                 if peptide_doc[field_name] == "None":
                     peptide_doc.pop(field_name)
+
+            # Add source metadata to peptide doc
+            peptide_doc = self.embed_source_id(peptide_doc, source_id)
+
             # Convert strings to correct data types and validate
             for field_name in peptide_doc:
+                # Convert strings to correct data types
                 peptide_doc[field_name] = self.convert_data_type(
-                    self.peptide_coll_def["fields"][field_name],
+                    self.peptide_coll_def["_dict_def"][field_name],
                     peptide_doc[field_name])
-
-                if not (
-                    self.adheres_to_defined_constraints(
-                        self.peptide_coll_def["fields"][field_name],
-                        peptide_doc[field_name])
-                ):
-                    raise errors.ViolationOfDefinedConstraintError(
-                        {field_name: self.peptide_coll_def["fields"][field_name]},
-                        peptide_doc)
+            # Validate
+            if not (
+                self.adheres_to_defined_constraints(
+                    self.peptide_coll_def,
+                    peptide_doc)
+            ):
+                raise errors.ViolationOfDefinedConstraintError(
+                    {field_name: self.peptide_coll_def["_dict_def"][field_name]},
+                    peptide_doc)
 
             docs_to_insert.append(peptide_doc)
 
         for peptide_doc in docs_to_insert:
-            print(peptide_doc)
             # Insert into database
             try:
-                self.insert_peptide_doc(peptide_doc, source_id)
+                self.insert_peptide_doc(peptide_doc)
             # If already in database, augment existing document instead
             except pymongo.errors.WriteError:
+                # Remove _id generated by insert statement
+                peptide_doc.pop("_id")
+                # Print updating info
                 uif = list(self.unique_indexed_fields(self.peptide_coll_def))
                 peptide_doc_uif = {k: v for k, v in peptide_doc.items() if k in uif}
-                #print("{0} already exists. Merging data...".format(peptide_doc_uif))
-                self.augment_peptide_doc(peptide_doc, source_id)
+                print("{0} already exists. Merging data...".format(peptide_doc_uif))
+                # Augment existing document
+                self.augment_peptide_doc(peptide_doc)
 
-    def insert_peptide_doc(self, peptide_doc, source_id):
-        peptide_doc = self.embed_source_id(peptide_doc, source_id)
+    def insert_peptide_doc(self, peptide_doc):
         self.peptides.insert_one(peptide_doc)
 
-    def augment_peptide_doc(self, fields_to_add, source_id):
-        fields_to_add = self.embed_source_id(fields_to_add, source_id)
+    def augment_peptide_doc(self, fields_to_add):
         uif = list(self.unique_indexed_fields(self.peptide_coll_def))
         fields_to_add_uif = {k: v for k, v in fields_to_add.items() if k in uif}
         fields_to_add = {k: v for k, v in fields_to_add.items() if k not in uif}
@@ -208,7 +238,7 @@ class PeptideDB(DB):
         doc = {}
         for field in peptide_doc:
             if field in self.unique_indexed_fields(self.peptide_coll_def):
-                # Don't embed source_id
+                # Don't embed unique_indexed_fields
                 doc[field] = peptide_doc[field]
             else:
                 # Embed source_id

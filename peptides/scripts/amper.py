@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 import sys
 sys.path.append('../')
 import csv_tools
@@ -24,6 +26,8 @@ del table_list[0][len(table_list[0])-1]
 amper = csv_tools.Dataset()
 amper.table = table_list
 amper.conform_column_names(rename={"HydrophobicFraction": "hydrophobicity", "Source Organism": "source"})
-amper.remove_all_columns_except([k for k in definitions.collection_peptide["fields"]])
+amper.remove_all_columns_except([k for k in definitions.collection_peptide["_dict_def"]])
+# Remove rows where lenth of sequence > 50
+amper.remove_rows_where("sequence", lambda value: len(value) > 50)
 
 scrub.write_to_file("../../data/clean/amper.csv", amper.to_csv_string())
