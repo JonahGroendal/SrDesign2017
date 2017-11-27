@@ -4,7 +4,7 @@
     <div class="navbar-inner">
        <div class="container-fluid">
            <div class="navbar-header">
-               <a class="navbar-brand page-scroll" href="index.php">Peptide Database</a>
+               <a class="navbar-brand page-scroll" href="../index.php">Peptide Database</a>
            </div>
 		   <ul class="nav navbar-nav navbar-right">
 		   </ul>

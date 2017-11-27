@@ -1,39 +1,27 @@
 #author Jack McClure
-#scrubbing script to standardize satpdb files
+#script to put records in canonical form
 #this leaves duplicates, peptides with multiple activities appear
 #multiple times, once for each activity
 
 import sys
 sys.path.append('../')
 import definitions
+import csv_tools
 
+satp = csv_tools.Dataset()
+satp.import_csv("../../data/downloads/satpdb_combined.csv", encoding="ISO-8859-1")
 
-header = 'sequence|activity\n'
+satp.column_names = ["sequence", "activities"]
 
+satp.create_bool_column_from_value("activities", 'antibacterial', assume_false=False)
+satp.create_bool_column_from_value("activities", 'anticancer', assume_false=False)
+satp.create_bool_column_from_value("activities", 'antifungal', assume_false=False)
+satp.create_bool_column_from_value("activities", 'antihypertensive', assume_false=False)
+satp.create_bool_column_from_value("activities", 'antimicrobial', assume_false=False)
+satp.create_bool_column_from_value("activities", 'antiparasitic', assume_false=False)
+satp.create_bool_column_from_value("activities", 'antiviral', assume_false=False)
+satp.create_bool_column_from_value("activities", 'toxic', assume_false=False)
 
-destination_path = '../../data/clean/satpdb_cleaned.csv'
-destination = open(destination_path, 'w')
-destination.write(header)
+satp.conform_column_names()
 
-def readFile(activity):
-    source_path = '../../data/downloads/satpdb/' + activity + '.csv'
-    with open(source_path, 'r') as source:
-        while True:
-            line = source.readline()
-            if not line: break  # EOF
-            line = source.readline().rstrip()
-            if len(line) <=50:
-                destination.write(line + '|' + activity + '\n')
-        source.close()
-    return;
-
-readFile(activity = 'antibacterial')
-readFile(activity = 'anticancer')
-readFile(activity = 'antifungal')
-readFile(activity = 'antihypertensive')
-readFile(activity = 'antimicrobial')
-readFile(activity = 'antiparasitic')
-readFile(activity = 'antiviral')
-readFile(activity = 'toxic')
-
-destination.close()
+satp.export_csv("../../data/clean/satpdb.csv")
