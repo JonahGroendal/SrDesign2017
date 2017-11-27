@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 import urllib.request
 import xlrd
 
@@ -7,7 +9,7 @@ class Dataset:
     with import_csv(), cleaned using the other functions, and exported to file with
     export_csv().
 
-    This class has two attributes: a 2D list named self.table, and
+    This class has two attributes: a 2D list named self.table and
     a list named column_names. self.table contains the data for the dataset.
     self.column_names IS self.table[0], it is the header for the table
     (self.column_names and self.table[0] can be used interchangeably).
@@ -102,9 +104,15 @@ class Dataset:
         for i in range(len(indices_to_delete)):
             del self.table[indices_to_delete[len(indices_to_delete) - 1 - i]]
 
+    def remove_rows_where(self, column_name, function):
+        column_index = self.column_names.index(column_name)
+        data_rows = filter(lambda row: not function(row[column_index]), self.table[1:])
+        self.table = [self.column_names]
+        self.table.extend(data_rows)
+
     def combine_rows(self, row_indices):
         """
-        Combines data from all specified row_indices in self.table into
+        Combines values from all specified row_indices in self.table into
         self.table[row_indices[0]]
         """
         new_row_index = row_indices[0]

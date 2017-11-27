@@ -1,3 +1,5 @@
+__author__ = "Jonah Groendal"
+
 import db
 import definitions
 
