@@ -1,6 +1,7 @@
 __author__ = "Jonah Groendal"
 
 from bson.objectid import ObjectId
+import copy
 
 """
 Contains the dictionary that defines the schemas for each of the MongoDb
@@ -19,17 +20,18 @@ Representation of MongoDB terms/types in Python (python: mongo):
     bool: bool,
     etc.
 
-For clarity of terminology, "validation key" != "key":
-    - "validation key" (or "validation keyword") is any key in collection_defs
-            that starts with a "_". It is used to define constraints.
-    - "key" is a key of the dict that's hypothetically being validated.
+Terminology:
+    - "validation key" (or "validation keyword") is any key in collections_def
+      that starts with a "_". It is used to define constraints.
+    - "valid key" is a key of the dict (document) that's hypothetically being validated.
+      Valid (or permitted) keys are defined in "_dict_def"
 
-Each collection-defining dict (found within collection_defs) contains validation
-keywords used to define constraints. All validation keywords are used to define
-constraints on a key's value(s).
+Each collection-defining dict (found within collections_def) contains validation
+keywords used to define constraints. All validation keywords are used only to
+define constraints on a key's value(s).
 
 Core validation keywords:
-    _data_type - REQUIRED IN EVERY KEY DEFINITION.
+    _data_type - REQUIRED IN EVERY VALUE DEFINITION.
                  The type of a key's value.
     _dict_def - CAN ONLY BE USED WHEN "_data_type": dict.
                 Defines the form of a (possibly nested) dict. The value of this
@@ -37,7 +39,7 @@ Core validation keywords:
                 keys and their value definitions.
                 E.g. "_data_type": dict,
                      "_dict_def": {"name": {"_data_type": str}, "type": {"_data_type": str}}
-                     |-val. key-| |--------------- dict of permitted keys -----------------|
+                     |-val. key-| |------- dict of permitted keys w/ their val. defs -------|
     _list_def - CAN ONLY BE USED WHEN "_data_type": list.
                 The value of this validation key is a dict containing a data
                 definition, which applies to every value in the list.
@@ -52,6 +54,11 @@ Special key-value pairs that are used when creating the database:
     note: Indexed unique fields will be indexed together as a compound index and
           are together used to identify each peptide in peptides.db
 """
+
+
+####################################
+# DEFINING COLLECTIONS
+####################################
 
 def value_with_metadata(def_of_value):
     return {
@@ -72,18 +79,18 @@ def value_with_metadata(def_of_value):
     }
 
 
-collection_defs = {
+collections_def = {
     # Definition for collection "peptide"
     "peptide": {
         "_data_type": list,
-        # Validation for list object (collection) itself:
-        # (E.g. _data_max would limit len of list (collection))
+        # Validation for list object ("collection" in mongo) itself:
+        # (E.g. if _data_max was used, it would limit len of list (collection))
         "_list_def": {
             # Validation for all values in list:
-            # (E.g. _data_max would limit len of dict (document))
+            # (E.g. if _data_max was used, it would limit len of dict (collection))
             "_data_type": dict,
             "_dict_def": {
-                # Permitted keys (fields):
+                # Permitted keys ("fields" in mongo):
                 "sequence": {
                     # Mark this field as unique and indexed
                     "_indexed": {"_unique": True},
@@ -169,6 +176,144 @@ collection_defs = {
                 },
                 "authors": {
                     "_data_type": str
+                }
+            }
+        }
+    }
+}
+
+
+####################################
+# DEFINING VALID DEFINITIONS
+####################################
+
+valid_data_def = {}         # Data definition of a valid data definition.
+
+valid_data_def_dict = {}    # Data definition of a valid data definition where
+                            # data_type is dict.
+valid_data_def_list = {}    # Data definition of a valid data definition where
+                            # data_type is list.
+valid_data_def_other = {}   # Data definition of a valid data definition where
+                            # data_type is neither dict nor list.
+
+valid_data_def = {
+    # A valid data definition can be one of three forms:
+    "_or": [
+        valid_data_def_other,
+        valid_data_def_list,
+        valid_data_def_dict
+    ]
+}
+
+# Validation keys common to all three forms
+universal_validation_keys = {
+    # Allowed validation keys and thier values' data definitions:
+    '_not': valid_data_def,
+    '_or': {
+        "_data_type": list,
+        "_list_def": valid_data_def
+    },
+    '_and': {
+        "_data_type": list,
+        "_list_def": valid_data_def
+    },
+    '_data_min': {
+        "_or": [
+            {"_data_type": int},
+            {"_data_type": float}
+        ]
+    },
+    '_data_max': {
+        "_or": [
+            {"_data_type": int},
+            {"_data_type": float}
+        ]
+    },
+    '_data_equals': {
+        "_data_type": type
+    }
+}
+
+# Data definition of a valid dict data definition:
+valid_data_def_dict["_data_type"] = dict   # A data definition is always a dict
+valid_data_def_dict["_dict_def"] = {
+    # Allowed validation keys and thier values' data definitions:
+    '_data_type': {
+        "_data_type": type,
+        "_data_equals": dict
+    },
+    '_dict_def': {
+        "_data_type": dict,
+        "_dict_def": {
+            '*': valid_data_def
+        }
+    }
+}
+valid_data_def_dict["_dict_def"].update(universal_validation_keys)
+
+# Data definition of a valid list data definition:
+valid_data_def_list["_data_type"] = dict   # A data definition is always a dict
+valid_data_def_list["_dict_def"] = {
+    # Allowed validation keys and thier values' data definitions:
+    '_data_type': {
+        "_data_type": type,
+        "_data_equals": list
+    },
+    '_list_def': valid_data_def
+}
+valid_data_def_list["_dict_def"].update(universal_validation_keys)
+
+# Data definition of a valid data definition where the data being defined is
+# neither a list nor a dict:
+valid_data_def_other["_data_type"] = dict   # A data definition is always a dict
+valid_data_def_other["_dict_def"] = {
+    # Allowed validation keys and thier values' data definitions:
+    '_data_type': {
+        "_and": [
+            {"_data_type": type},
+            {"_not": {"_data_type": type, "_data_equals": dict}},
+            {"_not": {"_data_type": type, "_data_equals": list}}
+        ]
+    },
+    '_indexed': {
+        "_data_type": dict,
+        "_dict_def": {
+            '_unique': {
+                "_data_type": bool
+            }
+        }
+    }
+}
+valid_data_def_other["_dict_def"].update(universal_validation_keys)
+
+
+# Data definition of a valid collections_def dict
+# Used to validate syntax of collections_def
+def_of_collections_def = {
+    "_data_type": dict,
+    "_dict_def": {
+        '*': {
+            "_data_type": dict,
+            "_dict_def": {
+                '_data_type': {
+                    "_data_type": type,
+                    "_data_equals": list
+                },
+                '_list_def': {
+                    "_data_type": dict,
+                    "_dict_def": {
+                        '_data_type': {
+                            "_data_type": type,
+                            "_data_equals": dict
+                        },
+                        '_dict_def': {
+                            "_data_type": dict,
+                            "_dict_def": {
+                                # '*' matches every string
+                                '*': valid_data_def
+                            }
+                        }
+                    }
                 }
             }
         }

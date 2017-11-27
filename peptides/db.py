@@ -6,10 +6,15 @@ import definitions
 import errors
 import csv_tools
 
-class DB:
-    def __init__(self, db_name, collection_defs):
+class PymongoDB:
+    def __init__(self, db_name, collections_def):
         self.db_name = db_name
-        self.collection_defs = collection_defs
+        self.collections_def = collections_def
+        self.valid_data_def = definitions.valid_data_def
+        self.def_of_collections_def = definitions.def_of_collections_def
+        # Validate syntax of collections_def
+        if not self.is_valid_data(self.def_of_collections_def, self.collections_def):
+            raise ValueError("argument 'collections_def' is invalid")
         # Connect to server
         self.client = MongoClient()
         # Use desired database
@@ -20,14 +25,13 @@ class DB:
             print("Creating collections...")
             self.create_collections()
 
-    #
     def create_collections(self):
         """ Creates and indexes collections based on their definitions """
-        for collection_name in self.collection_defs:
+        for collection_name in self.collections_def:
             self.db.create_collection(collection_name)
             collection_keys = []
-            for field in self.indexed_fields(self.collection_defs[collection_name]):
-                if field in self.unique_indexed_fields(self.collection_defs[collection_name]):
+            for field in self.indexed_fields(self.collections_def[collection_name]):
+                if field in self.unique_indexed_fields(self.collections_def[collection_name]):
                     collection_keys.append((field, 1))
                 else:
                     self.db[collection_name].create_index(field, unique=False)
@@ -60,15 +64,48 @@ class DB:
 
     def is_valid_data(self, data_definition, data):
         """
+        Returns true if data is valid with respect to data_definition,
+        otherwise returns false.
+
+        More info can be found in definitions.py.
+
         args:
-            data_definition - a collection defintion,
+            data_definition - Attribute 'data' is validated against this definition.
+            data - The data that is being validated. Can be any data type that
+                   satisfies: type( data type ) == type
         """
 
-        def data_type(data):
+        def _or(data):
+            """
+            Recursively validate data against each data definition.
+            data must be valid with respect to at least one data definition.
+            """
+            for data_def in data_definition["_or"]:
+                if self.is_valid_data(data_def, data):
+                    return True
+
+            return False
+
+        def _and(data):
+            """
+            Recursively validate data against each data definition.
+            data must be valid with respect to all data definitions.
+            """
+            for data_def in data_definition["_and"]:
+                if not self.is_valid_data(data_def, data):
+                    return False
+
+            return True
+
+        def _not(data):
+            """ Recursively validate falsity of data """
+            return not self.is_valid_data(data_definition["_not"], data)
+
+        def _data_type(data):
             """ Verify data is of it's defined type """
             return type(data) is data_definition["_data_type"]
 
-        def list_def(data):
+        def _list_def(data):
             """ Recursively validate items in (nested) lists """
             # Ignore this constraint if data_type is not list
             if data_definition["_data_type"] is not list:
@@ -79,48 +116,65 @@ class DB:
                     return False
             return True
 
-        def dict_def(data):
-            """ Recursively validate items in nested dicts (nested documents) """
+        def _dict_def(data):
+            """ Recursively validate items in nested dicts """
             # Ignore this constraint if data_type is not dict
             if data_definition["_data_type"] is not dict:
                 return True
             # Validate every item in list
             for key in data:
-                if not self.is_valid_data(data_definition["_dict_def"][key], data[key]):
+                valid = False
+                # '*' matches every string
+                if "*" in data_definition["_dict_def"]:
+                    if self.is_valid_data(data_definition["_dict_def"]["*"], data[key]):
+                        valid = True
+                if key in data_definition["_dict_def"]:
+                    if self.is_valid_data(data_definition["_dict_def"][key], data[key]):
+                        valid = True
+                if not valid:
                     return False
+
             return True
 
-        def magnitude(data):
-            """ helper function for data_min() and data_max() """
-            try:
-                return len(data)
-            except TypeError:
-                return data
+        def _data_equals(data):
+            return data == data_definition["_data_equals"]
 
-        def data_min(data):
+        def _data_min(data):
             """
             If data is a collection, verify len(data) >= _data_min.
             If data is not a collection, verify data >= _data_min.
             """
-            return magnitude(data) >= data_definition["_data_min"]
+            try:
+                magnitude = len(data)
+            except TypeError:
+                magnitude = data
+            return magnitude >= data_definition["_data_min"]
 
-        def data_max(data):
+        def _data_max(data):
             """
             If data is a collection, verify len(data) <= _data_max.
             If data is not a collection, verify data <= _data_max.
             """
-            return magnitude(data) <= data_definition["_data_max"]
+            try:
+                magnitude = len(data)
+            except TypeError:
+                magnitude = data
+            return magnitude <= data_definition["_data_max"]
 
         validators = {
-            "_data_type": data_type,
-            "_list_def": list_def,
-            "_dict_def": dict_def,
-            "_data_min": data_min,
-            "_data_max": data_max
+            "_or": _or,
+            "_and": _and,
+            "_not": _not,
+            "_data_type": _data_type,
+            "_list_def": _list_def,
+            "_dict_def": _dict_def,
+            "_data_min": _data_min,
+            "_data_max": _data_max,
+            "_data_equals": _data_equals
         }
-        for constraint_name in data_definition:
-            if constraint_name in validators:
-                is_valid = validators[constraint_name](data)
+        for validation_dey in data_definition:
+            if validation_key in validators:
+                is_valid = validators[validation_key](data)
                 if not is_valid:
                     return False
         return True
@@ -137,11 +191,11 @@ class DB:
                 if collection_def["_list_def"]["_dict_def"][field]["_indexed"]["_unique"] is True:
                     yield field
 
-class PeptideDB(DB):
+class PeptideDB(PymongoDB):
     def __init__(self, db_name="peptide"):
-        self.source_coll_def = definitions.collection_defs["source"]
-        self.peptide_coll_def = definitions.collection_defs["peptide"]
-        super().__init__(db_name, definitions.collection_defs)
+        self.source_coll_def = definitions.collections_def["source"]
+        self.peptide_coll_def = definitions.collections_def["peptide"]
+        super().__init__(db_name, definitions.collections_def)
         self.sources = self.db["source"]
         self.peptides = self.db["peptide"]
 
@@ -179,7 +233,7 @@ class PeptideDB(DB):
                     peptide_doc)
 
             docs_to_insert.append(peptide_doc)
-            
+
         for peptide_doc in docs_to_insert:
             # Insert into database
             try:
