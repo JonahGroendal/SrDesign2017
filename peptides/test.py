@@ -1,16 +1,14 @@
-'''
-import ml
+#import ml
+from bson.objectid import ObjectId
+import db
+import definitions
 
+'''
 linear_svm = ml.LinearSVM()
 linear_svm.get_input_data()
 linear_svm.fit()
 print(linear_svm.evaluate())
 '''
 
-import db
-import definitions
-
 d = db.PeptideDB()
-a = d.peptides.find_one()
-print(a["immunogenic"])
-print(d.adheres_to_defined_constraints(definitions.collection_peptide["document_def"]["immunogenic"], a["immunogenic"]))
+print(d.is_valid_data(definitions.valid_data_def, definitions.collection_defs["source"]))
