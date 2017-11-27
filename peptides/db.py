@@ -172,7 +172,7 @@ class PymongoDB:
             "_data_max": _data_max,
             "_data_equals": _data_equals
         }
-        for validation_dey in data_definition:
+        for validation_key in data_definition:
             if validation_key in validators:
                 is_valid = validators[validation_key](data)
                 if not is_valid:
