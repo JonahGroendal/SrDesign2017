@@ -124,7 +124,7 @@ class PymongoDB:
             # Validate every item in list
             for key in data:
                 valid = False
-                # '*' matches every string
+                # '*' matches all strings
                 if "*" in data_definition["_dict_def"]:
                     if self.is_valid_data(data_definition["_dict_def"]["*"], data[key]):
                         valid = True
