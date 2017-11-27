@@ -5,7 +5,7 @@
 	?>
 </head>
     <div class="page">
-      <h1>Peptide Database Project</h1>
+      <h1>Peptide Database</h1>
     </div>
     <div class="page" style="margin-top:10px">
         <h3>About</h3>
@@ -15,7 +15,15 @@
     </div>
     <div class="page" style="margin-top:10px">
         <h3>
-			<a href="php/database.php">Go to Database</a>
+			<script type="text/javascript">
+				function AlertIt() {
+					var answer = confirm ("Loading Full database might take some time.")
+					if (answer)
+						window.location="php/database.php";
+				}
+			</script>
+
+			<a href="javascript:AlertIt();">Go to Full Database</a>
 		</h3>
     </div>
 </body>
