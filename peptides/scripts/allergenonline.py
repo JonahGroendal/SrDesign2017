@@ -19,7 +19,7 @@ allergenonline.conform_column_names()
 allergenonline.create_bool_column_from_value("toxicity", "Immunogenic", assume_false=True)
 allergenonline.create_bool_column_from_value("toxicity", "Toxic", assume_false=True)
 allergenonline.conform_column_names()
-allergenonline.remove_all_columns_except([k for k in definitions.collection_peptide["_dict_def"]])
+allergenonline.remove_all_columns_except([k for k in definitions.collection_peptide["peptide"]["_list_def"]["_dict_def"]])
 # Remove rows where lenth of sequence > 50
 allergenonline.remove_rows_where("sequence", lambda value: len(value) > 50)
 allergenonline.export_csv("../../data/clean/allergenonline.csv")

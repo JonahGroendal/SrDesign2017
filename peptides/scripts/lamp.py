@@ -40,10 +40,10 @@ lamp.remove_rows_where_equals("found", "patent")
 lamp.remove_rows_where("sequence", lambda value: len(value) > 50)
 # Separate activities into their own boolean columns
 # Only using assume_false=True if there are many records with this property
-lamp.create_bool_column_from_value("activities", "Antibacterial", assume_false=True)
-lamp.create_bool_column_from_value("activities", "Antiviral", assume_false=True)
-lamp.create_bool_column_from_value("activities", "Antifungal", assume_false=True)
-lamp.create_bool_column_from_value("activities", "Antimicrobial", assume_false=True)
+lamp.create_bool_column_from_value("activities", "Antibacterial", assume_false=False)
+lamp.create_bool_column_from_value("activities", "Antiviral", assume_false=False)
+lamp.create_bool_column_from_value("activities", "Antifungal", assume_false=False)
+lamp.create_bool_column_from_value("activities", "Antimicrobial", assume_false=False)
 lamp.create_bool_column_from_value("activities", "Anticancer", assume_false=False)
 lamp.create_bool_column_from_value("activities", "Antiparasitic", assume_false=False)
 lamp.create_bool_column_from_value("activities", "Insecticidal", assume_false=False)
@@ -58,6 +58,6 @@ print("Num antiparasitic rows:", len([v for v in lamp.table if v[lamp.table[0].i
 print("Num insecticidal rows:", len([v for v in lamp.table if v[lamp.table[0].index("insecticidal")] is True]))
 print("Num antimicrobial rows:", len([v for v in lamp.table if v[lamp.table[0].index("antimicrobial")] is True]))
 # Remove undefined columns
-lamp.remove_all_columns_except([k for k in definitions.collection_peptide["_dict_def"]])
+lamp.remove_all_columns_except([k for k in definitions.collections_def["peptide"]["_list_def"]["_dict_def"]])
 
 lamp.export_csv("../../data/clean/lamp.csv")
