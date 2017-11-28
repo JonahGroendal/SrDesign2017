@@ -20,5 +20,15 @@ db_object.import_dataset("../data/clean/amper.csv", {
 })
 db_object.import_dataset("../data/clean/lamp.csv", {
     "url": "http://biotechlab.fudan.edu.cn/database/lamp/",
-    "institution": "Fudan University"
+    "institution": "Fudan University",
+    "authors": ["Dr. Qingshan Huang","Mrs. Xiaowei Zhao","Mr. Jinjiang Huang",
+                "Mr. Hongyu Wu", "Dr. Hairong Lu", "Mr. Guodong Li"]
+})
+db_object.import_dataset("../data/clean/satpdb.csv",{
+    "url": "http://crdd.osdd.net/raghava/satpdb/index.html",
+    "institution": ("Raghava's Group, Bioinformatics Centre, Institute of"
+        " Microbial Technology, Chandigarh, India."),
+    "authors": ["Sandeep Singh", "Kumardeep Chaudhary", "Sandeep Kumar Dhanda",
+                "Sherry Bhalla", "Salman Usmani", "Dr. Ankur Gautam", "Abhishek Tuknait",
+                "Piyush Agrawal", "Deepika Mathur", "Dr. G.P.S. Raghava"]
 })
