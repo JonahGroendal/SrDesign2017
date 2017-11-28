@@ -1,5 +1,5 @@
 <!-- <body background="res/Homepagebackground.jpg" style="background-position: top center;"> -->
-<style> body { background-color: #eeb111} </style>
+<style> body { background-color: #FFFFFF} </style>
 <nav class="navbar navbar-default navbar-fixedtop affix-top nav-style">
     <div class="navbar-inner">
        <div class="container-fluid">

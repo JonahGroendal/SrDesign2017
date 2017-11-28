@@ -3,7 +3,7 @@
 }
 
 .navbar-default{
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(238, 177, 17, 0.8);
 	outline: #000000 solid thin;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .floating-text{
-  background: rgba(0, 0, 0, 0.0);
+  background: rgba(238, 177, 17, 0.8);
   color: #696969;
   /*font-family: 'Lato';*/
   font-weight: 400;
@@ -41,7 +41,7 @@
 }
 
 .page {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(238, 177, 17, 0.8);
   outline: #000000 solid thin;
   margin: 0 auto;
   padding-left: 3%;
@@ -49,11 +49,11 @@
   padding-bottom: 1%;
   padding-top:1%;
   position: relative;
-  max-width: 1000px;
+  max-width: 95%;
 }
 
 .tablepage {
-	background-color: rgba(255, 255, 255, .8);
+	background-color: rgba(238, 177, 17, 0.8);
     outline: #000000 solid thin;
     margin: 0 auto;
     padding-left: 3%;
@@ -61,11 +61,15 @@
     padding-bottom: 1%;
     padding-top:1%;
     position: relative;
-    max-width: 100%;
+    max-width: 95%;
 }
 
-tr, td {
+tr, td, th {
 	font-size: 10px;
+}
+
+.table-bordered td{
+   border-color: black;
 }
 
 textarea:focus, input:focus{
