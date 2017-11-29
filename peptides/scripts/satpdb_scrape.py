@@ -7,48 +7,48 @@ import requests
 import sys
 import csv
 
-myRequests = requests.session()
+def dumpData(activity, data, destination):
+    peptides = data.split('\n')
 
-bactData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antibacterial.fasta")
-
-cancData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/anticancer.fasta")
-
-fungData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antifungal.fasta")
-
-toxiData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/toxic.fasta")
-
-tensData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antihypertensive.fasta")
-
-micrData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antimicrobial.fasta")
-
-paraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiparasitic.fasta")
-
-viraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiviral.fasta")
-
-header = 'sequence|activity\n'
+    for line in peptides:
+        if line and line[0] != '>':
+            line = line.rstrip()
+            if len(line) <=50:
+                contents = line + '|' + activity + '\n'
+                destination.write(contents.encode('UTF-8'))
+    return;
 
 destination_path = '../../data/downloads/satpdb_combined.csv'
-destination = open(destination_path, 'w')
-destination.write(header)
+header = 'sequence|activity\n'
 
-def readFile(activity, data):
-	peptides = data.split("\n")
+data_dict = {
+    'antibacterial': '',
+    'anticancer': '',
+    'antifungal': '',
+    'antihypertensive': '',
+    'antimicrobial': '',
+    'antiparasitic': '',
+    'antiviral': '',
+    'toxic': ''
+}
 
-	for line in peptides:
-		if line[0] != ">":
-			line = line.rstrip()
-			if len(line) <=50:
-				destination.write(line + '|' + activity + '\n')
-	return;
+with requests.session() as myRequests:
+    bactData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antibacterial.fasta")
+    cancData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/anticancer.fasta")
+    fungData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antifungal.fasta")
+    tensData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antihypertensive.fasta")
+    micrData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antimicrobial.fasta")
+    paraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiparasitic.fasta")
+    viraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiviral.fasta")
+    toxiData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/toxic.fasta")
 
-readFile('antibacterial', bactData.content.decode('utf-8'))
-readFile('anticancer', cancData.content.decode('utf-8'))
-readFile('antifungal', fungData.content.decode('utf-8'))
-readFile('antihypertensive', tensData.content.decode('utf-8'))
-readFile('antimicrobial', micrData.content.decode('utf-8'))
-readFile('antiparasitic', paraData.content.decode('utf-8'))
-readFile('antiviral', viraData.content.decode('utf-8'))
-readFile('toxic', toxiData.content.decode('utf-8'))
-
-myRequests.close()
-destination.close()
+with open(destination_path, 'wb') as output_file:
+    output_file.write(header.encode('UTF-8'))
+    dumpData('antibacterial', bactData.content.decode('UTF-8'), output_file)
+    dumpData('anticancer', cancData.content.decode('UTF-8'), output_file)
+    dumpData('antifungal', fungData.content.decode('UTF-8'), output_file)
+    dumpData('antihypertensive', tensData.content.decode('UTF-8'), output_file)
+    dumpData('antimicrobial', micrData.content.decode('UTF-8'), output_file)
+    dumpData('antiparasitic', paraData.content.decode('UTF-8'), output_file)
+    dumpData('antiviral', viraData.content.decode('UTF-8'), output_file)
+    dumpData('toxic', toxiData.content.decode('UTF-8'), output_file)
