@@ -23,28 +23,36 @@
 	<div id="table_div" class="tablepage form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 		  <?php
-          // phpinfo();
-            // require '../vendor/autoload.php';
-            //
-            // $db = new MongoDB\Client("peptide://localhost:27017");
-            //
-            // // select a collection (analogous to a relational database's table)
-            // $collection = $db->peptide;
-            //
-			// // find everything in the collection
+            require '../vendor/autoload.php';
+
+			// $db = $m->local;				// select a database
+			// $collection = $db->directors;  // select a collection (table in old DB)
+			$db = new MongoDB\Client("mongodb://localhost:27017");
+			$collection = $db->peptide->peptide;
+			$cursor = $collection->find(); // view all
+			foreach ($cursor as $doc)
+				{
+    				var_dump($doc);
+				}
+			// $db = new MongoDB\Client("mongodb://localhost:27017");
+
+            // select a collection (analogous to a relational database's table)
+            // $collection = $db->peptide->peptide;
+
+			// find everything in the collection
 			// $cursor = $collection->find();
-
-		  	echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
-
-			$myfile = fopen("../res/db_dump.csv", "r") or die("Unable to open file!");
-
-			$line = fgets($myfile);
-			$tokens = explode("|", $line);
-
-			echo "<thead><tr>";
-
-			$shrink_count = 0;
-
+            //
+		  	// echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
+            //
+			// $myfile = fopen("../res/db_dump.csv", "r") or die("Unable to open file!");
+            //
+			// $line = fgets($myfile);
+			// $tokens = explode("|", $line);
+            //
+			// echo "<thead><tr>";
+            //
+			// $shrink_count = 0;
+            //
 			// for ($i = 0; $i < count($tokens); $i++)
 			// {
 			// 	if ($shrink_count < 3) //Change 3 to change the number of Columns keep their name
@@ -63,54 +71,55 @@
 			// 		'\')">?</th>';
 			// 	}
 			// }
-            foreach ($cursor as $document)
-            {
-                foreach ($document as $attribute)
-                {
-                    if ($shrink_count < 3) //Change 3 to change the number of Columns keep their name
-        				{
-        					echo '<th>' . $attribute . '</th>';
-        					$shrink_count++;
-        				}
-        				else
-        				{
-        					echo '<th id = "' .
-        					$attribute .
-        					'" onmouseover="this.innerHTML=\'' .
-        					$attribute .
-        					'\';" onmouseout="this.innerHTML=\'?\';" onclick="click_on(\'' .
-        					$attribute .
-        					'\')">?</th>';
-        				}
-                }
-            }
-
-			echo "</tr></thead><tbody>";
-
-			while (!feof($myfile))
-			{
-				$line = fgets($myfile);
-				$tokens = explode("|", $line);
+			// echo "</tr></thead><tbody>";
+			// $shrink_count = 0;
+            // foreach ($cursor as $document)
+            // {
+            //     foreach ($document as $attribute)
+            //     {
+            //         if ($shrink_count < 3) //Change 3 to change the number of Columns keep their name
+        	// 			{
+        	// 				echo '<th>' . "$attribute" . '</th>';
+        	// 				$shrink_count++;
+        	// 			}
+        	// 			else
+        	// 			{
+        	// 				echo '<th id = "' .
+        	// 				$attribute .
+        	// 				'" onmouseover="this.innerHTML=\'' .
+        	// 				$attribute .
+        	// 				'\';" onmouseout="this.innerHTML=\'?\';" onclick="click_on(\'' .
+        	// 				$attribute .
+        	// 				'\')">?</th>';
+        	// 			}
+            //     }
+            // }
 
 
-				if (strlen(trim($tokens[0])) < 50)
-				{
-					echo "<tr>";
-					for ($i = 0; $i < count($tokens); $i++)
-					{
-						if (trim($tokens[$i]) === "None")
-						{
-								$tokens[$i] = "NA";
-						}
-						echo "<td>" . trim($tokens[$i]) . "</td>";
-					}
-					echo "</tr>";
-				}
-			}
+			// while (!feof($myfile))
+			// {
+			// 	$line = fgets($myfile);
+			// 	$tokens = explode("|", $line);
+            //
+            //
+			// 	if (strlen(trim($tokens[0])) < 50)
+			// 	{
+			// 		echo "<tr>";
+			// 		for ($i = 0; $i < count($tokens); $i++)
+			// 		{
+			// 			if (trim($tokens[$i]) === "None")
+			// 			{
+			// 					$tokens[$i] = "NA";
+			// 			}
+			// 			echo "<td>" . trim($tokens[$i]) . "</td>";
+			// 		}
+			// 		echo "</tr>";
+			// 	}
+			// }
 
-			echo "</tbody>";
+			// echo "</tbody>";
 
-			fclose($myfile);
+			// fclose($myfile);
 
 			echo '<script> document.getElementById("table_div").style.visibility = "visible"; </script>';
 		   ?>
