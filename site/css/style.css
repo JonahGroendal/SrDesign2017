@@ -41,7 +41,7 @@
 }
 
 .page {
-  background-color: rgba(238, 177, 17, 0.8);
+  background-color: rgba(238, 177, 17, 0.0);
   outline: #000000 solid thin;
   margin: 0 auto;
   padding-left: 3%;
@@ -53,7 +53,7 @@
 }
 
 .tablepage {
-	background-color: rgba(238, 177, 17, 0.8);
+	background-color: rgba(238, 177, 17, 0.0);
     outline: #000000 solid thin;
     margin: 0 auto;
     padding-left: 3%;
