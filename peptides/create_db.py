@@ -34,7 +34,7 @@ db_object.import_dataset("../data/clean/satpdb.csv",{
 })
 db_object.import_dataset("../data/clean/kaliumdb.csv",{
     "url": "httpL//kaliumdb.org/",
-    "institution": "Laboratory of Molecular Instruments for Neurobiology"
+    "institution": "Laboratory of Molecular Instruments for Neurobiology",
     "authors": ["Prof. Eugene V. Grishin","Prof. Jan Tytgat","Prof. Lourival D. Possani",
                 "Prof. Ricardo C. Rodríguez de la Vega", "Prof. Yong-Hua Ji", "Dr. Florence Jungo"]
 })
