@@ -23,9 +23,6 @@
                             Sequence
                         </th>
                         <th>
-                            Institution
-                        </th>
-                        <th>
                             Activity
                         </th>
                         <th>
@@ -36,14 +33,7 @@
                 <tbody>
                     <tr>
                         <th>
-                            <input type="text" name="seq" form="query_form">
-                        </th>
-                        <th>
-                            <select form="query_form" name="institution" style="width:100%;max-width:90%;">
-                                <option value="None">None</option>
-                                <option value="WMU">WMU</option>
-                                <option value="CMU">CMU</option>
-                            </select>
+                            <input type="text" name="seq" form="query_form" style="width:100%;max-width:90%;">
                         </th>
                         <th>
                             <select form="query_form" name="activity" style="width:100%;max-width:90%;">
@@ -76,8 +66,8 @@
     <div class="page" style="margin-top:100px">
         <h3>Authors</h3>
         <h5>Jacob Schuurmans</h5>
-        <h5>Jack</h5>
-        <h5>Jonah</h5>
-        <h5>Angelo</h5>
-        <h5>Josh</h5>
+        <h5>Jack McClure</h5>
+        <h5>Jonah Groendal</h5>
+        <h5>Angelo Danducci</h5>
+        <h5>Josh Looney</h5>
 </body>
