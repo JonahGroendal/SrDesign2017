@@ -9,7 +9,7 @@ import definitions
 import csv_tools
 
 satp = csv_tools.Dataset()
-satp.import_csv("../../data/downloads/satpdb_combined.csv", encoding="UTF-8")
+satp.import_csv("../../data/downloads/satpdb_combined.csv")
 
 satp.column_names = ["sequence", "activities"]
 
@@ -24,6 +24,5 @@ satp.create_bool_column_from_value("activities", 'toxic', assume_false=False)
 
 satp.conform_column_names()
 satp.remove_column("activities")
-
 
 satp.export_csv("../../data/clean/satpdb.csv")
