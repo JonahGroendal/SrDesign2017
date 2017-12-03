@@ -14,7 +14,8 @@ def dumpData(activity, data, destination):
 
     #step through the entire buffer
     for line in peptides:
-        if line and line[0] != '>': #skip to lines with sequences only
+        if() line and line[0] != '>' and
+        '-' not in line and '(' not in line): #skip to lines with sequences only
             line = line.rstrip()
             if len(line) <=50:
                 contents = '%s|%s\n' % (line, activity)
