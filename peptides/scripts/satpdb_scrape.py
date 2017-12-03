@@ -7,14 +7,17 @@ import requests
 import sys
 import csv
 
+#function cleans and combines data from separate urls to one csv
 def dumpData(activity, data, destination):
+    #delimitting based on newlines
     peptides = data.split('\n')
 
+    #step through the entire buffer
     for line in peptides:
-        if line and line[0] != '>':
+        if line and line[0] != '>': #skip to lines with sequences only
             line = line.rstrip()
             if len(line) <=50:
-                contents = line + '|' + activity + '\n'
+                contents = '%s|%s\n' % (line, activity)
                 destination.write(contents.encode('UTF-8'))
     return;
 
@@ -32,23 +35,9 @@ data_dict = {
     'toxic': ''
 }
 
-with requests.session() as myRequests:
-    bactData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antibacterial.fasta")
-    cancData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/anticancer.fasta")
-    fungData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antifungal.fasta")
-    tensData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antihypertensive.fasta")
-    micrData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antimicrobial.fasta")
-    paraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiparasitic.fasta")
-    viraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiviral.fasta")
-    toxiData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/toxic.fasta")
-
 with open(destination_path, 'wb') as output_file:
-    output_file.write(header.encode('UTF-8'))
-    dumpData('antibacterial', bactData.content.decode('UTF-8'), output_file)
-    dumpData('anticancer', cancData.content.decode('UTF-8'), output_file)
-    dumpData('antifungal', fungData.content.decode('UTF-8'), output_file)
-    dumpData('antihypertensive', tensData.content.decode('UTF-8'), output_file)
-    dumpData('antimicrobial', micrData.content.decode('UTF-8'), output_file)
-    dumpData('antiparasitic', paraData.content.decode('UTF-8'), output_file)
-    dumpData('antiviral', viraData.content.decode('UTF-8'), output_file)
-    dumpData('toxic', toxiData.content.decode('UTF-8'), output_file)
+	output_file.write(header.encode('UTF-8'))
+    #iterate through dictionary, downloading corresponding files and combining them
+    for field in data_dict:
+		data = requests.get("http://crdd.osdd.net/raghava/satpdb/%s.fasta" % field)
+		dumpData(field, data.content.decode('UTF-8'), output_file)
