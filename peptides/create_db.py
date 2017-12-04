@@ -2,10 +2,10 @@ __author__ = "Jonah Groendal"
 
 import db
 
-# create database
+# Create database
 db_object = db.PeptideDB(db_name="peptide")
 
-# import csv
+# Import CSV files
 db_object.import_dataset("../data/clean/allergenonline.csv", {
     "url": "http://www.allergenonline.org/celiacbrowse.shtml",
     "institution": "University of Nebraska-Lincoln",

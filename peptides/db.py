@@ -188,7 +188,7 @@ class PymongoDB:
                     return False
             return True
 
-        # For keeping track of schemas that were validated so self-referential
+        # For keeping track of schemas that were validated, so self-referential
         # schemas don't cause infinite recursion.
         schemas_validated = []
 
@@ -211,8 +211,8 @@ class PymongoDB:
         Called in __init__() to initialize self.data_meta_schema
 
         If you would like to understand the syntax of a data schemas such as
-        this, please refer to the section on creating data schemas in the
-        documentation for further details.
+        this, please refer to the documentation in db_schema.py for further
+        details.
 
         Note: This data schema is a valid data schema of itself 😎
         """
@@ -315,8 +315,7 @@ class PymongoDB:
 
         Called in __init__() to initialize self.db_meta_schema.
 
-        Please refer to the section on creating data schemas in the
-        documentation for further details.
+        Please refer to the documentation in db_schema.py for further details.
         """
         # A valid database schema is a data schema that describes a list of
         # dicts, each of which is a valid data schema.
@@ -379,8 +378,8 @@ class PeptideDB(PymongoDB):
 
     def import_dataset(self, filepath, source_doc):
         """
-        Used for importing data into the "peptide" collection from a specially
-        formatted csv file.
+        Used for importing data into the "peptide" and "source" collections
+        from a specially formatted csv file.
 
         Will convert data from string to whatever is specified in the "peptide"
         collection schema, then validates the data against the collection schema.
