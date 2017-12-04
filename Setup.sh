@@ -27,4 +27,4 @@ sudo apt-get install php-pear php7.0-dev libcurl4-openssl-dev -y
 #Install the Driver
 sudo pecl install mongodb
 
-echo "\n*******************************************************\n*ADD \"extensions=mongodb.so\" to \"apache2/php.ini\"     *\n*Type \"php --ini\" to find the files location. *\n*******************************************************"
+echo "\n*******************************************************\n*ADD \"extension=mongodb.so\" to \"apache2/php.ini\"     *\n*Type \"php --ini\" to find the files location. *\n*******************************************************"
