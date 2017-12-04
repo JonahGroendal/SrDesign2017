@@ -4,7 +4,7 @@ import sys
 sys.path.append('../')
 
 import csv_tools
-import definitions
+import db_schema
 
 #http://www.allergenonline.org/celiacbrowse.shtml
 
@@ -19,8 +19,8 @@ allergenonline.conform_column_names()
 allergenonline.create_bool_column_from_value("toxicity", "Immunogenic", assume_false=True)
 allergenonline.create_bool_column_from_value("toxicity", "Toxic", assume_false=True)
 allergenonline.conform_column_names()
-allergenonline.remove_all_columns_except([k for k in definitions.collection_peptide["peptide"]["_list_def"]["_dict_def"]])
-# Remove rows where lenth of sequence > 50
+allergenonline.remove_all_columns_except([k for k in db_schema.peptide_db_schema["peptide"]["_for_each"]["_schema"]])
+# Remove rows where length of sequence > 50
 allergenonline.remove_rows_where("sequence", lambda value: len(value) > 50)
 allergenonline.export_csv("../../data/clean/allergenonline.csv")
 #scrub.write_to_file("../../data/clean/allergenonline.csv", allergenonline.to_csv_string())

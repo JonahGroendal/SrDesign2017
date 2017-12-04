@@ -4,7 +4,7 @@ import sys
 sys.path.append('../')
 
 import csv_tools
-import definitions
+import db_schema
 
 # http://biotechlab.fudan.edu.cn/database/lamp/db/lamp.fasta
 
@@ -58,6 +58,6 @@ print("Num antiparasitic rows:", len([v for v in lamp.table if v[lamp.table[0].i
 print("Num insecticidal rows:", len([v for v in lamp.table if v[lamp.table[0].index("insecticidal")] is True]))
 print("Num antimicrobial rows:", len([v for v in lamp.table if v[lamp.table[0].index("antimicrobial")] is True]))
 # Remove undefined columns
-lamp.remove_all_columns_except([k for k in definitions.collections_def["peptide"]["_list_def"]["_dict_def"]])
+lamp.remove_all_columns_except([k for k in db_schema.peptide_db_schema["peptide"]["_for_each"]["_schema"]])
 
 lamp.export_csv("../../data/clean/lamp.csv")

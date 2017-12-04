@@ -10,7 +10,7 @@ class Dataset:
     export_csv().
 
     This class has two attributes: a 2D list named self.table and
-    a list named column_names. self.table contains the data for the dataset.
+    a list named column_names. self.table contains the data of the dataset.
     self.column_names IS self.table[0], it is the header for the table
     (self.column_names and self.table[0] can be used interchangeably).
 
@@ -70,7 +70,7 @@ class Dataset:
     # IMPORT / EXPORT
     ##########################
     def import_csv(self, filepath, delimiter="|", encoding="utf-8"):
-        """ import csv into self.table """
+        """ Imports csv into self.table """
         with open(filepath, encoding=encoding) as f:
             file_str = f.read()
         self.csv_into_table(file_str, delimiter)
@@ -84,14 +84,14 @@ class Dataset:
     # ROW OPERATIONS
     ##########################
     def append_row(self, row_dict):
-        """ append a row of data to self.table """
+        """ Appends a row of data to self.table """
         row = [None] * len(self.column_names)
         for key in row_dict:
             row[self.column_names.index(key)] = row_dict[key]
         self.table.append(row)
 
     def remove_last_row(self):
-        """ remove last row in self.table """
+        """ Removes last row in self.table """
         del self.table[len(self.table) - 1]
 
     def remove_rows_where_equals(self, column_name, value):
@@ -105,6 +105,10 @@ class Dataset:
             del self.table[indices_to_delete[len(indices_to_delete) - 1 - i]]
 
     def remove_rows_where(self, column_name, function):
+        """
+        Removes rows where function returns False when passed the value of
+        column column_name. function must take only that one parameter.
+        """
         column_index = self.column_names.index(column_name)
         data_rows = filter(lambda row: not function(row[column_index]), self.table[1:])
         self.table = [self.column_names]
@@ -122,7 +126,7 @@ class Dataset:
             del self.table[index]
 
     def remove_duplicate_rows(self):
-        """ removes any rows that contain all the same data as another row """
+        """ Removes any rows that contain all the same data as another row """
         self.table = [list(self.table[:1])].extend(list(set(tuple(i) for i in self.table[1:])))
 
     ##########################
@@ -167,20 +171,20 @@ class Dataset:
                     row.append(None)
 
     def remove_all_columns_except(self, keep_column_names):
-        """ removes all columns in self.table besides those specified """
+        """ Removes all columns in self.table besides those specified. """
         columns = list(self.column_names)  # make a copy of column names
         for column in columns:
             if column not in keep_column_names:
                 self.remove_column(column)
 
     def remove_column(self, column_name):
-        """ remove column from self.table whose column name is column_name """
+        """ Remove column from self.table whose column name is column_name. """
         index = self.column_names.index(column_name)
         for row in self.table:
             del row[index]
 
     def unique_values_of_column(self, column_name):
-        """ Returns list of all unique values for a column """
+        """ Returns list of all unique values for a column. """
         index = self.column_names.index(column_name)
         return list(set([v[index] for v in self.table[1:]]))
 
@@ -188,7 +192,7 @@ class Dataset:
     # HELPER METHODS
     ##########################
     def csv_into_table(self, csv_str, delimiter="|"):
-        """ Reads csv_str into self.table """
+        """ Reads csv_str into self.table. """
         self.table = csv_str.split("\n")
         for i in range(len(self.table)):
             self.table[i] = self.table[i].split(delimiter)
@@ -197,13 +201,14 @@ class Dataset:
         for value in self.table[len(self.table) - 1]:
             if value != '' and value is not None:
                 empty = False
-        if empty: del self.table[len(self.table) - 1]
+        if empty:
+            del self.table[len(self.table) - 1]
 
     def to_csv_string(self, delimiter="|", pad_values=False):
         """
         Returns a string representation of self.table in csv format.
         If pad_values, each string in a column will be the same length (padded
-        with spaces)
+        with spaces).
         """
         def pad(value, index):
             if pad_values:
@@ -233,6 +238,10 @@ class Dataset:
         return csv_str
 
 class Scrub:
+    """
+    Misc methods for common scrubbing operations.
+    Attribute self.delimiter is the default delimiter used in the methods.
+    """
     def __init__(self, delimiter="|"):
         self.delimiter = delimiter
 
@@ -254,6 +263,10 @@ class Scrub:
         return html
 
     def csv_str_from_quoted_csv_str(self, file_str, current_delimiter=","):
+        """
+        Takes the contents of a csv file with values quoted as a string and
+        returns the contents of the csv string without quotes around values.
+        """
         temp = self.delimiter
         self.delimiter = '","'
         file_list = self.list_from_csv_str(file_str)
@@ -272,7 +285,8 @@ class Scrub:
         for value in lines[len(lines) - 1]:
             if value != '' and value is not None:
                 empty = False
-        if empty: del lines[len(lines) - 1]
+        if empty:
+            del lines[len(lines) - 1]
 
         return lines
 
@@ -294,63 +308,34 @@ class Scrub:
     def prepend_list(self, file_list, values):
         return [list(values)] + file_list
 
-    def list_from_quoted_csv_str(self, file_str):
-        temp = self.delimiter
-        self.delimiter = '","'
-        file_list = self.list_from_csv_str(file_str)
-        self.delimiter = temp
-        file_list = self.remove_all(file_list, '"')
-        # remove trailing line if it's empty
-        empty = True
-        for value in file_list[len(file_list) - 1]:
-            if value != '' and value is not None:
-                empty = False
-        if empty: del file_list[len(file_list) - 1]
-        return file_list
-
-    # Converts all column names of a formatted csv to lower case
-    # Optionally, replace can be set to replace a column name.
-    # replace can be used to override the lowercase conversion of a column name.
-    def conform_column_names(self, file_str, rename={}):
-        split_str = file_str.split("\n", 2)
-        for i in range(len(split_str)):
-            # replace newline that split() removed
-            if i != 2:
-                split_str[i] = split_str[i] + '\n'
-            if i == 1:
-                # convert column names to lowercase
-                split_str[i] = split_str[i].lower()
-                # replace columns
-                for key in replace:
-                    split_str[i] = split_str[i].replace(key.lower(), replace[key])
-        return ''.join(split_str)
-
     def remove_all(self, file_list, char):
         for row in file_list:
             for i in range(len(row)):
                 row[i] = row[i].replace(char, '')
         return file_list
 
-    def csv_from_excel(self, csv_file, workbook_filepath, sheet_name):
-        wb = xlrd.open_workbook(workbook_filepath)
-        sh = wb.sheet_by_name('Sheet1')
-        sh.row_values(rownum)
-
 
 class Inspect:
+    """
+    Methods useful for inspecting csv files. Not used in any scubbing scripts
+    but sometimes handy when making the scripts.
+    """
     def __init__(self):
         pass
 
-    def get_excel_sheet_names(self, workbook_filepath):
-        wb = xlrd.open_workbook(workbook_filepath)
-        return wb.sheets()
-
-    # Assumes column names are on second line of file
     def get_column_values(self, file_str, column_name, only_unique=False):
+        """
+        Returns list of all values from within column column_name.
+
+        params:
+            file_str - the contents of the file in a string
+            column_name - name of column
+            only_unique - return only unique values
+        """
         column_index = self.get_column_index(file_str, column_name)
         lines = file_str.split("\n")
         values = []
-        for line in lines[2:]:
+        for line in lines:
             line_values = line.split(self.delimiter)
             if only_unique:
                 if line_values[column_index] not in values:
@@ -359,18 +344,11 @@ class Inspect:
                 values.append(line_values[column_index])
         return values
 
-    # Assumes column names are on second line of file
-    # substring of file can be given as arugment
-    def get_column_index(self, file_str, column_name):
-        lines = file_str.split("\n", 2)
-        for line_count, line in enumerate(lines):
-            if line_count == 1:
-                columns = line.split(self.delimiter)
-                for column_count, column in enumerate(columns):
-                    if column == column_name:
-                        return column_count
-
     def get_row_indexes_where_equals(self, file_list, column, value):
+        """
+        params:
+            file_list - contents of file as a string
+        """
         column_index = file_list[1].index(column)
         indexes = []
         for count, row in enumerate(file_list):

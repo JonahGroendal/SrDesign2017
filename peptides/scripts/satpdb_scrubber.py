@@ -5,7 +5,6 @@
 
 import sys
 sys.path.append('../')
-import definitions
 import csv_tools
 
 satp = csv_tools.Dataset()

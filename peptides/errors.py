@@ -23,11 +23,11 @@ class ConflictingUpdateError(PeptidesError):
 
 class ViolationOfDefinedConstraintError(PeptidesError):
     ''' Raised when a document being inserted doesn't conform to its spec (in definitions.py). '''
-    def __init__(self, invalid_value_definition, document):
-        self.invalid_value_definition = invalid_value_definition
+    def __init__(self, definition, document):
+        self.definition = definition
         self.document = document
         super().__init__(
             ("Document being inserted doesn't conform to its spec"
-            " (in definitions.py). Insert was aborted.\n    invalid_value_definition: {0}"
-            "\n    document: {1}\n").format(self.invalid_value_definition, self.document)
+            " (in definitions.py). Insert was aborted.\n    definition: {0}"
+            "\n    document: {1}\n").format(self.definition, self.document)
         )

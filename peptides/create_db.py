@@ -1,7 +1,6 @@
 __author__ = "Jonah Groendal"
 
 import db
-import definitions
 
 # create database
 db_object = db.PeptideDB(db_name="peptide")

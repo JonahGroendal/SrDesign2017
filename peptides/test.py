@@ -1,7 +1,6 @@
 #import ml
 from bson.objectid import ObjectId
 import db
-import definitions
 
 '''
 linear_svm = ml.LinearSVM()
@@ -11,4 +10,4 @@ print(linear_svm.evaluate())
 '''
 
 d = db.PeptideDB()
-print(d.is_valid_data(definitions.valid_data_def, definitions.collection_defs["source"]))
+print(d.is_valid_data(d.data_meta_schema, d.data_meta_schema))
