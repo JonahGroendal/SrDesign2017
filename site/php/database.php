@@ -19,17 +19,27 @@
         $('#peptide_table').DataTable();
 	} );
 	</script>
-
+	<div id="loading" class ="page"><h3>Loading . . .</h3></div>
 	<div id="table_div" class="tablepage form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 		  <?php
-		  	echo '<script> document.getElementById("peptide_table").style.visibility = "hidden"; </script>';
+		  	echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
+
+			require '../vendor/autoload.php';
+
+			$db = new MongoDB\Client("mongodb://localhost:27017");
+
+			$collection = $db->peptide->peptide;
+			$cursor = $collection->find(array("antibacterial" => array('$ne' => null))); //WORKS
+
 			$array_labels = array("sequence", "name", "type");
 			$array_activites = array("hydrophobicity","toxic", "immunogenic", "insecticidal", "allergen", "antibacterial", "anticancer", "antifungal", "antihyptertensive", "antimicrobial", "antiparasitic", "antiviral");
 			$size = count($array_activites);
 			$size_labels = count($array_labels);
+
 			echo "<thead><tr>";
 
+			//Print labels
 			for ($i = 0; $i < $size_labels; $i++)
 			{
 				echo '<th>' . $array_labels[$i] . '</th>';
@@ -47,32 +57,19 @@
 
 			echo "</tr></thead><tbody>";
 
-			require '../vendor/autoload.php';
-
-			$db = new MongoDB\Client("mongodb://localhost:27017");
-
-			$collection = $db->peptide->peptide;
-			$cursor = $collection->find(); // get all
 			foreach ($cursor as $doc)
 			{
 				$array = iterator_to_array($doc);
 				//Sequence
-				if(isset($array["sequence"]))
+				if(isset($array["sequence"]) && strlen($array["sequence"]) <= 50) //Check if empty
 				{
 					echo "<tr><td>" . $array["sequence"] . "</td>";
 					//Name
 					echo "<td>NA</td>";
 					//Type
-					if(isset($array["type"]))
+					if(isset($array["type"])) //Check if empty
 					{
-						if (isset(iterator_to_array($array["type"])["value"]))
-						{
-							echo "<td>" . iterator_to_array($array["type"])["value"] . "</td>";
-						}
-						else
-						{
-							echo "<td>NA</td>";
-						}
+						echo "<td>" . iterator_to_array($array["type"])["value"] . "</td>";
 					}
 					else
 					{
@@ -81,24 +78,19 @@
 					//Activities
 					for($i = 0; $i < $size; $i++)
 					{
-						if (isset($array[$array_activites[$i]]) && !strcmp(iterator_to_array($array[$array_activites[$i]])["value"], " "))
+						if (isset($array[$array_activites[$i]])) //Check if empty
 						{
+							if (iterator_to_array($array[$array_activites[$i]])["value"] == false)
+							{
+								echo "<td>" . 0 . "</td>";
+							}
+							else
+							{
 							echo "<td>" . iterator_to_array($array[$array_activites[$i]])["value"] . "</td>";
+							}
 						}
 						else
 						{
-							// if ($array["sequence"] === "YVRGMASKAGAIAGKIAKVALKAL")
-							// {
-							// 	// error_log("DEBUG :" . isset($array["toxic"]) . ":");
-							// 	if(isset($array["toxic"]))
-							// 	{
-							// 		error_log("TEST");
-							// 	}
-							// 	else
-							// 	{
-							// 		error_log("FUCK YOU");
-							// 	}
-							// }
 							echo "<td>NA</td>";
 						}
 					}
@@ -107,7 +99,8 @@
 			}
 			echo "</tbody>";
 
-			echo '<script> document.getElementById("peptide_table").style.visibility = "visible"; </script>';
+			echo '<script> document.getElementById("loading").remove(); </script>';
+			echo '<script> document.getElementById("table_div").style.visibility = "visible"; </script>';
 		   ?>
 		</table>
 	</div>
