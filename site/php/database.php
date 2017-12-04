@@ -25,17 +25,16 @@
 		  <?php
 		  	echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
+			$not_null = array('$ne' => null);
+
 			require '../vendor/autoload.php';
+			require 'get_metadata.php';
 
 			$db = new MongoDB\Client("mongodb://localhost:27017");
 
-			$collection = $db->peptide->peptide;
-			$cursor = $collection->find(array("antibacterial" => array('$ne' => null))); //WORKS
 
-			$array_labels = array("sequence", "name", "type");
-			$array_activites = array("hydrophobicity","toxic", "immunogenic", "insecticidal", "allergen", "antibacterial", "anticancer", "antifungal", "antihyptertensive", "antimicrobial", "antiparasitic", "antiviral");
-			$size = count($array_activites);
-			$size_labels = count($array_labels);
+			$collection = $db->peptide->peptide;
+			$cursor = $collection->find(array("antibacterial" => $not_null)); //WORKS
 
 			echo "<thead><tr>";
 
@@ -47,11 +46,11 @@
 			for ($i = 0; $i < $size; $i++)
 			{
 				echo '<th id = "' .
-				$array_activites[$i] .
+				$array_activities[$i] .
 				'" onmouseover="this.innerHTML=\'' .
-				$array_activites[$i] .
+				$array_activities[$i] .
 				'\';" onmouseout="this.innerHTML=\'*\';" onclick="click_on(\'' .
-				$array_activites[$i] .
+				$array_activities[$i] .
 				'\')">*</th>';
 			}
 
@@ -78,15 +77,15 @@
 					//Activities
 					for($i = 0; $i < $size; $i++)
 					{
-						if (isset($array[$array_activites[$i]])) //Check if empty
+						if (isset($array[$array_activities[$i]])) //Check if empty
 						{
-							if (iterator_to_array($array[$array_activites[$i]])["value"] == false)
+							if (iterator_to_array($array[$array_activities[$i]])["value"] == false)
 							{
 								echo "<td>" . 0 . "</td>";
 							}
-							else
+							else //Is true or has value
 							{
-							echo "<td>" . iterator_to_array($array[$array_activites[$i]])["value"] . "</td>";
+							echo "<td>" . iterator_to_array($array[$array_activities[$i]])["value"] . "</td>";
 							}
 						}
 						else

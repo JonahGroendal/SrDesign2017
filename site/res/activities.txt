@@ -1,0 +1,12 @@
+hydrophobicity
+toxic
+immunogenic
+insecticidal
+allergen
+antibacterial
+anticancer
+antifungal
+antihyptertensive
+antimicrobial
+antiparasitic
+antiviral
