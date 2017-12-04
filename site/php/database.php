@@ -23,34 +23,26 @@
 	<div id="table_div" class="tablepage form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 		  <?php
-		  	// echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
-
-			$myfile = fopen("../res/db_dump.csv", "r") or die("Unable to open file!");
-
-			$line = fgets($myfile);
-			$tokens = explode("|", $line);
-
+		  	echo '<script> document.getElementById("peptide_table").style.visibility = "hidden"; </script>';
+			$array_labels = array("sequence", "name", "type");
+			$array_activites = array("hydrophobicity","toxic", "immunogenic", "insecticidal", "allergen", "antibacterial", "anticancer", "antifungal", "antihyptertensive", "antimicrobial", "antiparasitic", "antiviral");
+			$size = count($array_activites);
+			$size_labels = count($array_labels);
 			echo "<thead><tr>";
 
-			$shrink_count = 0;
-
-			for ($i = 0; $i < count($tokens); $i++)
+			for ($i = 0; $i < $size_labels; $i++)
 			{
-				if ($shrink_count < 3) //Change 3 to change the number of Columns keep their name
-				{
-					echo '<th>' . trim($tokens[$i]) . '</th>';
-					$shrink_count++;
-				}
-				else
-				{
-					echo '<th id = "' .
-					trim($tokens[$i]) .
-					'" onmouseover="this.innerHTML=\'' .
-					trim($tokens[$i]) .
-					'\';" onmouseout="this.innerHTML=\'?\';" onclick="click_on(\'' .
-					trim($tokens[$i]) .
-					'\')">?</th>';
-				}
+				echo '<th>' . $array_labels[$i] . '</th>';
+			}
+			for ($i = 0; $i < $size; $i++)
+			{
+				echo '<th id = "' .
+				$array_activites[$i] .
+				'" onmouseover="this.innerHTML=\'' .
+				$array_activites[$i] .
+				'\';" onmouseout="this.innerHTML=\'*\';" onclick="click_on(\'' .
+				$array_activites[$i] .
+				'\')">*</th>';
 			}
 
 			echo "</tr></thead><tbody>";
@@ -65,30 +57,57 @@
 			{
 				$array = iterator_to_array($doc);
 				//Sequence
-				echo "<tr><td>" . $array["sequence"] . "</td>";
-				//Name
-				echo "<td>NA</td>";
-				//Type
-
-				// $type = iterator_to_array($array["type"])["value"];
-				if (iterator_to_array($array["type"])["value"])
+				if(isset($array["sequence"]))
 				{
-					echo "<td>" . iterator_to_array($array["type"])["value"] . "</td></tr>";
+					echo "<tr><td>" . $array["sequence"] . "</td>";
+					//Name
+					echo "<td>NA</td>";
+					//Type
+					if(isset($array["type"]))
+					{
+						if (isset(iterator_to_array($array["type"])["value"]))
+						{
+							echo "<td>" . iterator_to_array($array["type"])["value"] . "</td>";
+						}
+						else
+						{
+							echo "<td>NA</td>";
+						}
+					}
+					else
+					{
+						echo "<td>NA</td>";
+					}
+					//Activities
+					for($i = 0; $i < $size; $i++)
+					{
+						if (isset($array[$array_activites[$i]]) && !strcmp(iterator_to_array($array[$array_activites[$i]])["value"], " "))
+						{
+							echo "<td>" . iterator_to_array($array[$array_activites[$i]])["value"] . "</td>";
+						}
+						else
+						{
+							// if ($array["sequence"] === "YVRGMASKAGAIAGKIAKVALKAL")
+							// {
+							// 	// error_log("DEBUG :" . isset($array["toxic"]) . ":");
+							// 	if(isset($array["toxic"]))
+							// 	{
+							// 		error_log("TEST");
+							// 	}
+							// 	else
+							// 	{
+							// 		error_log("FUCK YOU");
+							// 	}
+							// }
+							echo "<td>NA</td>";
+						}
+					}
+					echo "</tr>";
 				}
-				else
-				{
-					echo "<td>ZNA</td></tr>";
-				}
-				//Activities
-				// echo "<td>" . $array[]
-
 			}
-
 			echo "</tbody>";
 
-			fclose($myfile);
-
-			// echo '<script> document.getElementById("table_div").style.visibility = "visible"; </script>';
+			echo '<script> document.getElementById("peptide_table").style.visibility = "visible"; </script>';
 		   ?>
 		</table>
 	</div>

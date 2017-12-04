@@ -6,7 +6,7 @@ function hover_on(id)
 
 function hover_off(id, text)
 {
-	document.getElementById(id).innerHTML = '?';
+	document.getElementById(id).innerHTML = '*';
 }
 
 function click_on(id)
