@@ -1,79 +1,44 @@
 #SATPdb scrubber
 #pulls 8 csv files from the satp database and combines them into one
+#leaves duplicates but assigns an activity to each sequence
 #Author: Jack McClure
 
 import requests
 import sys
 import csv
 
-myRequests = requests.session()
+#function cleans and combines data from separate urls to one csv
+def dumpData(activity, data, destination):
+    #delimitting based on newlines
+    peptides = data.split('\n')
 
-bactData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antibacterial.fasta")
-with open('../../data/downloads/satpdb/antibacterial.csv', 'wb') as csvfile:
-    csvfile.write(bactData.content)
-    csvfile.close()
-
-cancData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/anticancer.fasta")
-with open('../../data/downloads/satpdb/anticancer.csv', 'wb') as csvfile:
-    csvfile.write(cancData.content)
-    csvfile.close()
-
-fungData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antifungal.fasta")
-with open('../../data/downloads/satpdb/antifungal.csv', 'wb') as csvfile:
-    csvfile.write(fungData.content)
-    csvfile.close()
-
-toxiData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/toxic.fasta")
-with open('../../data/downloads/satpdb/toxic.csv', 'wb') as csvfile:
-    csvfile.write(toxiData.content)
-    csvfile.close()
-
-tensData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antihypertensive.fasta")
-with open('../../data/downloads/satpdb/antihypertensive.csv', 'wb') as csvfile:
-    csvfile.write(tensData.content)
-    csvfile.close()
-
-micrData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antimicrobial.fasta")
-with open('../../data/downloads/satpdb/antimicrobial.csv', 'wb') as csvfile:
-    csvfile.write(micrData.content)
-    csvfile.close()
-
-paraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiparasitic.fasta")
-with open('../../data/downloads/satpdb/antiparasitic.csv', 'wb') as csvfile:
-    csvfile.write(paraData.content)
-    csvfile.close()
-
-viraData = myRequests.get("http://crdd.osdd.net/raghava/satpdb/antiviral.fasta")
-with open('../../data/downloads/satpdb/antiviral.csv', 'wb') as csvfile:
-    csvfile.write(viraData.content)
-    csvfile.close()
-
-
-header = 'sequence|activity\n'
-
-destination_path = '../../data/downloads/satpdb_combined.csv'
-destination = open(destination_path, 'w')
-destination.write(header)
-
-def readFile(activity):
-    source_path = '../../data/downloads/satpdb/' + activity + '.csv'
-    with open(source_path, 'r') as source:
-        while True:
-            line = source.readline()
-            if not line: break  # EOF
-            line = source.readline().rstrip()
+    #step through the entire buffer
+    for line in peptides:
+        if() line and line[0] != '>' and
+        '-' not in line and '(' not in line): #skip to lines with sequences only
+            line = line.rstrip()
             if len(line) <=50:
-                destination.write(line + '|' + activity + '\n')
-        source.close()
+                contents = '%s|%s\n' % (line, activity)
+                destination.write(contents.encode('UTF-8'))
     return;
 
-readFile(activity = 'antibacterial')
-readFile(activity = 'anticancer')
-readFile(activity = 'antifungal')
-readFile(activity = 'antihypertensive')
-readFile(activity = 'antimicrobial')
-readFile(activity = 'antiparasitic')
-readFile(activity = 'antiviral')
-readFile(activity = 'toxic')
+destination_path = '../../data/downloads/satpdb_combined.csv'
+header = 'sequence|activity\n'
 
-destination.close()
+data_dict = {
+    'antibacterial': '',
+    'anticancer': '',
+    'antifungal': '',
+    'antihypertensive': '',
+    'antimicrobial': '',
+    'antiparasitic': '',
+    'antiviral': '',
+    'toxic': ''
+}
+
+with open(destination_path, 'wb') as output_file:
+	output_file.write(header.encode('UTF-8'))
+    #iterate through dictionary, downloading corresponding files and combining them
+    for field in data_dict:
+		data = requests.get("http://crdd.osdd.net/raghava/satpdb/%s.fasta" % field)
+		dumpData(field, data.content.decode('UTF-8'), output_file)

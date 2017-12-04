@@ -12,26 +12,18 @@
 
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		$('#table').DataTable();
+
+        //Supressing warnings, there is a bug that i cant resolve. . .
+        $.fn.dataTable.ext.errMode = 'none';
+
+        $('#peptide_table').DataTable();
 	} );
 	</script>
 
 	<div id="table_div" class="tablepage form-inline no-footer">
-		<table id="table" class="table table-bordered">
+		<table id="peptide_table" class="table table-bordered">
 		  <?php
-
-		  	// $m = new MongoClient();
-			// // select a database
-			// $db = $m->peptide;
-            //
-			// // select a collection (analogous to a relational database's table)
-			// $collection = $db->peptide;
-            //
-			// // find everything in the collection
-			// $cursor = $collection->find();
-
-
-		  	echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
+		  	// echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
 			$myfile = fopen("../res/db_dump.csv", "r") or die("Unable to open file!");
 
@@ -63,32 +55,40 @@
 
 			echo "</tr></thead><tbody>";
 
-			while (!feof($myfile))
+			require '../vendor/autoload.php';
+
+			$db = new MongoDB\Client("mongodb://localhost:27017");
+
+			$collection = $db->peptide->peptide;
+			$cursor = $collection->find(); // get all
+			foreach ($cursor as $doc)
 			{
-				$line = fgets($myfile);
-				$tokens = explode("|", $line);
+				$array = iterator_to_array($doc);
+				//Sequence
+				echo "<tr><td>" . $array["sequence"] . "</td>";
+				//Name
+				echo "<td>NA</td>";
+				//Type
 
-
-				if (strlen(trim($tokens[0])) < 50)
+				// $type = iterator_to_array($array["type"])["value"];
+				if (iterator_to_array($array["type"])["value"])
 				{
-					echo "<tr>";
-					for ($i = 0; $i < count($tokens); $i++)
-					{
-						if (trim($tokens[$i]) === "None")
-						{
-								$tokens[$i] = "NA";
-						}
-						echo "<td>" . trim($tokens[$i]) . "</td>";
-					}
-					echo "</tr>";
+					echo "<td>" . iterator_to_array($array["type"])["value"] . "</td></tr>";
 				}
+				else
+				{
+					echo "<td>ZNA</td></tr>";
+				}
+				//Activities
+				// echo "<td>" . $array[]
+
 			}
 
 			echo "</tbody>";
 
 			fclose($myfile);
 
-			echo '<script> document.getElementById("table_div").style.visibility = "visible"; </script>';
+			// echo '<script> document.getElementById("table_div").style.visibility = "visible"; </script>';
 		   ?>
 		</table>
 	</div>
