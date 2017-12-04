@@ -32,7 +32,6 @@
 
 			$db = new MongoDB\Client("mongodb://localhost:27017");
 
-
 			$collection = $db->peptide->peptide;
 			$cursor = $collection->find(array("antibacterial" => $not_null)); //WORKS
 
@@ -43,7 +42,7 @@
 			{
 				echo '<th>' . $array_labels[$i] . '</th>';
 			}
-			for ($i = 0; $i < $size; $i++)
+			for ($i = 0; $i < $size_activities; $i++)
 			{
 				echo '<th id = "' .
 				$array_activities[$i] .

@@ -37,13 +37,19 @@
                         </th>
                         <th>
                             <select form="query_form" name="activity" style="width:100%;max-width:90%;">
-                                <option value="None">None</option>
-                                <option value="hydrophobicity" >Hydrophobicity</option>
-                                <option value="allergen">Allergen</option>
+                                <option value="None">All</option>
+                                <?php
+                                    require 'php/get_metadata.php';
+
+                                    for ($i = 0; $i < $size_activities; $i++)
+                                    {
+                                        echo '<option value="' . $array_activities[$i] . '">' . $array_activities[$i] . '</option>';
+                                    }
+                                ?>
                             </select>
                         </th>
                         <th>
-                            <form action="php/test.php" method="post" id="query_form"><input type="submit">
+                            <form action="php/database.php" method="post" id="query_form"><input type="submit">
                             </form>
                         </th>
                     </tr>
