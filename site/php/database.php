@@ -86,7 +86,7 @@
 						echo "<td>NA</td>";
 					}
 					//Activities
-					for($i = 0; $i < $size; $i++)
+					for($i = 0; $i < $size_activities; $i++)
 					{
 						if (isset($array[$array_activities[$i]])) //Check if empty
 						{
