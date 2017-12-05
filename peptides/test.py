@@ -10,4 +10,7 @@ print(linear_svm.evaluate())
 '''
 
 d = db.PeptideDB()
-print(d.is_valid_data(d.data_meta_schema, d.data_meta_schema))
+p = d.peptides.find({"sequence": "GLGSLLGKAFKFGLKTVGKMMGGAPREE"})
+
+for s in p:
+    print(s)

@@ -311,7 +311,7 @@ class PymongoDB:
         """
         Returns a data schema of a valid database schema. Using
         self.is_valid_data(), this data schema defines what values of the
-        the parameter 'db_schema' are valid in __init__().
+        parameter 'db_schema' are valid in __init__().
 
         Called in __init__() to initialize self.db_meta_schema.
 
@@ -357,9 +357,9 @@ class PeptideDB(PymongoDB):
     database. Included is the database schema as well as methods for importing
     and exporting to and from a csv file.
 
-    In this project, all connections to the database are facilitaed through an
-    instance of this class. self.sources and self.peptides are MongoDB
-    Collection objects that should be used to perform operations on their
+    In this project, all connections to the database are facilitaed through
+    instances of this class. self.sources and self.peptides are MongoDB
+    Collection objects, which should be used to perform operations on their
     respective collections. Please refer to the MongoDB API reference for
     documentation on their methods for querying, inserting, updating, etc.
     """
@@ -381,24 +381,23 @@ class PeptideDB(PymongoDB):
         Used for importing data into the "peptide" and "source" collections
         from a specially formatted csv file.
 
-        Will convert data from string to whatever is specified in the "peptide"
+        Converts data from string to whatever is specified in the "peptide"
         collection schema, then validates the data against the collection schema.
         If valid, it will attempt to insert the data into the "peptide"
         collection. If the sequence already exists, it will update the existing
         peptide document using self.augment_peptide_doc(). If documet validation
         fails or if the update conflicts with data in the database, an error is
-        thrown and no more documents are inserted/updated (and the update is
+        thrown and no more documents are inserted/updated (the update is
         aborted).
 
         Sadly, MongoDB doesn't support transactions. If you would like to
         reverse an insert, you must perform an update operation and $unset all
         references to source_doc as well as any fields that refer only to
-        source_doc. Alternatively, you could delete the database and start over,
-        which is much easier.
+        source_doc. Alternatively, you could delete the database and start over.
 
         Format of csv file:
             - First row contains the names of the columns (or "fields" in Mongo)
-            - The rest of the rows contains values corresponding to thier
+            - The rest of the rows contain values corresponding to thier
               columns.
             - Use "None" to indicate no value (equivalent to null in SQL).
             - Use "1" and "0" to indicate True and False
@@ -484,8 +483,6 @@ class PeptideDB(PymongoDB):
 
         for field in fields_to_add:
             if field in peptide_doc:
-                # If field exists and value is the same, add source to
-                # references in existing doc
                 if type(fields_to_add[field]) is list:
                     for v1 in fields_to_add[field]:
                         for v2 in peptide_doc[field]:
@@ -498,11 +495,9 @@ class PeptideDB(PymongoDB):
                     peptide_doc.pop("_id")
                     fields_to_add.update(fields_to_add_uif)
                     raise errors.ConflictingUpdateError(peptide_doc, fields_to_add)
-                # If field doesn't exist, add field with value and references to
-                # the existing document
                 elif fields_to_add[field]["references"][0] not in peptide_doc[field]["references"]:
                     fields_to_add[field]["references"].extend(peptide_doc[field]["references"])
-            # Commit changes to database
+            # Update database with changes
             fields_to_add_update = {"$set": fields_to_add}
             self.peptides.update(fields_to_add_uif, fields_to_add_update)
 
