@@ -14,11 +14,11 @@ def dumpData(activity, data, destination):
 
     #step through the entire buffer
     for line in peptides:
-        if() line and line[0] != '>' and
+        if( line and line[0] != '>' and
         '-' not in line and '(' not in line): #skip to lines with sequences only
             line = line.rstrip()
             if len(line) <=50:
-                contents = '%s|%s\n' % (line, activity)
+                contents = '%s|%s\n' % (line.upper(), activity)
                 destination.write(contents.encode('UTF-8'))
     return;
 
@@ -37,8 +37,8 @@ data_dict = {
 }
 
 with open(destination_path, 'wb') as output_file:
-	output_file.write(header.encode('UTF-8'))
+    output_file.write(header.encode('UTF-8'))
     #iterate through dictionary, downloading corresponding files and combining them
     for field in data_dict:
-		data = requests.get("http://crdd.osdd.net/raghava/satpdb/%s.fasta" % field)
-		dumpData(field, data.content.decode('UTF-8'), output_file)
+        data = requests.get("http://crdd.osdd.net/raghava/satpdb/%s.fasta" % field)
+        dumpData(field, data.content.decode('UTF-8'), output_file)

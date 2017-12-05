@@ -1,7 +1,7 @@
 import sys
 sys.path.append('peptides/')
 import db
-import definitions
+import db_schema
 
 d = db.PeptideDB()
 fields_to_print = [k for k in definitions.collection_peptide["_dict_def"] if k != "source"]

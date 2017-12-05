@@ -28,7 +28,7 @@ def cleanData(activity, data, destination):
             if seq[-1] == '-':
                 seq = seq[:-1]
             if len(seq) <=50:
-                contents = "%s|%s|%s\n" % (contents, seq, activity)
+                contents = "%s|%s|%s\n" % (contents, seq.upper(), activity)
                 destination.write(contents.encode('ISO-8859-1'))
     return;
 #very long URL, with key value in the middle
