@@ -29,10 +29,14 @@ sudo pip3 install requests
 
 #Install PHP MongoDB Driver
 
-sudo apt-get install php-pear php7.0-dev libcurl4-openssl-dev -y
+sudo apt-get install php-pear php7.0-dev libcurl4-openssl-dev python-software-properties software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php-7.0
+sudo apt-get update
+sudo apt-get install php7.0 libapache2-mod-php7.0
+sudo apt-get install mongodb
 #Install the Driver
 sudo pecl install mongodb
 
-sudo bash -c "echo 'extension=mongodb.so' >> /etc/php/7.0/apache2/php.ini"
+# sudo bash -c "echo 'extension=mongodb.so' >> /etc/php/7.0/apache2/php.ini"
 echo "*****ATTENTION******\nVerify the root directory of Apache2 is that of SrDesign2017/site/";
 # echo "\n*******************************************************\n*ADD \"extension=mongodb.so\" to \"apache2/php.ini\"     *\n*Type \"php --ini\" to find the files location. *\n*******************************************************"
