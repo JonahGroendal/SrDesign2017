@@ -29,7 +29,7 @@ sudo pip3 install requests
 
 #Install PHP MongoDB Driver
 
-sudo apt-get install php-pear php-dev libcurl4-openssl-dev python-software-properties software-properties-common -y
+sudo apt-get install php-pear php-dev libcurl4-openssl-dev pkg-config python-software-properties software-properties-common -y
 sudo apt-get update
 sudo apt-get install php7.0 libapache2-mod-php7.0
 sudo apt-get install mongodb
