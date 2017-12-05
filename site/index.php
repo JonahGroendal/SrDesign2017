@@ -39,8 +39,18 @@
                             <select form="query_form" name="activity" style="width:100%;max-width:90%;">
                                 <option value="None">All</option>
                                 <?php
-                                    require 'php/get_metadata.php';
+                                    $array_labels = array("sequence", "name", "type");
+                                    $array_activities = array();
+                                    $myfile = fopen("res/activities.txt", "r") or die("Unable to open file!");
+                                    while(!feof($myfile)) {
+                                      array_push($array_activities, trim(fgets($myfile)));
+                                    }
+                                    fclose($myfile);
 
+                                    array_pop($array_activities); //removes last item, which is just a '\n'
+
+                                    $size_activities = count($array_activities);
+                                    $size_labels = count($array_labels);
                                     for ($i = 0; $i < $size_activities; $i++)
                                     {
                                         echo '<option value="' . $array_activities[$i] . '">' . $array_activities[$i] . '</option>';
