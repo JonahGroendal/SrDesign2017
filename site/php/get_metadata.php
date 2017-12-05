@@ -1,7 +1,7 @@
 <?php
 $array_labels = array("sequence", "name", "type");
 $array_activities = array();
-$myfile = fopen("./res/activities.txt", "r") or die("Unable to open file!");
+$myfile = fopen("../res/activities.txt", "r") or die("Unable to open file!");
 while(!feof($myfile)) {
   array_push($array_activities, trim(fgets($myfile)));
 }
