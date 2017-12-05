@@ -5,7 +5,6 @@
 
 import sys
 sys.path.append('../')
-import definitions
 import csv_tools
 
 erop = csv_tools.Dataset()
