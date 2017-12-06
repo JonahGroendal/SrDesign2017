@@ -6,7 +6,7 @@ allergen
 antibacterial
 anticancer
 antifungal
-antihyptertensive
+antihypertensive
 antimicrobial
 antiparasitic
 antiviral
