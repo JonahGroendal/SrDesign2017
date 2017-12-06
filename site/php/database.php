@@ -36,43 +36,71 @@
 	<div id="table_div" class="page form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 			<?php
-				// echo "<div>";
-				// if (!empty($_GET['seq']))
-				// {
-				// 	echo "<h3>SEQ:" . $_GET['seq'] . "</h3>";
-				// }
-				// if (!empty($_GET['min']))
-				// {
-				// 	echo "<h3>MIN:" . $_GET['min'] . "</h3>";
-				// }
-				// if (!empty($_GET['max']))
-				// {
-				// 	echo "<h3>MAX:" . $_GET['max'] . "</h3>";
-				// }
-				// if (!empty($_GET['count']))
-				// {
-				// 	echo "<h3>COUNT:" . $_GET['count'] . "</h3>";
-				// }
-				// if (isset($_GET['activities'])){
-				// 	$activities = $_GET['activities'];
-				// 	foreach($activities as $activity)
-				// 	{
-				// 		echo '<h2>' . $activity . '</h2>';
-				// 	}
-				// }
-			?>
-			<?php
-		  		echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
+				$query_array = array();
+				//Limit starts at 1000, If the user sets the limit to 0, it will print ALL.
+				// $limit_size = 1001;
 
-				$not_null = array('$ne' => null);
+				echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
 				require '../vendor/autoload.php';
 
-				$db = new MongoDB\Client("mongodb://localhost:27017");
-
+				// $db = new \MongoDB\Driver\Manager('mongodb://localhost:27017');
+				$db = new MongoDB\Client('mongodb://localhost:27017');
 				$collection = $db->peptide->peptide;
-				// $cursor = $collection->find(array("antibacterial" => $not_null)); //WORKS
-				$cursor = $collection->find();
+
+				// $id           = new \MongoDB\BSON\ObjectId('AGQQQPFPPQQPYPQPQPF');
+				// $filter      = ['sequence' => $id];
+				// $options = [];
+                //
+				// $query = new \MongoDB\Driver\Query($filter, $options);
+				// $rows   = $mongo->executeQuery('peptide.peptide', $query);
+
+
+				//Preperation of the query array
+
+				//Sequence
+				// if (!empty($_GET['seq']))
+				// {
+				// 	array_push($query_array, array('sequence' => 'AGQQQPFPPQQPYPQPQPF'));//new MongoDB\BSON\Regex ('/' . (string) $_GET['seq'] . '/i'))); // (string) sanitizes the query.
+				// }
+				// //Min length of Sequence
+				// if (!empty($_GET['min']))
+				// {
+				// 	array_push($query_array, array('sequence' => array('$gt' => (string) $_GET['min'])));
+				// }
+				// //Max length of Sequence
+				// if (!empty($_GET['max']))
+				// {
+				// 	array_push($query_array, array('sequence' => array('$lt' => (string) $_GET['max'])));
+				// }
+				// //Limit the number of items to query
+				// if (!empty($_GET['count']))
+				// {
+				// 	//Subtract 1 from limit, to evade a off by one error and print out limit + 1;
+				// 	$limit_size = ((int) $_GET['count']) - 1;
+				// }
+				// //Activities
+				// if (isset($_GET['activities'])){
+                //
+				// 	$activities = $_GET['activities'];
+				// 	$not_null = array('$ne' => null);
+                //
+				// 	foreach($activities as $activity)
+				// 	{
+				// 		array_push($query_array, array( (string) $activity => $not_null));
+				// 	}
+				// }
+
+				// if (empty($query_array))
+				// {
+					$cursor = $collection->find();
+				// }
+				// else
+				// {
+					// $cursor = $collection->find($query_array);
+				// }
+
+				//Ok, now time to print out the table.
 
 				echo "<thead><tr>";
 
@@ -93,6 +121,7 @@
 				}
 
 				echo "</tr></thead><tbody>";
+				$j = 0;
 
 				foreach ($cursor as $doc)
 				{
@@ -133,6 +162,15 @@
 						}
 						echo "</tr>";
 					}
+					// //Limit the number of items printed.
+					// if ($limit_size != 0)
+					// {
+					// 	if ($limit_size <= $j)
+					// 	{
+					// 		break;
+					// 	}
+					// 	$j++;
+					// }
 				}
 				echo "</tbody>";
 

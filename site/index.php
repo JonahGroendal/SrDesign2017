@@ -8,7 +8,6 @@
 		$myfile = fopen("res/activities.txt", "r") or die("Unable to open file!");
 		while(!feof($myfile)) {
 			array_push($array_activities, trim(fgets($myfile)));
-			error_log($array_activities[0]);
 		}
 		fclose($myfile);
 
@@ -44,7 +43,7 @@
                             Length (high, Max of 50)
                         </th>
 						<th>
-							Count (Leave blank for all)
+							Count (Leave blank for 1000 items, put 0 for ALL)
 						</th>
                     </tr>
                 </thead>
