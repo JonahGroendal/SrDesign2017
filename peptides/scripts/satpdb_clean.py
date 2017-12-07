@@ -1,7 +1,7 @@
-#author Jack McClure
+#SATPdb cleaner
 #script to put records in canonical form
-#this leaves duplicates, peptides with multiple activities appear
-#multiple times, once for each activity
+#each sequence occurs once with multiple features
+#Author: Jack McClure
 
 import sys
 sys.path.append('../')
@@ -20,6 +20,8 @@ satp.create_bool_column_from_value("activities", 'antimicrobial', assume_false=F
 satp.create_bool_column_from_value("activities", 'antiparasitic', assume_false=False)
 satp.create_bool_column_from_value("activities", 'antiviral', assume_false=False)
 satp.create_bool_column_from_value("activities", 'toxic', assume_false=False)
+satp.remove_rows_where_equals("sequence","STRUCTURE GIVEN")
+
 
 satp.conform_column_names()
 satp.remove_column("activities")
