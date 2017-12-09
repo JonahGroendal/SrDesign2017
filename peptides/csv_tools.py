@@ -75,10 +75,10 @@ class Dataset:
             file_str = f.read()
         self.csv_into_table(file_str, delimiter)
 
-    def export_csv(self, filepath, pretty=False):
+    def export_csv(self, filepath, pretty=False, encoding="utf-8"):
         """ Exports to csv """
-        with open(filepath, "w") as f:
-            f.write(self.to_csv_string(pad_values=pretty))
+        with open(filepath, "wb") as f:
+            f.write(self.to_csv_string(pad_values=pretty).encode(encoding))
 
     ##########################
     # ROW OPERATIONS
