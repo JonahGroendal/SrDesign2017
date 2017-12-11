@@ -130,7 +130,10 @@
 					<?php
 					for ($i = 0; $i < $size_activities; $i++)
 					{
-						echo '<tr><td>' . $array_activities[$i] . '</td><td><input type="checkbox" name="activities_true[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></td><td><input type="checkbox" name="activities_false[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></tr>';
+						if($i%2==0)
+							echo '<tr><td>' . $array_activities[$i] . '</td><td><input type="checkbox" name="activities_true[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></td><td><input type="checkbox" name="activities_false[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td>';
+						else
+							echo '<td>' . $array_activities[$i] . '</td><td><input type="checkbox" name="activities_true[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></td><td><input type="checkbox" name="activities_false[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></tr>';
 					}
 					?>
 				</tbody>
