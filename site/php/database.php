@@ -38,7 +38,7 @@
 			<?php
 				$query = array();
 				//Limit starts at 1000, If the user sets the limit to 0, it will print ALL.
-				$limit_size = 1001;
+				$limit_size = 999;
 
 				echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
@@ -80,9 +80,9 @@
 				}
 				//Max length of Sequence
 				//Limit the number of items to query
-				if (!empty($_GET['count']))
+				if (isset($_GET['count']))
 				{
-					$limit_size = ((int) $_GET['count']) + 1;
+					$limit_size = ((int) $_GET['count']) - 1;
 				}
 
 				//Activities True
@@ -186,10 +186,13 @@
 						}
 						echo "</tr>";
 					}
-					//Limit the number of items printed.
-					if ($limit_size != 1)
+					else
 					{
-						error_log("TEST");
+						$j--;
+					}
+					//Limit the number of items printed.
+					if ($limit_size != -1)
+					{
 						if ($limit_size <= $j)
 						{
 							break;
