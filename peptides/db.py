@@ -127,11 +127,13 @@ class PymongoDB:
 
         args:
             data_schema - Attribute 'data' is validated against this schema. A
-                data_schema may contain nested data schemas
+                data_schema may contain nested data schemas.
             data - The data that is being validated. Can be any data type that
-                satisfies: type( data type ) == type
+                satisfies: type( data type ) == type.
         """
-
+        ###################
+        # RECURSION CASES
+        ###################
         def _or(data):
             """
             Recursively validate data against each data schema.
@@ -214,7 +216,7 @@ class PymongoDB:
         this, please refer to the documentation in db_schema.py for further
         details.
 
-        Note: This data schema is a valid data schema of itself 😎
+        Note: This data structure/schema is valid with respect to itself 😎
         """
 
         valid_data_schema = {}          # Data schema of a valid data schema.
