@@ -36,72 +36,96 @@
 	<div id="table_div" class="page form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 			<?php
-				$query_array = array();
+				$query = array();
 				//Limit starts at 1000, If the user sets the limit to 0, it will print ALL.
-				// $limit_size = 1001;
+				$limit_size = 1001;
 
 				echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
 				require '../vendor/autoload.php';
 
-				// $db = new \MongoDB\Driver\Manager('mongodb://localhost:27017');
 				$db = new MongoDB\Client('mongodb://localhost:27017');
 				$collection = $db->peptide->peptide;
-
-				// $id           = new \MongoDB\BSON\ObjectId('AGQQQPFPPQQPYPQPQPF');
-				// $filter      = ['sequence' => $id];
-				// $options = [];
-                //
-				// $query = new \MongoDB\Driver\Query($filter, $options);
-				// $rows   = $mongo->executeQuery('peptide.peptide', $query);
-
 
 				//Preperation of the query array
 
 				//Sequence
-				// if (!empty($_GET['seq']))
-				// {
-				// 	array_push($query_array, array('sequence' => 'AGQQQPFPPQQPYPQPQPF'));//new MongoDB\BSON\Regex ('/' . (string) $_GET['seq'] . '/i'))); // (string) sanitizes the query.
-				// }
-				// //Min length of Sequence
-				// if (!empty($_GET['min']))
-				// {
-				// 	array_push($query_array, array('sequence' => array('$gt' => (string) $_GET['min'])));
-				// }
-				// //Max length of Sequence
-				// if (!empty($_GET['max']))
-				// {
-				// 	array_push($query_array, array('sequence' => array('$lt' => (string) $_GET['max'])));
-				// }
-				// //Limit the number of items to query
-				// if (!empty($_GET['count']))
-				// {
-				// 	//Subtract 1 from limit, to evade a off by one error and print out limit + 1;
-				// 	$limit_size = ((int) $_GET['count']) - 1;
-				// }
-				// //Activities
-				// if (isset($_GET['activities'])){
-                //
-				// 	$activities = $_GET['activities'];
-				// 	$not_null = array('$ne' => null);
-                //
-				// 	foreach($activities as $activity)
-				// 	{
-				// 		array_push($query_array, array( (string) $activity => $not_null));
-				// 	}
-				// }
+				if (!empty($_GET['seq']))
+				{
+					// array_push($query, array('sequence' => array($regex => "/^" . ( (string) $_GET['seq'] ) . "/i")));
+					$regex = new MongoDB\BSON\Regex (".*" . ((string) $_GET['seq']) . ".*");
+					array_push($query, array('sequence' => $regex));
+				}
+				//Min length of Sequence
+				if (!empty($_GET['min']))
+				{
+					if (!empty($_GET['max']))
+					{
+						$min = array('$where' => "(this.sequence.length > ". ((string)$_GET['min']) .")");
+						$max = array('$where' => "(this.sequence.length < ". ((string)$_GET['max']) .")");
+						$length_query = array('$and' => array($min, $max));
+						array_push($query, $length_query);
+					}
+					else
+					{
+						array_push($query, array('$where' => "(this.sequence.length > ". ((string)$_GET['min']) .")"));
+					}
+				}
+				else
+				{
+					if (!empty($_GET['max']))
+					{
+						array_push($query, array('$where' => "(this.sequence.length < ". ((string)$_GET['max']) .")"));
+					}
+				}
+				//Max length of Sequence
+				//Limit the number of items to query
+				if (!empty($_GET['count']))
+				{
+					$limit_size = ((int) $_GET['count']) + 1;
+				}
 
-				// if (empty($query_array))
-				// {
+				//Activities True
+				if (isset($_GET['activities_true'])){
+
+					$activities = $_GET['activities_true'];
+
+					foreach($activities as $activity)
+					{
+						array_push($query, array( (((string)$activity) . '.value') => true));
+					}
+				}
+
+				//Activities False
+				if (isset($_GET['activities_false'])){
+
+					$activities = $_GET['activities_false'];
+
+					foreach($activities as $activity)
+					{
+						array_push($query, array( (((string)$activity) . '.value') => false));
+					}
+				}
+
+				//Execute Query
+				if (empty($query))
+				{
 					$cursor = $collection->find();
-				// }
-				// else
-				// {
-					// $cursor = $collection->find($query_array);
-				// }
+				}
+				else
+				{
+					if (isset($_GET['logic']))
+					{
+						$query = array(('$' . ((string)$_GET['logic'])) => $query);
+					}
+					else
+					{
+						$query = array('$or' => $query);
+					}
+					$cursor = $collection->find($query);
+				}
 
 				//Ok, now time to print out the table.
-
 				echo "<thead><tr>";
 
 				//Print labels
@@ -162,15 +186,15 @@
 						}
 						echo "</tr>";
 					}
-					// //Limit the number of items printed.
-					// if ($limit_size != 0)
-					// {
-					// 	if ($limit_size <= $j)
-					// 	{
-					// 		break;
-					// 	}
-					// 	$j++;
-					// }
+					//Limit the number of items printed.
+					if ($limit_size != 0)
+					{
+						if ($limit_size <= $j)
+						{
+							break;
+						}
+						$j++;
+					}
 				}
 				echo "</tbody>";
 

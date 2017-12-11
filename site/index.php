@@ -43,7 +43,7 @@
                             Length (high, Max of 50)
                         </th>
 						<th>
-							Count (Leave blank for 1000 items, put 0 for ALL)
+							Count
 						</th>
                     </tr>
                 </thead>
@@ -66,6 +66,53 @@
                 </tbody>
 			</table>
 		</div>
+		<div class="tablepage">
+			<table class="table">
+				<thead>
+					<th>
+						Logical Operators
+					</th>
+					<th>
+						Default is "OR"
+					</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							OR
+						</td>
+						<td>
+							<input type="radio" name="logic" id="activities" form="query_form" checked="checked" value="or">
+						</td>
+						<td>
+					</tr>
+					<!-- <tr>
+						<td>
+							NOT
+						</td>
+						<td>
+							<input type="radio" name="logic" id="activities" form="query_form" value="not">
+						</td>
+					</tr> -->
+					<tr>
+						<td>
+							NOR
+						</td>
+						<td>
+							<input type="radio" name="logic" id="activities" form="query_form" value="nor">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							AND
+						</td>
+						<td>
+							<input type="radio" name="logic" id="activities" form="query_form" value="and">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 		<div class="tablepage"> <!-- ADD THIS STYLE IF THE LIST IS GETTING LONG :  style="overflow-y:scroll; height:250px" -->
 			<table class="table">
 				<thead>
@@ -73,13 +120,17 @@
 						Activities
 					</th>
 					<th>
+						isTrue
+					</th>
+					<th>
+						isFalse
 					</th>
 				</thead>
 				<tbody>
 					<?php
 					for ($i = 0; $i < $size_activities; $i++)
 					{
-						echo '<tr><td>' . $array_activities[$i] . '</td><td><input type="checkbox" name="activities[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></tr>';
+						echo '<tr><td>' . $array_activities[$i] . '</td><td><input type="checkbox" name="activities_true[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></td><td><input type="checkbox" name="activities_false[] id="activities" form="query_form" value="' . $array_activities[$i] . '"></td></tr>';
 					}
 					?>
 				</tbody>
