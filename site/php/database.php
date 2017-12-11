@@ -20,7 +20,7 @@
 
 <body>
 	<div class="tablepage">
-		<a href="../res/db_dump.csv" download>Download Whole Database as CSV</a>
+		<a href="../../db_dump.csv" download>Download Whole Database as CSV</a>
 	</div>
 
 	<script type="text/javascript" charset="utf-8">
@@ -187,8 +187,9 @@
 						echo "</tr>";
 					}
 					//Limit the number of items printed.
-					if ($limit_size != 0)
+					if ($limit_size != 1)
 					{
+						error_log("TEST");
 						if ($limit_size <= $j)
 						{
 							break;
