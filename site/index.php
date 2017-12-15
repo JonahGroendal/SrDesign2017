@@ -1,7 +1,7 @@
 <head>
     <?php
-		include 'php/commonLinks.php';
-		include 'php/header.php';
+		include 'commonLinks.php';
+		include 'header.php';
 
 		$array_labels = array("sequence", "name", "type");
 		$array_activities = array();
@@ -11,20 +11,19 @@
 		}
 		fclose($myfile);
 
-		array_pop($array_activities); //removes last item, which is just a '\n'
+		array_pop($array_activities); //removes last item, which is just a newline
 		$size_activities = count($array_activities);
 		$size_labels = count($array_labels);
 	?>
 </head>
+<body>
     <div class="page">
       <h1>Peptide Database</h1>
     </div>
     <div class="page" style="margin-top:10px">
-        <h3>About</h3>
-        <h4>
-            This website has a collection of many different peptide databases used for machine learning purposes.
-        </h4>
-    </div>
+		<h4>WMU Peptide is a free access database of experimentally verified peptides that have been compiled together from various public sources.<br><br>
+		It combines data from separate databases with different focuses to give a straightforward representation of biological activity observed for each peptide as well as a link to each source of an activity.</h4>
+	</div>
 	<div class="page" style="margin-top:10px">
 		<h3>Query Form</h3>
 		<div class="tablepage">
@@ -73,7 +72,7 @@
 						Logical Operators
 					</th>
 					<th>
-						Default is "OR"
+						Default is "AND"
 					</th>
 				</thead>
 				<tbody>
@@ -82,18 +81,10 @@
 							OR
 						</td>
 						<td>
-							<input type="radio" name="logic" id="activities" form="query_form" checked="checked" value="or">
+							<input type="radio" name="logic" id="activities" form="query_form" value="or">
 						</td>
 						<td>
 					</tr>
-					<!-- <tr>
-						<td>
-							NOT
-						</td>
-						<td>
-							<input type="radio" name="logic" id="activities" form="query_form" value="not">
-						</td>
-					</tr> -->
 					<tr>
 						<td>
 							NOR
@@ -107,7 +98,7 @@
 							AND
 						</td>
 						<td>
-							<input type="radio" name="logic" id="activities" form="query_form" value="and">
+							<input type="radio" name="logic" id="activities" form="query_form" checked="checked" value="and">
 						</td>
 					</tr>
 				</tbody>
@@ -116,6 +107,15 @@
 		<div class="tablepage"> <!-- ADD THIS STYLE IF THE LIST IS GETTING LONG :  style="overflow-y:scroll; height:250px" -->
 			<table class="table">
 				<thead>
+					<th>
+						Activities
+					</th>
+					<th>
+						isTrue
+					</th>
+					<th>
+						isFalse
+					</th>
 					<th>
 						Activities
 					</th>
@@ -139,23 +139,7 @@
 				</tbody>
 			</table>
 		</div>
-			<form action="php/database.php" method="get" id="query_form"><input type="submit" style="width:100%">
+			<form action="database.php" method="get" id="query_form"><input type="submit" style="width:100%">
 			</form>
 	</div>
-    <div class="page" style="margin-top:100px">
-        <h3>Authors</h3>
-        <h5>Jacob Schuurmans</h5>
-        <h5>Jack McClure</h5>
-        <h5>Jonah Groendal</h5>
-        <h5>Angelo Danducci</h5>
-        <h5>Josh Looney</h5>
-	</div>
 </body>
-
-<!-- <script type="text/javascript">
-	function AlertIt() {
-		var answer = confirm ("Loading Full database might take some time.")
-		if (answer)
-			window.location="php/database.php";
-	}
-</script> -->

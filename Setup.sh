@@ -36,6 +36,7 @@ sudo apt-get install mongodb
 #Install the Driver
 sudo pecl install mongodb
 
-# sudo bash -c "echo 'extension=mongodb.so' >> /etc/php/7.0/apache2/php.ini"
+#Text that needs to be inserted for PHP MongoDB driver
+sudo bash -c "echo 'extension=mongodb.so' >> /etc/php/7.0/apache2/php.ini"
+
 echo "*****ATTENTION******\nVerify the root directory of Apache2 is that of SrDesign2017/site/";
-# echo "\n*******************************************************\n*ADD \"extension=mongodb.so\" to \"apache2/php.ini\"     *\n*Type \"php --ini\" to find the files location. *\n*******************************************************"
