@@ -5,7 +5,8 @@ import requests
 import sys
 import json
 
-data = requests.get('http://kaliumdb.org/data/toxins')
+def run():
+    data = requests.get('http://kaliumdb.org/data/toxins')
 
-with open('../../data/downloads/kaliumdb.json', 'wb') as output:
-    output.write(data.content)
+    with open('../../data/downloads/kaliumdb.json', 'wb') as output:
+        output.write(data.content)
