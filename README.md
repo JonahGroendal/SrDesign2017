@@ -54,5 +54,5 @@ site/vendor contains php mongo driver so the website can access database
 index.php is the primary website page
 
 #setup
-run the Setup.sh script to install necessary components for the project to run on a Linux system
+run the Setup.sh script to install necessary components for the project to run on a Ubuntu 16.04 system
 python code is written in python3.6.3 so to run it in linux use command python3
