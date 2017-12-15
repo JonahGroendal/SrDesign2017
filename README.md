@@ -50,7 +50,7 @@ site/css contains css code
 site/js contains javascript code
 site/php contains php code
 site/res contains resource such as text files the website uses
-site/vendor contains necessary mongodb files for accessing the database
+site/vendor contains php mongo driver so the website can access database
 index.php is the primary website page
 
 #setup
