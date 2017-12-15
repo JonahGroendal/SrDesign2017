@@ -32,7 +32,7 @@
 		$query = setup_query();
 		$_SESSION['query'] = $query;
 		?>
-		<a href="download_query.php" download>Download Whole Database as CSV</a>
+		<a href="download_query.php" download>Download Query Results as CSV</a>
 	</div>
 
 	<script type="text/javascript" charset="utf-8">
