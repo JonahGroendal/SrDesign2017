@@ -48,11 +48,11 @@ csv files should be encoded in UTF-8
 contained in site directory
 site/css contains css code
 site/js contains javascript code
-site/php contains php code
 site/res contains resource such as text files the website uses
 site/vendor contains php mongo driver so the website can access database
+res/activities.txt contains a list of active activities in the database. The website uses this to dynamically build the site. Update these with more activities when more data is entered into the site.
 index.php is the primary website page
 
 #setup
 run the Setup.sh script to install necessary components for the project to run on a Ubuntu 16.04 system
-python code is written in python3.6.3 so to run it in linux use command python3
+python code is written in python3.6.3 so to run it in Ubuntu 16.04 LTS. use command python3

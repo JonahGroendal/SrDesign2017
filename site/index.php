@@ -42,7 +42,7 @@
                             Length (high, Max of 50)
                         </th>
 						<th>
-							Count
+							Count (Blank for 1k Entries. 0 for ALL)
 						</th>
                     </tr>
                 </thead>

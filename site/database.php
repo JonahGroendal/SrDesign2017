@@ -49,9 +49,6 @@
 	<div id="table_div" class="page form-inline no-footer">
 		<table id="peptide_table" class="table table-bordered">
 			<?php
-				//Limit starts at 1000, If the user sets the limit to 0, it will print ALL.
-				$limit_size = 999;
-
 				//Hide document until loading is complete
 				echo '<script> document.getElementById("table_div").style.visibility = "hidden"; </script>';
 
@@ -62,7 +59,11 @@
 				$collection = $db->peptide->peptide;
 
 				//Limit the number of items to query
-				if (isset($_GET['count']))
+				if ($_GET['count'] == "")
+				{
+					$limit_size = 999;
+				}
+				else
 				{
 					$limit_size = ((int) $_GET['count']) - 1;
 				}
@@ -148,7 +149,6 @@
 					//Limit the number of items printed.
 					if ($limit_size != -1)
 					{
-						error_log($limit_size);
 						if ($limit_size <= $j)
 						{
 							break;

@@ -39,4 +39,7 @@ sudo pecl install mongodb
 #Text that needs to be inserted for PHP MongoDB driver
 sudo bash -c "echo 'extension=mongodb.so' >> /etc/php/7.0/apache2/php.ini"
 
-echo "*****ATTENTION******\nVerify the root directory of Apache2 is that of SrDesign2017/site/";
+echo "***********************************ATTENTION**************************************\nVerify the root directory of Apache2 is that of SrDesign2017/site/\n\nHowTo:\n";
+echo "Once everything is installed, you must either move 'site/*' to apache's root directory, or move apache'2 root directory to 'site'. To move the root directory, there are two things you must change\n.";
+echo "In /etc/apache2, you must find '<Directory /var/www/html >' and replace it with '<Directory /path/to/site>'.\n";
+echo "Then in '/etc/apache2/sites-available' you must change 'DocumentRoot /var/www/html' to 'DocumentRoot /path/to/site'.";
